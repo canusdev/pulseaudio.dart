@@ -1,4 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:pulseaudio/src/generated_bindings.dart';
 
 part 'isolate_request.freezed.dart';
 
@@ -6,6 +7,8 @@ part 'isolate_request.freezed.dart';
 sealed class IsolateRequest with _$IsolateRequest {
   const factory IsolateRequest.getSinkList({required int requestId}) =
       GetSinkListRequest;
+  const factory IsolateRequest.getInputSinkList({required int requestId}) =
+      GetInputSinkListRequest;
   const factory IsolateRequest.getSourceList({required int requestId}) =
       GetSourceListRequest;
   const factory IsolateRequest.getServerInfo({required int requestId}) =
@@ -18,6 +21,11 @@ sealed class IsolateRequest with _$IsolateRequest {
       {required int requestId,
       required String sourceName,
       required double volume}) = SetSourceVolumeRequest;
+  const factory IsolateRequest.propListUpdate(
+      {required int requestId,
+      required pa_update_mode mode,
+      required String key,
+      required String value}) = PropListUpdate;
   const factory IsolateRequest.setSinkMute(
       {required int requestId,
       required String sinkName,

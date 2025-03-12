@@ -18,6 +18,8 @@ library pulseaudio;
 import 'dart:async';
 import 'dart:isolate';
 
+import 'package:pulseaudio/src/generated_bindings.dart';
+import 'package:pulseaudio/src/model/input_sink.dart';
 import 'package:pulseaudio/src/model/isolate_request.dart';
 import 'package:pulseaudio/src/model/isolate_response.dart';
 import 'package:pulseaudio/src/model/server_info.dart';
@@ -159,6 +161,19 @@ class PulseAudioClient {
     return response.list;
   }
 
+  /// Get Lists of [PulseAudioInputSink]
+  Future<List<PulseAudioInputSink>> getInputSinkList() async {
+    if (!_initializedCompleter.isCompleted) {
+      throw Exception("PulseAudio is not initialized");
+    }
+    final requestId = newRequestId;
+    _sendPort.send(IsolateRequest.getInputSinkList(requestId: requestId));
+    final response = await _broadcastStream.firstWhere((message) =>
+        message is OnInputSinkListResponse &&
+        message.requestId == requestId) as OnInputSinkListResponse;
+    return response.list;
+  }
+
   /// Get Lists of [PulseAudioSource]
   Future<List<PulseAudioSource>> getSourceList() async {
     if (!_initializedCompleter.isCompleted) {
@@ -208,6 +223,20 @@ class PulseAudioClient {
         requestId: requestId, sinkName: sinkName, volume: volume));
     await _broadcastStream.firstWhere((message) =>
         message is SetSinkVolumeResponse && message.requestId == requestId);
+  }
+
+  /// Set volume for sink by name
+  Future<void> propListUpdate(
+      pa_update_mode mode, String key, String value) async {
+    if (!_initializedCompleter.isCompleted) {
+      throw Exception("PulseAudio is not initialized");
+    }
+    final requestId = newRequestId;
+
+    _sendPort.send(IsolateRequest.propListUpdate(
+        requestId: requestId, mode: mode, key: key, value: value));
+    await _broadcastStream.firstWhere((message) =>
+        message is PropListUpdateResponse && message.requestId == requestId);
   }
 
   /// set mute for source by name

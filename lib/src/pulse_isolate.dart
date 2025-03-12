@@ -4,6 +4,7 @@ import 'dart:isolate';
 
 import 'package:ffi/ffi.dart';
 import 'package:pulseaudio/src/generated_bindings.dart';
+import 'package:pulseaudio/src/model/input_sink.dart';
 import 'package:pulseaudio/src/model/isolate_request.dart';
 import 'package:pulseaudio/src/model/isolate_response.dart';
 import 'package:pulseaudio/src/model/server_info.dart';
@@ -81,6 +82,12 @@ class PulseIsolate {
         case GetServerInfoRequest():
           _getServerInfo(message.requestId);
           break;
+        case GetInputSinkListRequest():
+          _getInputSinkList(message.requestId);
+          break;
+        case PropListUpdate():
+          _propListSets(
+              message.requestId, message.mode, message.key, message.value);
       }
     });
 
@@ -167,6 +174,71 @@ class PulseIsolate {
     }
   }
 
+  static void _onInputSinkListInfo(
+    Pointer<pa_context> context,
+    Pointer<pa_sink_input_info> sink,
+    int eol,
+    Pointer<Void> userdata,
+  ) {
+    if (eol > 0) {
+      return;
+    }
+
+    final requestId = userdata.cast<Int>().value;
+    final response =
+        _instance!.responsePerIdMap[requestId]! as OnInputSinkListResponse;
+    _instance!.responsePerIdMap[requestId] = response.copyWith(
+        list: [...response.list, PulseAudioInputSink.fromNative(sink.ref)]);
+  }
+
+  static void _getSourceList(int requestId) {
+    final requestIdNative = calloc<Int>()
+      ..value = requestId; // Allocate memory explicitly
+
+    _instance!.responsePerIdMap[requestId] =
+        OnSourceListResponse(requestId: requestId, list: []);
+    final operation = pa.pa_context_get_source_info_list(
+      _instance!.context,
+      Pointer.fromFunction(_onSourceListInfo),
+      requestIdNative.cast(),
+    );
+
+    _instance!.operationCallbackMap[operation] = () {
+      _instance!._sendPort.send(_instance!.responsePerIdMap[requestId]!);
+      calloc.free(requestIdNative); // Free memory when the operation is done
+    };
+  }
+
+  static void _propListSets(
+      int requestId, pa_update_mode mode, String key, String value) {
+    var propList = pa.pa_proplist_new();
+    pa.pa_proplist_sets(
+        propList, key.toNativeUtf8().cast(), value.toNativeUtf8().cast());
+    var operation = pa.pa_context_proplist_update(
+        _instance!.context, mode, propList, nullptr, nullptr);
+    _instance!.operationCallbackMap[operation] = () {
+      _instance!._sendPort.send(PropListUpdateResponse(requestId: requestId));
+    };
+  }
+
+  static void _getInputSinkList(int requestId) {
+    final requestIdNative = calloc<Int>()
+      ..value = requestId; // Allocate memory explicitly
+
+    _instance!.responsePerIdMap[requestId] =
+        OnInputSinkListResponse(requestId: requestId, list: []);
+    final operation = pa.pa_context_get_sink_input_info_list(
+      _instance!.context,
+      Pointer.fromFunction(_onInputSinkListInfo),
+      requestIdNative.cast(),
+    );
+
+    _instance!.operationCallbackMap[operation] = () {
+      _instance!._sendPort.send(_instance!.responsePerIdMap[requestId]!);
+      calloc.free(requestIdNative); // Free memory when the operation is done
+    };
+  }
+
   static void _getSinkList(int requestId) {
     final requestIdNative = calloc<Int>()
       ..value = requestId; // Allocate memory explicitly
@@ -194,30 +266,13 @@ class PulseIsolate {
     if (eol > 0) {
       return;
     }
+
     final requestId = userdata.cast<Int>().value;
     final response =
         _instance!.responsePerIdMap[requestId]! as OnSinkListResponse;
 
     _instance!.responsePerIdMap[requestId] = response.copyWith(
         list: [...response.list, PulseAudioSink.fromNative(sink.ref)]);
-  }
-
-  static void _getSourceList(int requestId) {
-    final requestIdNative = calloc<Int>()
-      ..value = requestId; // Allocate memory explicitly
-
-    _instance!.responsePerIdMap[requestId] =
-        OnSourceListResponse(requestId: requestId, list: []);
-    final operation = pa.pa_context_get_source_info_list(
-      _instance!.context,
-      Pointer.fromFunction(_onSourceListInfo),
-      requestIdNative.cast(),
-    );
-
-    _instance!.operationCallbackMap[operation] = () {
-      _instance!._sendPort.send(_instance!.responsePerIdMap[requestId]!);
-      calloc.free(requestIdNative); // Free memory when the operation is done
-    };
   }
 
   static void _onSourceListInfo(

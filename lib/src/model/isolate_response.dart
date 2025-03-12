@@ -1,4 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:pulseaudio/src/model/input_sink.dart';
 import 'package:pulseaudio/src/model/server_info.dart';
 import 'package:pulseaudio/src/model/sink.dart';
 import 'package:pulseaudio/src/model/source.dart';
@@ -21,6 +22,9 @@ sealed class IsolateResponse with _$IsolateResponse {
   const factory IsolateResponse.onSinkList(
       {required int requestId,
       required List<PulseAudioSink> list}) = OnSinkListResponse;
+  const factory IsolateResponse.onInputSinkList(
+      {required int requestId,
+      required List<PulseAudioInputSink> list}) = OnInputSinkListResponse;
   const factory IsolateResponse.onSourceList(
       {required int requestId,
       required List<PulseAudioSource> list}) = OnSourceListResponse;
@@ -45,4 +49,7 @@ sealed class IsolateResponse with _$IsolateResponse {
   const factory IsolateResponse.setDefaultSource({
     required int requestId,
   }) = SetDefaultSourceResponse;
+  const factory IsolateResponse.propListUpdate({
+    required int requestId,
+  }) = PropListUpdateResponse;
 }

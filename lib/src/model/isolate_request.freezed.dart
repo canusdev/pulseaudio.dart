@@ -20,12 +20,16 @@ mixin _$IsolateRequest {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(int requestId) getSinkList,
+    required TResult Function(int requestId) getInputSinkList,
     required TResult Function(int requestId) getSourceList,
     required TResult Function(int requestId) getServerInfo,
     required TResult Function(int requestId, String sinkName, double volume)
         setSinkVolume,
     required TResult Function(int requestId, String sourceName, double volume)
         setSourceVolume,
+    required TResult Function(
+            int requestId, pa_update_mode mode, String key, String value)
+        propListUpdate,
     required TResult Function(int requestId, String sinkName, bool mute)
         setSinkMute,
     required TResult Function(int requestId, String sourceName, bool mute)
@@ -39,12 +43,16 @@ mixin _$IsolateRequest {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(int requestId)? getSinkList,
+    TResult? Function(int requestId)? getInputSinkList,
     TResult? Function(int requestId)? getSourceList,
     TResult? Function(int requestId)? getServerInfo,
     TResult? Function(int requestId, String sinkName, double volume)?
         setSinkVolume,
     TResult? Function(int requestId, String sourceName, double volume)?
         setSourceVolume,
+    TResult? Function(
+            int requestId, pa_update_mode mode, String key, String value)?
+        propListUpdate,
     TResult? Function(int requestId, String sinkName, bool mute)? setSinkMute,
     TResult? Function(int requestId, String sourceName, bool mute)?
         setSourceMute,
@@ -56,12 +64,16 @@ mixin _$IsolateRequest {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(int requestId)? getSinkList,
+    TResult Function(int requestId)? getInputSinkList,
     TResult Function(int requestId)? getSourceList,
     TResult Function(int requestId)? getServerInfo,
     TResult Function(int requestId, String sinkName, double volume)?
         setSinkVolume,
     TResult Function(int requestId, String sourceName, double volume)?
         setSourceVolume,
+    TResult Function(
+            int requestId, pa_update_mode mode, String key, String value)?
+        propListUpdate,
     TResult Function(int requestId, String sinkName, bool mute)? setSinkMute,
     TResult Function(int requestId, String sourceName, bool mute)?
         setSourceMute,
@@ -74,10 +86,12 @@ mixin _$IsolateRequest {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(GetSinkListRequest value) getSinkList,
+    required TResult Function(GetInputSinkListRequest value) getInputSinkList,
     required TResult Function(GetSourceListRequest value) getSourceList,
     required TResult Function(GetServerInfoRequest value) getServerInfo,
     required TResult Function(SetSinkVolumeRequest value) setSinkVolume,
     required TResult Function(SetSourceVolumeRequest value) setSourceVolume,
+    required TResult Function(PropListUpdate value) propListUpdate,
     required TResult Function(SetSinkMuteRequest value) setSinkMute,
     required TResult Function(SetSourceMuteRequest value) setSourceMute,
     required TResult Function(SetDefaultSinkRequest value) setDefaultSink,
@@ -88,10 +102,12 @@ mixin _$IsolateRequest {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(GetSinkListRequest value)? getSinkList,
+    TResult? Function(GetInputSinkListRequest value)? getInputSinkList,
     TResult? Function(GetSourceListRequest value)? getSourceList,
     TResult? Function(GetServerInfoRequest value)? getServerInfo,
     TResult? Function(SetSinkVolumeRequest value)? setSinkVolume,
     TResult? Function(SetSourceVolumeRequest value)? setSourceVolume,
+    TResult? Function(PropListUpdate value)? propListUpdate,
     TResult? Function(SetSinkMuteRequest value)? setSinkMute,
     TResult? Function(SetSourceMuteRequest value)? setSourceMute,
     TResult? Function(SetDefaultSinkRequest value)? setDefaultSink,
@@ -102,10 +118,12 @@ mixin _$IsolateRequest {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(GetSinkListRequest value)? getSinkList,
+    TResult Function(GetInputSinkListRequest value)? getInputSinkList,
     TResult Function(GetSourceListRequest value)? getSourceList,
     TResult Function(GetServerInfoRequest value)? getServerInfo,
     TResult Function(SetSinkVolumeRequest value)? setSinkVolume,
     TResult Function(SetSourceVolumeRequest value)? setSourceVolume,
+    TResult Function(PropListUpdate value)? propListUpdate,
     TResult Function(SetSinkMuteRequest value)? setSinkMute,
     TResult Function(SetSourceMuteRequest value)? setSourceMute,
     TResult Function(SetDefaultSinkRequest value)? setDefaultSink,
@@ -230,12 +248,16 @@ class _$GetSinkListRequestImpl implements GetSinkListRequest {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(int requestId) getSinkList,
+    required TResult Function(int requestId) getInputSinkList,
     required TResult Function(int requestId) getSourceList,
     required TResult Function(int requestId) getServerInfo,
     required TResult Function(int requestId, String sinkName, double volume)
         setSinkVolume,
     required TResult Function(int requestId, String sourceName, double volume)
         setSourceVolume,
+    required TResult Function(
+            int requestId, pa_update_mode mode, String key, String value)
+        propListUpdate,
     required TResult Function(int requestId, String sinkName, bool mute)
         setSinkMute,
     required TResult Function(int requestId, String sourceName, bool mute)
@@ -252,12 +274,16 @@ class _$GetSinkListRequestImpl implements GetSinkListRequest {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(int requestId)? getSinkList,
+    TResult? Function(int requestId)? getInputSinkList,
     TResult? Function(int requestId)? getSourceList,
     TResult? Function(int requestId)? getServerInfo,
     TResult? Function(int requestId, String sinkName, double volume)?
         setSinkVolume,
     TResult? Function(int requestId, String sourceName, double volume)?
         setSourceVolume,
+    TResult? Function(
+            int requestId, pa_update_mode mode, String key, String value)?
+        propListUpdate,
     TResult? Function(int requestId, String sinkName, bool mute)? setSinkMute,
     TResult? Function(int requestId, String sourceName, bool mute)?
         setSourceMute,
@@ -272,12 +298,16 @@ class _$GetSinkListRequestImpl implements GetSinkListRequest {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(int requestId)? getSinkList,
+    TResult Function(int requestId)? getInputSinkList,
     TResult Function(int requestId)? getSourceList,
     TResult Function(int requestId)? getServerInfo,
     TResult Function(int requestId, String sinkName, double volume)?
         setSinkVolume,
     TResult Function(int requestId, String sourceName, double volume)?
         setSourceVolume,
+    TResult Function(
+            int requestId, pa_update_mode mode, String key, String value)?
+        propListUpdate,
     TResult Function(int requestId, String sinkName, bool mute)? setSinkMute,
     TResult Function(int requestId, String sourceName, bool mute)?
         setSourceMute,
@@ -296,10 +326,12 @@ class _$GetSinkListRequestImpl implements GetSinkListRequest {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(GetSinkListRequest value) getSinkList,
+    required TResult Function(GetInputSinkListRequest value) getInputSinkList,
     required TResult Function(GetSourceListRequest value) getSourceList,
     required TResult Function(GetServerInfoRequest value) getServerInfo,
     required TResult Function(SetSinkVolumeRequest value) setSinkVolume,
     required TResult Function(SetSourceVolumeRequest value) setSourceVolume,
+    required TResult Function(PropListUpdate value) propListUpdate,
     required TResult Function(SetSinkMuteRequest value) setSinkMute,
     required TResult Function(SetSourceMuteRequest value) setSourceMute,
     required TResult Function(SetDefaultSinkRequest value) setDefaultSink,
@@ -313,10 +345,12 @@ class _$GetSinkListRequestImpl implements GetSinkListRequest {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(GetSinkListRequest value)? getSinkList,
+    TResult? Function(GetInputSinkListRequest value)? getInputSinkList,
     TResult? Function(GetSourceListRequest value)? getSourceList,
     TResult? Function(GetServerInfoRequest value)? getServerInfo,
     TResult? Function(SetSinkVolumeRequest value)? setSinkVolume,
     TResult? Function(SetSourceVolumeRequest value)? setSourceVolume,
+    TResult? Function(PropListUpdate value)? propListUpdate,
     TResult? Function(SetSinkMuteRequest value)? setSinkMute,
     TResult? Function(SetSourceMuteRequest value)? setSourceMute,
     TResult? Function(SetDefaultSinkRequest value)? setDefaultSink,
@@ -330,10 +364,12 @@ class _$GetSinkListRequestImpl implements GetSinkListRequest {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(GetSinkListRequest value)? getSinkList,
+    TResult Function(GetInputSinkListRequest value)? getInputSinkList,
     TResult Function(GetSourceListRequest value)? getSourceList,
     TResult Function(GetServerInfoRequest value)? getServerInfo,
     TResult Function(SetSinkVolumeRequest value)? setSinkVolume,
     TResult Function(SetSourceVolumeRequest value)? setSourceVolume,
+    TResult Function(PropListUpdate value)? propListUpdate,
     TResult Function(SetSinkMuteRequest value)? setSinkMute,
     TResult Function(SetSourceMuteRequest value)? setSourceMute,
     TResult Function(SetDefaultSinkRequest value)? setDefaultSink,
@@ -361,6 +397,232 @@ abstract class GetSinkListRequest implements IsolateRequest {
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$GetSinkListRequestImplCopyWith<_$GetSinkListRequestImpl> get copyWith =>
       throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$GetInputSinkListRequestImplCopyWith<$Res>
+    implements $IsolateRequestCopyWith<$Res> {
+  factory _$$GetInputSinkListRequestImplCopyWith(
+          _$GetInputSinkListRequestImpl value,
+          $Res Function(_$GetInputSinkListRequestImpl) then) =
+      __$$GetInputSinkListRequestImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({int requestId});
+}
+
+/// @nodoc
+class __$$GetInputSinkListRequestImplCopyWithImpl<$Res>
+    extends _$IsolateRequestCopyWithImpl<$Res, _$GetInputSinkListRequestImpl>
+    implements _$$GetInputSinkListRequestImplCopyWith<$Res> {
+  __$$GetInputSinkListRequestImplCopyWithImpl(
+      _$GetInputSinkListRequestImpl _value,
+      $Res Function(_$GetInputSinkListRequestImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of IsolateRequest
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? requestId = null,
+  }) {
+    return _then(_$GetInputSinkListRequestImpl(
+      requestId: null == requestId
+          ? _value.requestId
+          : requestId // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$GetInputSinkListRequestImpl implements GetInputSinkListRequest {
+  const _$GetInputSinkListRequestImpl({required this.requestId});
+
+  @override
+  final int requestId;
+
+  @override
+  String toString() {
+    return 'IsolateRequest.getInputSinkList(requestId: $requestId)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GetInputSinkListRequestImpl &&
+            (identical(other.requestId, requestId) ||
+                other.requestId == requestId));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, requestId);
+
+  /// Create a copy of IsolateRequest
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$GetInputSinkListRequestImplCopyWith<_$GetInputSinkListRequestImpl>
+      get copyWith => __$$GetInputSinkListRequestImplCopyWithImpl<
+          _$GetInputSinkListRequestImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(int requestId) getSinkList,
+    required TResult Function(int requestId) getInputSinkList,
+    required TResult Function(int requestId) getSourceList,
+    required TResult Function(int requestId) getServerInfo,
+    required TResult Function(int requestId, String sinkName, double volume)
+        setSinkVolume,
+    required TResult Function(int requestId, String sourceName, double volume)
+        setSourceVolume,
+    required TResult Function(
+            int requestId, pa_update_mode mode, String key, String value)
+        propListUpdate,
+    required TResult Function(int requestId, String sinkName, bool mute)
+        setSinkMute,
+    required TResult Function(int requestId, String sourceName, bool mute)
+        setSourceMute,
+    required TResult Function(int requestId, String sinkName) setDefaultSink,
+    required TResult Function(int requestId, String sourceName)
+        setDefaultSource,
+    required TResult Function(int requestId) dispose,
+  }) {
+    return getInputSinkList(requestId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(int requestId)? getSinkList,
+    TResult? Function(int requestId)? getInputSinkList,
+    TResult? Function(int requestId)? getSourceList,
+    TResult? Function(int requestId)? getServerInfo,
+    TResult? Function(int requestId, String sinkName, double volume)?
+        setSinkVolume,
+    TResult? Function(int requestId, String sourceName, double volume)?
+        setSourceVolume,
+    TResult? Function(
+            int requestId, pa_update_mode mode, String key, String value)?
+        propListUpdate,
+    TResult? Function(int requestId, String sinkName, bool mute)? setSinkMute,
+    TResult? Function(int requestId, String sourceName, bool mute)?
+        setSourceMute,
+    TResult? Function(int requestId, String sinkName)? setDefaultSink,
+    TResult? Function(int requestId, String sourceName)? setDefaultSource,
+    TResult? Function(int requestId)? dispose,
+  }) {
+    return getInputSinkList?.call(requestId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(int requestId)? getSinkList,
+    TResult Function(int requestId)? getInputSinkList,
+    TResult Function(int requestId)? getSourceList,
+    TResult Function(int requestId)? getServerInfo,
+    TResult Function(int requestId, String sinkName, double volume)?
+        setSinkVolume,
+    TResult Function(int requestId, String sourceName, double volume)?
+        setSourceVolume,
+    TResult Function(
+            int requestId, pa_update_mode mode, String key, String value)?
+        propListUpdate,
+    TResult Function(int requestId, String sinkName, bool mute)? setSinkMute,
+    TResult Function(int requestId, String sourceName, bool mute)?
+        setSourceMute,
+    TResult Function(int requestId, String sinkName)? setDefaultSink,
+    TResult Function(int requestId, String sourceName)? setDefaultSource,
+    TResult Function(int requestId)? dispose,
+    required TResult orElse(),
+  }) {
+    if (getInputSinkList != null) {
+      return getInputSinkList(requestId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(GetSinkListRequest value) getSinkList,
+    required TResult Function(GetInputSinkListRequest value) getInputSinkList,
+    required TResult Function(GetSourceListRequest value) getSourceList,
+    required TResult Function(GetServerInfoRequest value) getServerInfo,
+    required TResult Function(SetSinkVolumeRequest value) setSinkVolume,
+    required TResult Function(SetSourceVolumeRequest value) setSourceVolume,
+    required TResult Function(PropListUpdate value) propListUpdate,
+    required TResult Function(SetSinkMuteRequest value) setSinkMute,
+    required TResult Function(SetSourceMuteRequest value) setSourceMute,
+    required TResult Function(SetDefaultSinkRequest value) setDefaultSink,
+    required TResult Function(SetDefaultSourceRequest value) setDefaultSource,
+    required TResult Function(DisposeRequest value) dispose,
+  }) {
+    return getInputSinkList(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(GetSinkListRequest value)? getSinkList,
+    TResult? Function(GetInputSinkListRequest value)? getInputSinkList,
+    TResult? Function(GetSourceListRequest value)? getSourceList,
+    TResult? Function(GetServerInfoRequest value)? getServerInfo,
+    TResult? Function(SetSinkVolumeRequest value)? setSinkVolume,
+    TResult? Function(SetSourceVolumeRequest value)? setSourceVolume,
+    TResult? Function(PropListUpdate value)? propListUpdate,
+    TResult? Function(SetSinkMuteRequest value)? setSinkMute,
+    TResult? Function(SetSourceMuteRequest value)? setSourceMute,
+    TResult? Function(SetDefaultSinkRequest value)? setDefaultSink,
+    TResult? Function(SetDefaultSourceRequest value)? setDefaultSource,
+    TResult? Function(DisposeRequest value)? dispose,
+  }) {
+    return getInputSinkList?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(GetSinkListRequest value)? getSinkList,
+    TResult Function(GetInputSinkListRequest value)? getInputSinkList,
+    TResult Function(GetSourceListRequest value)? getSourceList,
+    TResult Function(GetServerInfoRequest value)? getServerInfo,
+    TResult Function(SetSinkVolumeRequest value)? setSinkVolume,
+    TResult Function(SetSourceVolumeRequest value)? setSourceVolume,
+    TResult Function(PropListUpdate value)? propListUpdate,
+    TResult Function(SetSinkMuteRequest value)? setSinkMute,
+    TResult Function(SetSourceMuteRequest value)? setSourceMute,
+    TResult Function(SetDefaultSinkRequest value)? setDefaultSink,
+    TResult Function(SetDefaultSourceRequest value)? setDefaultSource,
+    TResult Function(DisposeRequest value)? dispose,
+    required TResult orElse(),
+  }) {
+    if (getInputSinkList != null) {
+      return getInputSinkList(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class GetInputSinkListRequest implements IsolateRequest {
+  const factory GetInputSinkListRequest({required final int requestId}) =
+      _$GetInputSinkListRequestImpl;
+
+  @override
+  int get requestId;
+
+  /// Create a copy of IsolateRequest
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$GetInputSinkListRequestImplCopyWith<_$GetInputSinkListRequestImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -437,12 +699,16 @@ class _$GetSourceListRequestImpl implements GetSourceListRequest {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(int requestId) getSinkList,
+    required TResult Function(int requestId) getInputSinkList,
     required TResult Function(int requestId) getSourceList,
     required TResult Function(int requestId) getServerInfo,
     required TResult Function(int requestId, String sinkName, double volume)
         setSinkVolume,
     required TResult Function(int requestId, String sourceName, double volume)
         setSourceVolume,
+    required TResult Function(
+            int requestId, pa_update_mode mode, String key, String value)
+        propListUpdate,
     required TResult Function(int requestId, String sinkName, bool mute)
         setSinkMute,
     required TResult Function(int requestId, String sourceName, bool mute)
@@ -459,12 +725,16 @@ class _$GetSourceListRequestImpl implements GetSourceListRequest {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(int requestId)? getSinkList,
+    TResult? Function(int requestId)? getInputSinkList,
     TResult? Function(int requestId)? getSourceList,
     TResult? Function(int requestId)? getServerInfo,
     TResult? Function(int requestId, String sinkName, double volume)?
         setSinkVolume,
     TResult? Function(int requestId, String sourceName, double volume)?
         setSourceVolume,
+    TResult? Function(
+            int requestId, pa_update_mode mode, String key, String value)?
+        propListUpdate,
     TResult? Function(int requestId, String sinkName, bool mute)? setSinkMute,
     TResult? Function(int requestId, String sourceName, bool mute)?
         setSourceMute,
@@ -479,12 +749,16 @@ class _$GetSourceListRequestImpl implements GetSourceListRequest {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(int requestId)? getSinkList,
+    TResult Function(int requestId)? getInputSinkList,
     TResult Function(int requestId)? getSourceList,
     TResult Function(int requestId)? getServerInfo,
     TResult Function(int requestId, String sinkName, double volume)?
         setSinkVolume,
     TResult Function(int requestId, String sourceName, double volume)?
         setSourceVolume,
+    TResult Function(
+            int requestId, pa_update_mode mode, String key, String value)?
+        propListUpdate,
     TResult Function(int requestId, String sinkName, bool mute)? setSinkMute,
     TResult Function(int requestId, String sourceName, bool mute)?
         setSourceMute,
@@ -503,10 +777,12 @@ class _$GetSourceListRequestImpl implements GetSourceListRequest {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(GetSinkListRequest value) getSinkList,
+    required TResult Function(GetInputSinkListRequest value) getInputSinkList,
     required TResult Function(GetSourceListRequest value) getSourceList,
     required TResult Function(GetServerInfoRequest value) getServerInfo,
     required TResult Function(SetSinkVolumeRequest value) setSinkVolume,
     required TResult Function(SetSourceVolumeRequest value) setSourceVolume,
+    required TResult Function(PropListUpdate value) propListUpdate,
     required TResult Function(SetSinkMuteRequest value) setSinkMute,
     required TResult Function(SetSourceMuteRequest value) setSourceMute,
     required TResult Function(SetDefaultSinkRequest value) setDefaultSink,
@@ -520,10 +796,12 @@ class _$GetSourceListRequestImpl implements GetSourceListRequest {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(GetSinkListRequest value)? getSinkList,
+    TResult? Function(GetInputSinkListRequest value)? getInputSinkList,
     TResult? Function(GetSourceListRequest value)? getSourceList,
     TResult? Function(GetServerInfoRequest value)? getServerInfo,
     TResult? Function(SetSinkVolumeRequest value)? setSinkVolume,
     TResult? Function(SetSourceVolumeRequest value)? setSourceVolume,
+    TResult? Function(PropListUpdate value)? propListUpdate,
     TResult? Function(SetSinkMuteRequest value)? setSinkMute,
     TResult? Function(SetSourceMuteRequest value)? setSourceMute,
     TResult? Function(SetDefaultSinkRequest value)? setDefaultSink,
@@ -537,10 +815,12 @@ class _$GetSourceListRequestImpl implements GetSourceListRequest {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(GetSinkListRequest value)? getSinkList,
+    TResult Function(GetInputSinkListRequest value)? getInputSinkList,
     TResult Function(GetSourceListRequest value)? getSourceList,
     TResult Function(GetServerInfoRequest value)? getServerInfo,
     TResult Function(SetSinkVolumeRequest value)? setSinkVolume,
     TResult Function(SetSourceVolumeRequest value)? setSourceVolume,
+    TResult Function(PropListUpdate value)? propListUpdate,
     TResult Function(SetSinkMuteRequest value)? setSinkMute,
     TResult Function(SetSourceMuteRequest value)? setSourceMute,
     TResult Function(SetDefaultSinkRequest value)? setDefaultSink,
@@ -644,12 +924,16 @@ class _$GetServerInfoRequestImpl implements GetServerInfoRequest {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(int requestId) getSinkList,
+    required TResult Function(int requestId) getInputSinkList,
     required TResult Function(int requestId) getSourceList,
     required TResult Function(int requestId) getServerInfo,
     required TResult Function(int requestId, String sinkName, double volume)
         setSinkVolume,
     required TResult Function(int requestId, String sourceName, double volume)
         setSourceVolume,
+    required TResult Function(
+            int requestId, pa_update_mode mode, String key, String value)
+        propListUpdate,
     required TResult Function(int requestId, String sinkName, bool mute)
         setSinkMute,
     required TResult Function(int requestId, String sourceName, bool mute)
@@ -666,12 +950,16 @@ class _$GetServerInfoRequestImpl implements GetServerInfoRequest {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(int requestId)? getSinkList,
+    TResult? Function(int requestId)? getInputSinkList,
     TResult? Function(int requestId)? getSourceList,
     TResult? Function(int requestId)? getServerInfo,
     TResult? Function(int requestId, String sinkName, double volume)?
         setSinkVolume,
     TResult? Function(int requestId, String sourceName, double volume)?
         setSourceVolume,
+    TResult? Function(
+            int requestId, pa_update_mode mode, String key, String value)?
+        propListUpdate,
     TResult? Function(int requestId, String sinkName, bool mute)? setSinkMute,
     TResult? Function(int requestId, String sourceName, bool mute)?
         setSourceMute,
@@ -686,12 +974,16 @@ class _$GetServerInfoRequestImpl implements GetServerInfoRequest {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(int requestId)? getSinkList,
+    TResult Function(int requestId)? getInputSinkList,
     TResult Function(int requestId)? getSourceList,
     TResult Function(int requestId)? getServerInfo,
     TResult Function(int requestId, String sinkName, double volume)?
         setSinkVolume,
     TResult Function(int requestId, String sourceName, double volume)?
         setSourceVolume,
+    TResult Function(
+            int requestId, pa_update_mode mode, String key, String value)?
+        propListUpdate,
     TResult Function(int requestId, String sinkName, bool mute)? setSinkMute,
     TResult Function(int requestId, String sourceName, bool mute)?
         setSourceMute,
@@ -710,10 +1002,12 @@ class _$GetServerInfoRequestImpl implements GetServerInfoRequest {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(GetSinkListRequest value) getSinkList,
+    required TResult Function(GetInputSinkListRequest value) getInputSinkList,
     required TResult Function(GetSourceListRequest value) getSourceList,
     required TResult Function(GetServerInfoRequest value) getServerInfo,
     required TResult Function(SetSinkVolumeRequest value) setSinkVolume,
     required TResult Function(SetSourceVolumeRequest value) setSourceVolume,
+    required TResult Function(PropListUpdate value) propListUpdate,
     required TResult Function(SetSinkMuteRequest value) setSinkMute,
     required TResult Function(SetSourceMuteRequest value) setSourceMute,
     required TResult Function(SetDefaultSinkRequest value) setDefaultSink,
@@ -727,10 +1021,12 @@ class _$GetServerInfoRequestImpl implements GetServerInfoRequest {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(GetSinkListRequest value)? getSinkList,
+    TResult? Function(GetInputSinkListRequest value)? getInputSinkList,
     TResult? Function(GetSourceListRequest value)? getSourceList,
     TResult? Function(GetServerInfoRequest value)? getServerInfo,
     TResult? Function(SetSinkVolumeRequest value)? setSinkVolume,
     TResult? Function(SetSourceVolumeRequest value)? setSourceVolume,
+    TResult? Function(PropListUpdate value)? propListUpdate,
     TResult? Function(SetSinkMuteRequest value)? setSinkMute,
     TResult? Function(SetSourceMuteRequest value)? setSourceMute,
     TResult? Function(SetDefaultSinkRequest value)? setDefaultSink,
@@ -744,10 +1040,12 @@ class _$GetServerInfoRequestImpl implements GetServerInfoRequest {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(GetSinkListRequest value)? getSinkList,
+    TResult Function(GetInputSinkListRequest value)? getInputSinkList,
     TResult Function(GetSourceListRequest value)? getSourceList,
     TResult Function(GetServerInfoRequest value)? getServerInfo,
     TResult Function(SetSinkVolumeRequest value)? setSinkVolume,
     TResult Function(SetSourceVolumeRequest value)? setSourceVolume,
+    TResult Function(PropListUpdate value)? propListUpdate,
     TResult Function(SetSinkMuteRequest value)? setSinkMute,
     TResult Function(SetSourceMuteRequest value)? setSourceMute,
     TResult Function(SetDefaultSinkRequest value)? setDefaultSink,
@@ -869,12 +1167,16 @@ class _$SetSinkVolumeRequestImpl implements SetSinkVolumeRequest {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(int requestId) getSinkList,
+    required TResult Function(int requestId) getInputSinkList,
     required TResult Function(int requestId) getSourceList,
     required TResult Function(int requestId) getServerInfo,
     required TResult Function(int requestId, String sinkName, double volume)
         setSinkVolume,
     required TResult Function(int requestId, String sourceName, double volume)
         setSourceVolume,
+    required TResult Function(
+            int requestId, pa_update_mode mode, String key, String value)
+        propListUpdate,
     required TResult Function(int requestId, String sinkName, bool mute)
         setSinkMute,
     required TResult Function(int requestId, String sourceName, bool mute)
@@ -891,12 +1193,16 @@ class _$SetSinkVolumeRequestImpl implements SetSinkVolumeRequest {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(int requestId)? getSinkList,
+    TResult? Function(int requestId)? getInputSinkList,
     TResult? Function(int requestId)? getSourceList,
     TResult? Function(int requestId)? getServerInfo,
     TResult? Function(int requestId, String sinkName, double volume)?
         setSinkVolume,
     TResult? Function(int requestId, String sourceName, double volume)?
         setSourceVolume,
+    TResult? Function(
+            int requestId, pa_update_mode mode, String key, String value)?
+        propListUpdate,
     TResult? Function(int requestId, String sinkName, bool mute)? setSinkMute,
     TResult? Function(int requestId, String sourceName, bool mute)?
         setSourceMute,
@@ -911,12 +1217,16 @@ class _$SetSinkVolumeRequestImpl implements SetSinkVolumeRequest {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(int requestId)? getSinkList,
+    TResult Function(int requestId)? getInputSinkList,
     TResult Function(int requestId)? getSourceList,
     TResult Function(int requestId)? getServerInfo,
     TResult Function(int requestId, String sinkName, double volume)?
         setSinkVolume,
     TResult Function(int requestId, String sourceName, double volume)?
         setSourceVolume,
+    TResult Function(
+            int requestId, pa_update_mode mode, String key, String value)?
+        propListUpdate,
     TResult Function(int requestId, String sinkName, bool mute)? setSinkMute,
     TResult Function(int requestId, String sourceName, bool mute)?
         setSourceMute,
@@ -935,10 +1245,12 @@ class _$SetSinkVolumeRequestImpl implements SetSinkVolumeRequest {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(GetSinkListRequest value) getSinkList,
+    required TResult Function(GetInputSinkListRequest value) getInputSinkList,
     required TResult Function(GetSourceListRequest value) getSourceList,
     required TResult Function(GetServerInfoRequest value) getServerInfo,
     required TResult Function(SetSinkVolumeRequest value) setSinkVolume,
     required TResult Function(SetSourceVolumeRequest value) setSourceVolume,
+    required TResult Function(PropListUpdate value) propListUpdate,
     required TResult Function(SetSinkMuteRequest value) setSinkMute,
     required TResult Function(SetSourceMuteRequest value) setSourceMute,
     required TResult Function(SetDefaultSinkRequest value) setDefaultSink,
@@ -952,10 +1264,12 @@ class _$SetSinkVolumeRequestImpl implements SetSinkVolumeRequest {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(GetSinkListRequest value)? getSinkList,
+    TResult? Function(GetInputSinkListRequest value)? getInputSinkList,
     TResult? Function(GetSourceListRequest value)? getSourceList,
     TResult? Function(GetServerInfoRequest value)? getServerInfo,
     TResult? Function(SetSinkVolumeRequest value)? setSinkVolume,
     TResult? Function(SetSourceVolumeRequest value)? setSourceVolume,
+    TResult? Function(PropListUpdate value)? propListUpdate,
     TResult? Function(SetSinkMuteRequest value)? setSinkMute,
     TResult? Function(SetSourceMuteRequest value)? setSourceMute,
     TResult? Function(SetDefaultSinkRequest value)? setDefaultSink,
@@ -969,10 +1283,12 @@ class _$SetSinkVolumeRequestImpl implements SetSinkVolumeRequest {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(GetSinkListRequest value)? getSinkList,
+    TResult Function(GetInputSinkListRequest value)? getInputSinkList,
     TResult Function(GetSourceListRequest value)? getSourceList,
     TResult Function(GetServerInfoRequest value)? getServerInfo,
     TResult Function(SetSinkVolumeRequest value)? setSinkVolume,
     TResult Function(SetSourceVolumeRequest value)? setSourceVolume,
+    TResult Function(PropListUpdate value)? propListUpdate,
     TResult Function(SetSinkMuteRequest value)? setSinkMute,
     TResult Function(SetSourceMuteRequest value)? setSourceMute,
     TResult Function(SetDefaultSinkRequest value)? setDefaultSink,
@@ -1101,12 +1417,16 @@ class _$SetSourceVolumeRequestImpl implements SetSourceVolumeRequest {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(int requestId) getSinkList,
+    required TResult Function(int requestId) getInputSinkList,
     required TResult Function(int requestId) getSourceList,
     required TResult Function(int requestId) getServerInfo,
     required TResult Function(int requestId, String sinkName, double volume)
         setSinkVolume,
     required TResult Function(int requestId, String sourceName, double volume)
         setSourceVolume,
+    required TResult Function(
+            int requestId, pa_update_mode mode, String key, String value)
+        propListUpdate,
     required TResult Function(int requestId, String sinkName, bool mute)
         setSinkMute,
     required TResult Function(int requestId, String sourceName, bool mute)
@@ -1123,12 +1443,16 @@ class _$SetSourceVolumeRequestImpl implements SetSourceVolumeRequest {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(int requestId)? getSinkList,
+    TResult? Function(int requestId)? getInputSinkList,
     TResult? Function(int requestId)? getSourceList,
     TResult? Function(int requestId)? getServerInfo,
     TResult? Function(int requestId, String sinkName, double volume)?
         setSinkVolume,
     TResult? Function(int requestId, String sourceName, double volume)?
         setSourceVolume,
+    TResult? Function(
+            int requestId, pa_update_mode mode, String key, String value)?
+        propListUpdate,
     TResult? Function(int requestId, String sinkName, bool mute)? setSinkMute,
     TResult? Function(int requestId, String sourceName, bool mute)?
         setSourceMute,
@@ -1143,12 +1467,16 @@ class _$SetSourceVolumeRequestImpl implements SetSourceVolumeRequest {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(int requestId)? getSinkList,
+    TResult Function(int requestId)? getInputSinkList,
     TResult Function(int requestId)? getSourceList,
     TResult Function(int requestId)? getServerInfo,
     TResult Function(int requestId, String sinkName, double volume)?
         setSinkVolume,
     TResult Function(int requestId, String sourceName, double volume)?
         setSourceVolume,
+    TResult Function(
+            int requestId, pa_update_mode mode, String key, String value)?
+        propListUpdate,
     TResult Function(int requestId, String sinkName, bool mute)? setSinkMute,
     TResult Function(int requestId, String sourceName, bool mute)?
         setSourceMute,
@@ -1167,10 +1495,12 @@ class _$SetSourceVolumeRequestImpl implements SetSourceVolumeRequest {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(GetSinkListRequest value) getSinkList,
+    required TResult Function(GetInputSinkListRequest value) getInputSinkList,
     required TResult Function(GetSourceListRequest value) getSourceList,
     required TResult Function(GetServerInfoRequest value) getServerInfo,
     required TResult Function(SetSinkVolumeRequest value) setSinkVolume,
     required TResult Function(SetSourceVolumeRequest value) setSourceVolume,
+    required TResult Function(PropListUpdate value) propListUpdate,
     required TResult Function(SetSinkMuteRequest value) setSinkMute,
     required TResult Function(SetSourceMuteRequest value) setSourceMute,
     required TResult Function(SetDefaultSinkRequest value) setDefaultSink,
@@ -1184,10 +1514,12 @@ class _$SetSourceVolumeRequestImpl implements SetSourceVolumeRequest {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(GetSinkListRequest value)? getSinkList,
+    TResult? Function(GetInputSinkListRequest value)? getInputSinkList,
     TResult? Function(GetSourceListRequest value)? getSourceList,
     TResult? Function(GetServerInfoRequest value)? getServerInfo,
     TResult? Function(SetSinkVolumeRequest value)? setSinkVolume,
     TResult? Function(SetSourceVolumeRequest value)? setSourceVolume,
+    TResult? Function(PropListUpdate value)? propListUpdate,
     TResult? Function(SetSinkMuteRequest value)? setSinkMute,
     TResult? Function(SetSourceMuteRequest value)? setSourceMute,
     TResult? Function(SetDefaultSinkRequest value)? setDefaultSink,
@@ -1201,10 +1533,12 @@ class _$SetSourceVolumeRequestImpl implements SetSourceVolumeRequest {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(GetSinkListRequest value)? getSinkList,
+    TResult Function(GetInputSinkListRequest value)? getInputSinkList,
     TResult Function(GetSourceListRequest value)? getSourceList,
     TResult Function(GetServerInfoRequest value)? getServerInfo,
     TResult Function(SetSinkVolumeRequest value)? setSinkVolume,
     TResult Function(SetSourceVolumeRequest value)? setSourceVolume,
+    TResult Function(PropListUpdate value)? propListUpdate,
     TResult Function(SetSinkMuteRequest value)? setSinkMute,
     TResult Function(SetSourceMuteRequest value)? setSourceMute,
     TResult Function(SetDefaultSinkRequest value)? setDefaultSink,
@@ -1236,6 +1570,264 @@ abstract class SetSourceVolumeRequest implements IsolateRequest {
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$SetSourceVolumeRequestImplCopyWith<_$SetSourceVolumeRequestImpl>
       get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$PropListUpdateImplCopyWith<$Res>
+    implements $IsolateRequestCopyWith<$Res> {
+  factory _$$PropListUpdateImplCopyWith(_$PropListUpdateImpl value,
+          $Res Function(_$PropListUpdateImpl) then) =
+      __$$PropListUpdateImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({int requestId, pa_update_mode mode, String key, String value});
+}
+
+/// @nodoc
+class __$$PropListUpdateImplCopyWithImpl<$Res>
+    extends _$IsolateRequestCopyWithImpl<$Res, _$PropListUpdateImpl>
+    implements _$$PropListUpdateImplCopyWith<$Res> {
+  __$$PropListUpdateImplCopyWithImpl(
+      _$PropListUpdateImpl _value, $Res Function(_$PropListUpdateImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of IsolateRequest
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? requestId = null,
+    Object? mode = null,
+    Object? key = null,
+    Object? value = null,
+  }) {
+    return _then(_$PropListUpdateImpl(
+      requestId: null == requestId
+          ? _value.requestId
+          : requestId // ignore: cast_nullable_to_non_nullable
+              as int,
+      mode: null == mode
+          ? _value.mode
+          : mode // ignore: cast_nullable_to_non_nullable
+              as pa_update_mode,
+      key: null == key
+          ? _value.key
+          : key // ignore: cast_nullable_to_non_nullable
+              as String,
+      value: null == value
+          ? _value.value
+          : value // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$PropListUpdateImpl implements PropListUpdate {
+  const _$PropListUpdateImpl(
+      {required this.requestId,
+      required this.mode,
+      required this.key,
+      required this.value});
+
+  @override
+  final int requestId;
+  @override
+  final pa_update_mode mode;
+  @override
+  final String key;
+  @override
+  final String value;
+
+  @override
+  String toString() {
+    return 'IsolateRequest.propListUpdate(requestId: $requestId, mode: $mode, key: $key, value: $value)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$PropListUpdateImpl &&
+            (identical(other.requestId, requestId) ||
+                other.requestId == requestId) &&
+            (identical(other.mode, mode) || other.mode == mode) &&
+            (identical(other.key, key) || other.key == key) &&
+            (identical(other.value, value) || other.value == value));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, requestId, mode, key, value);
+
+  /// Create a copy of IsolateRequest
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$PropListUpdateImplCopyWith<_$PropListUpdateImpl> get copyWith =>
+      __$$PropListUpdateImplCopyWithImpl<_$PropListUpdateImpl>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(int requestId) getSinkList,
+    required TResult Function(int requestId) getInputSinkList,
+    required TResult Function(int requestId) getSourceList,
+    required TResult Function(int requestId) getServerInfo,
+    required TResult Function(int requestId, String sinkName, double volume)
+        setSinkVolume,
+    required TResult Function(int requestId, String sourceName, double volume)
+        setSourceVolume,
+    required TResult Function(
+            int requestId, pa_update_mode mode, String key, String value)
+        propListUpdate,
+    required TResult Function(int requestId, String sinkName, bool mute)
+        setSinkMute,
+    required TResult Function(int requestId, String sourceName, bool mute)
+        setSourceMute,
+    required TResult Function(int requestId, String sinkName) setDefaultSink,
+    required TResult Function(int requestId, String sourceName)
+        setDefaultSource,
+    required TResult Function(int requestId) dispose,
+  }) {
+    return propListUpdate(requestId, mode, key, value);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(int requestId)? getSinkList,
+    TResult? Function(int requestId)? getInputSinkList,
+    TResult? Function(int requestId)? getSourceList,
+    TResult? Function(int requestId)? getServerInfo,
+    TResult? Function(int requestId, String sinkName, double volume)?
+        setSinkVolume,
+    TResult? Function(int requestId, String sourceName, double volume)?
+        setSourceVolume,
+    TResult? Function(
+            int requestId, pa_update_mode mode, String key, String value)?
+        propListUpdate,
+    TResult? Function(int requestId, String sinkName, bool mute)? setSinkMute,
+    TResult? Function(int requestId, String sourceName, bool mute)?
+        setSourceMute,
+    TResult? Function(int requestId, String sinkName)? setDefaultSink,
+    TResult? Function(int requestId, String sourceName)? setDefaultSource,
+    TResult? Function(int requestId)? dispose,
+  }) {
+    return propListUpdate?.call(requestId, mode, key, value);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(int requestId)? getSinkList,
+    TResult Function(int requestId)? getInputSinkList,
+    TResult Function(int requestId)? getSourceList,
+    TResult Function(int requestId)? getServerInfo,
+    TResult Function(int requestId, String sinkName, double volume)?
+        setSinkVolume,
+    TResult Function(int requestId, String sourceName, double volume)?
+        setSourceVolume,
+    TResult Function(
+            int requestId, pa_update_mode mode, String key, String value)?
+        propListUpdate,
+    TResult Function(int requestId, String sinkName, bool mute)? setSinkMute,
+    TResult Function(int requestId, String sourceName, bool mute)?
+        setSourceMute,
+    TResult Function(int requestId, String sinkName)? setDefaultSink,
+    TResult Function(int requestId, String sourceName)? setDefaultSource,
+    TResult Function(int requestId)? dispose,
+    required TResult orElse(),
+  }) {
+    if (propListUpdate != null) {
+      return propListUpdate(requestId, mode, key, value);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(GetSinkListRequest value) getSinkList,
+    required TResult Function(GetInputSinkListRequest value) getInputSinkList,
+    required TResult Function(GetSourceListRequest value) getSourceList,
+    required TResult Function(GetServerInfoRequest value) getServerInfo,
+    required TResult Function(SetSinkVolumeRequest value) setSinkVolume,
+    required TResult Function(SetSourceVolumeRequest value) setSourceVolume,
+    required TResult Function(PropListUpdate value) propListUpdate,
+    required TResult Function(SetSinkMuteRequest value) setSinkMute,
+    required TResult Function(SetSourceMuteRequest value) setSourceMute,
+    required TResult Function(SetDefaultSinkRequest value) setDefaultSink,
+    required TResult Function(SetDefaultSourceRequest value) setDefaultSource,
+    required TResult Function(DisposeRequest value) dispose,
+  }) {
+    return propListUpdate(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(GetSinkListRequest value)? getSinkList,
+    TResult? Function(GetInputSinkListRequest value)? getInputSinkList,
+    TResult? Function(GetSourceListRequest value)? getSourceList,
+    TResult? Function(GetServerInfoRequest value)? getServerInfo,
+    TResult? Function(SetSinkVolumeRequest value)? setSinkVolume,
+    TResult? Function(SetSourceVolumeRequest value)? setSourceVolume,
+    TResult? Function(PropListUpdate value)? propListUpdate,
+    TResult? Function(SetSinkMuteRequest value)? setSinkMute,
+    TResult? Function(SetSourceMuteRequest value)? setSourceMute,
+    TResult? Function(SetDefaultSinkRequest value)? setDefaultSink,
+    TResult? Function(SetDefaultSourceRequest value)? setDefaultSource,
+    TResult? Function(DisposeRequest value)? dispose,
+  }) {
+    return propListUpdate?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(GetSinkListRequest value)? getSinkList,
+    TResult Function(GetInputSinkListRequest value)? getInputSinkList,
+    TResult Function(GetSourceListRequest value)? getSourceList,
+    TResult Function(GetServerInfoRequest value)? getServerInfo,
+    TResult Function(SetSinkVolumeRequest value)? setSinkVolume,
+    TResult Function(SetSourceVolumeRequest value)? setSourceVolume,
+    TResult Function(PropListUpdate value)? propListUpdate,
+    TResult Function(SetSinkMuteRequest value)? setSinkMute,
+    TResult Function(SetSourceMuteRequest value)? setSourceMute,
+    TResult Function(SetDefaultSinkRequest value)? setDefaultSink,
+    TResult Function(SetDefaultSourceRequest value)? setDefaultSource,
+    TResult Function(DisposeRequest value)? dispose,
+    required TResult orElse(),
+  }) {
+    if (propListUpdate != null) {
+      return propListUpdate(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class PropListUpdate implements IsolateRequest {
+  const factory PropListUpdate(
+      {required final int requestId,
+      required final pa_update_mode mode,
+      required final String key,
+      required final String value}) = _$PropListUpdateImpl;
+
+  @override
+  int get requestId;
+  pa_update_mode get mode;
+  String get key;
+  String get value;
+
+  /// Create a copy of IsolateRequest
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$PropListUpdateImplCopyWith<_$PropListUpdateImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -1329,12 +1921,16 @@ class _$SetSinkMuteRequestImpl implements SetSinkMuteRequest {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(int requestId) getSinkList,
+    required TResult Function(int requestId) getInputSinkList,
     required TResult Function(int requestId) getSourceList,
     required TResult Function(int requestId) getServerInfo,
     required TResult Function(int requestId, String sinkName, double volume)
         setSinkVolume,
     required TResult Function(int requestId, String sourceName, double volume)
         setSourceVolume,
+    required TResult Function(
+            int requestId, pa_update_mode mode, String key, String value)
+        propListUpdate,
     required TResult Function(int requestId, String sinkName, bool mute)
         setSinkMute,
     required TResult Function(int requestId, String sourceName, bool mute)
@@ -1351,12 +1947,16 @@ class _$SetSinkMuteRequestImpl implements SetSinkMuteRequest {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(int requestId)? getSinkList,
+    TResult? Function(int requestId)? getInputSinkList,
     TResult? Function(int requestId)? getSourceList,
     TResult? Function(int requestId)? getServerInfo,
     TResult? Function(int requestId, String sinkName, double volume)?
         setSinkVolume,
     TResult? Function(int requestId, String sourceName, double volume)?
         setSourceVolume,
+    TResult? Function(
+            int requestId, pa_update_mode mode, String key, String value)?
+        propListUpdate,
     TResult? Function(int requestId, String sinkName, bool mute)? setSinkMute,
     TResult? Function(int requestId, String sourceName, bool mute)?
         setSourceMute,
@@ -1371,12 +1971,16 @@ class _$SetSinkMuteRequestImpl implements SetSinkMuteRequest {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(int requestId)? getSinkList,
+    TResult Function(int requestId)? getInputSinkList,
     TResult Function(int requestId)? getSourceList,
     TResult Function(int requestId)? getServerInfo,
     TResult Function(int requestId, String sinkName, double volume)?
         setSinkVolume,
     TResult Function(int requestId, String sourceName, double volume)?
         setSourceVolume,
+    TResult Function(
+            int requestId, pa_update_mode mode, String key, String value)?
+        propListUpdate,
     TResult Function(int requestId, String sinkName, bool mute)? setSinkMute,
     TResult Function(int requestId, String sourceName, bool mute)?
         setSourceMute,
@@ -1395,10 +1999,12 @@ class _$SetSinkMuteRequestImpl implements SetSinkMuteRequest {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(GetSinkListRequest value) getSinkList,
+    required TResult Function(GetInputSinkListRequest value) getInputSinkList,
     required TResult Function(GetSourceListRequest value) getSourceList,
     required TResult Function(GetServerInfoRequest value) getServerInfo,
     required TResult Function(SetSinkVolumeRequest value) setSinkVolume,
     required TResult Function(SetSourceVolumeRequest value) setSourceVolume,
+    required TResult Function(PropListUpdate value) propListUpdate,
     required TResult Function(SetSinkMuteRequest value) setSinkMute,
     required TResult Function(SetSourceMuteRequest value) setSourceMute,
     required TResult Function(SetDefaultSinkRequest value) setDefaultSink,
@@ -1412,10 +2018,12 @@ class _$SetSinkMuteRequestImpl implements SetSinkMuteRequest {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(GetSinkListRequest value)? getSinkList,
+    TResult? Function(GetInputSinkListRequest value)? getInputSinkList,
     TResult? Function(GetSourceListRequest value)? getSourceList,
     TResult? Function(GetServerInfoRequest value)? getServerInfo,
     TResult? Function(SetSinkVolumeRequest value)? setSinkVolume,
     TResult? Function(SetSourceVolumeRequest value)? setSourceVolume,
+    TResult? Function(PropListUpdate value)? propListUpdate,
     TResult? Function(SetSinkMuteRequest value)? setSinkMute,
     TResult? Function(SetSourceMuteRequest value)? setSourceMute,
     TResult? Function(SetDefaultSinkRequest value)? setDefaultSink,
@@ -1429,10 +2037,12 @@ class _$SetSinkMuteRequestImpl implements SetSinkMuteRequest {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(GetSinkListRequest value)? getSinkList,
+    TResult Function(GetInputSinkListRequest value)? getInputSinkList,
     TResult Function(GetSourceListRequest value)? getSourceList,
     TResult Function(GetServerInfoRequest value)? getServerInfo,
     TResult Function(SetSinkVolumeRequest value)? setSinkVolume,
     TResult Function(SetSourceVolumeRequest value)? setSourceVolume,
+    TResult Function(PropListUpdate value)? propListUpdate,
     TResult Function(SetSinkMuteRequest value)? setSinkMute,
     TResult Function(SetSourceMuteRequest value)? setSourceMute,
     TResult Function(SetDefaultSinkRequest value)? setDefaultSink,
@@ -1558,12 +2168,16 @@ class _$SetSourceMuteRequestImpl implements SetSourceMuteRequest {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(int requestId) getSinkList,
+    required TResult Function(int requestId) getInputSinkList,
     required TResult Function(int requestId) getSourceList,
     required TResult Function(int requestId) getServerInfo,
     required TResult Function(int requestId, String sinkName, double volume)
         setSinkVolume,
     required TResult Function(int requestId, String sourceName, double volume)
         setSourceVolume,
+    required TResult Function(
+            int requestId, pa_update_mode mode, String key, String value)
+        propListUpdate,
     required TResult Function(int requestId, String sinkName, bool mute)
         setSinkMute,
     required TResult Function(int requestId, String sourceName, bool mute)
@@ -1580,12 +2194,16 @@ class _$SetSourceMuteRequestImpl implements SetSourceMuteRequest {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(int requestId)? getSinkList,
+    TResult? Function(int requestId)? getInputSinkList,
     TResult? Function(int requestId)? getSourceList,
     TResult? Function(int requestId)? getServerInfo,
     TResult? Function(int requestId, String sinkName, double volume)?
         setSinkVolume,
     TResult? Function(int requestId, String sourceName, double volume)?
         setSourceVolume,
+    TResult? Function(
+            int requestId, pa_update_mode mode, String key, String value)?
+        propListUpdate,
     TResult? Function(int requestId, String sinkName, bool mute)? setSinkMute,
     TResult? Function(int requestId, String sourceName, bool mute)?
         setSourceMute,
@@ -1600,12 +2218,16 @@ class _$SetSourceMuteRequestImpl implements SetSourceMuteRequest {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(int requestId)? getSinkList,
+    TResult Function(int requestId)? getInputSinkList,
     TResult Function(int requestId)? getSourceList,
     TResult Function(int requestId)? getServerInfo,
     TResult Function(int requestId, String sinkName, double volume)?
         setSinkVolume,
     TResult Function(int requestId, String sourceName, double volume)?
         setSourceVolume,
+    TResult Function(
+            int requestId, pa_update_mode mode, String key, String value)?
+        propListUpdate,
     TResult Function(int requestId, String sinkName, bool mute)? setSinkMute,
     TResult Function(int requestId, String sourceName, bool mute)?
         setSourceMute,
@@ -1624,10 +2246,12 @@ class _$SetSourceMuteRequestImpl implements SetSourceMuteRequest {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(GetSinkListRequest value) getSinkList,
+    required TResult Function(GetInputSinkListRequest value) getInputSinkList,
     required TResult Function(GetSourceListRequest value) getSourceList,
     required TResult Function(GetServerInfoRequest value) getServerInfo,
     required TResult Function(SetSinkVolumeRequest value) setSinkVolume,
     required TResult Function(SetSourceVolumeRequest value) setSourceVolume,
+    required TResult Function(PropListUpdate value) propListUpdate,
     required TResult Function(SetSinkMuteRequest value) setSinkMute,
     required TResult Function(SetSourceMuteRequest value) setSourceMute,
     required TResult Function(SetDefaultSinkRequest value) setDefaultSink,
@@ -1641,10 +2265,12 @@ class _$SetSourceMuteRequestImpl implements SetSourceMuteRequest {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(GetSinkListRequest value)? getSinkList,
+    TResult? Function(GetInputSinkListRequest value)? getInputSinkList,
     TResult? Function(GetSourceListRequest value)? getSourceList,
     TResult? Function(GetServerInfoRequest value)? getServerInfo,
     TResult? Function(SetSinkVolumeRequest value)? setSinkVolume,
     TResult? Function(SetSourceVolumeRequest value)? setSourceVolume,
+    TResult? Function(PropListUpdate value)? propListUpdate,
     TResult? Function(SetSinkMuteRequest value)? setSinkMute,
     TResult? Function(SetSourceMuteRequest value)? setSourceMute,
     TResult? Function(SetDefaultSinkRequest value)? setDefaultSink,
@@ -1658,10 +2284,12 @@ class _$SetSourceMuteRequestImpl implements SetSourceMuteRequest {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(GetSinkListRequest value)? getSinkList,
+    TResult Function(GetInputSinkListRequest value)? getInputSinkList,
     TResult Function(GetSourceListRequest value)? getSourceList,
     TResult Function(GetServerInfoRequest value)? getServerInfo,
     TResult Function(SetSinkVolumeRequest value)? setSinkVolume,
     TResult Function(SetSourceVolumeRequest value)? setSourceVolume,
+    TResult Function(PropListUpdate value)? propListUpdate,
     TResult Function(SetSinkMuteRequest value)? setSinkMute,
     TResult Function(SetSourceMuteRequest value)? setSourceMute,
     TResult Function(SetDefaultSinkRequest value)? setDefaultSink,
@@ -1779,12 +2407,16 @@ class _$SetDefaultSinkRequestImpl implements SetDefaultSinkRequest {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(int requestId) getSinkList,
+    required TResult Function(int requestId) getInputSinkList,
     required TResult Function(int requestId) getSourceList,
     required TResult Function(int requestId) getServerInfo,
     required TResult Function(int requestId, String sinkName, double volume)
         setSinkVolume,
     required TResult Function(int requestId, String sourceName, double volume)
         setSourceVolume,
+    required TResult Function(
+            int requestId, pa_update_mode mode, String key, String value)
+        propListUpdate,
     required TResult Function(int requestId, String sinkName, bool mute)
         setSinkMute,
     required TResult Function(int requestId, String sourceName, bool mute)
@@ -1801,12 +2433,16 @@ class _$SetDefaultSinkRequestImpl implements SetDefaultSinkRequest {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(int requestId)? getSinkList,
+    TResult? Function(int requestId)? getInputSinkList,
     TResult? Function(int requestId)? getSourceList,
     TResult? Function(int requestId)? getServerInfo,
     TResult? Function(int requestId, String sinkName, double volume)?
         setSinkVolume,
     TResult? Function(int requestId, String sourceName, double volume)?
         setSourceVolume,
+    TResult? Function(
+            int requestId, pa_update_mode mode, String key, String value)?
+        propListUpdate,
     TResult? Function(int requestId, String sinkName, bool mute)? setSinkMute,
     TResult? Function(int requestId, String sourceName, bool mute)?
         setSourceMute,
@@ -1821,12 +2457,16 @@ class _$SetDefaultSinkRequestImpl implements SetDefaultSinkRequest {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(int requestId)? getSinkList,
+    TResult Function(int requestId)? getInputSinkList,
     TResult Function(int requestId)? getSourceList,
     TResult Function(int requestId)? getServerInfo,
     TResult Function(int requestId, String sinkName, double volume)?
         setSinkVolume,
     TResult Function(int requestId, String sourceName, double volume)?
         setSourceVolume,
+    TResult Function(
+            int requestId, pa_update_mode mode, String key, String value)?
+        propListUpdate,
     TResult Function(int requestId, String sinkName, bool mute)? setSinkMute,
     TResult Function(int requestId, String sourceName, bool mute)?
         setSourceMute,
@@ -1845,10 +2485,12 @@ class _$SetDefaultSinkRequestImpl implements SetDefaultSinkRequest {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(GetSinkListRequest value) getSinkList,
+    required TResult Function(GetInputSinkListRequest value) getInputSinkList,
     required TResult Function(GetSourceListRequest value) getSourceList,
     required TResult Function(GetServerInfoRequest value) getServerInfo,
     required TResult Function(SetSinkVolumeRequest value) setSinkVolume,
     required TResult Function(SetSourceVolumeRequest value) setSourceVolume,
+    required TResult Function(PropListUpdate value) propListUpdate,
     required TResult Function(SetSinkMuteRequest value) setSinkMute,
     required TResult Function(SetSourceMuteRequest value) setSourceMute,
     required TResult Function(SetDefaultSinkRequest value) setDefaultSink,
@@ -1862,10 +2504,12 @@ class _$SetDefaultSinkRequestImpl implements SetDefaultSinkRequest {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(GetSinkListRequest value)? getSinkList,
+    TResult? Function(GetInputSinkListRequest value)? getInputSinkList,
     TResult? Function(GetSourceListRequest value)? getSourceList,
     TResult? Function(GetServerInfoRequest value)? getServerInfo,
     TResult? Function(SetSinkVolumeRequest value)? setSinkVolume,
     TResult? Function(SetSourceVolumeRequest value)? setSourceVolume,
+    TResult? Function(PropListUpdate value)? propListUpdate,
     TResult? Function(SetSinkMuteRequest value)? setSinkMute,
     TResult? Function(SetSourceMuteRequest value)? setSourceMute,
     TResult? Function(SetDefaultSinkRequest value)? setDefaultSink,
@@ -1879,10 +2523,12 @@ class _$SetDefaultSinkRequestImpl implements SetDefaultSinkRequest {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(GetSinkListRequest value)? getSinkList,
+    TResult Function(GetInputSinkListRequest value)? getInputSinkList,
     TResult Function(GetSourceListRequest value)? getSourceList,
     TResult Function(GetServerInfoRequest value)? getServerInfo,
     TResult Function(SetSinkVolumeRequest value)? setSinkVolume,
     TResult Function(SetSourceVolumeRequest value)? setSourceVolume,
+    TResult Function(PropListUpdate value)? propListUpdate,
     TResult Function(SetSinkMuteRequest value)? setSinkMute,
     TResult Function(SetSourceMuteRequest value)? setSourceMute,
     TResult Function(SetDefaultSinkRequest value)? setDefaultSink,
@@ -1999,12 +2645,16 @@ class _$SetDefaultSourceRequestImpl implements SetDefaultSourceRequest {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(int requestId) getSinkList,
+    required TResult Function(int requestId) getInputSinkList,
     required TResult Function(int requestId) getSourceList,
     required TResult Function(int requestId) getServerInfo,
     required TResult Function(int requestId, String sinkName, double volume)
         setSinkVolume,
     required TResult Function(int requestId, String sourceName, double volume)
         setSourceVolume,
+    required TResult Function(
+            int requestId, pa_update_mode mode, String key, String value)
+        propListUpdate,
     required TResult Function(int requestId, String sinkName, bool mute)
         setSinkMute,
     required TResult Function(int requestId, String sourceName, bool mute)
@@ -2021,12 +2671,16 @@ class _$SetDefaultSourceRequestImpl implements SetDefaultSourceRequest {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(int requestId)? getSinkList,
+    TResult? Function(int requestId)? getInputSinkList,
     TResult? Function(int requestId)? getSourceList,
     TResult? Function(int requestId)? getServerInfo,
     TResult? Function(int requestId, String sinkName, double volume)?
         setSinkVolume,
     TResult? Function(int requestId, String sourceName, double volume)?
         setSourceVolume,
+    TResult? Function(
+            int requestId, pa_update_mode mode, String key, String value)?
+        propListUpdate,
     TResult? Function(int requestId, String sinkName, bool mute)? setSinkMute,
     TResult? Function(int requestId, String sourceName, bool mute)?
         setSourceMute,
@@ -2041,12 +2695,16 @@ class _$SetDefaultSourceRequestImpl implements SetDefaultSourceRequest {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(int requestId)? getSinkList,
+    TResult Function(int requestId)? getInputSinkList,
     TResult Function(int requestId)? getSourceList,
     TResult Function(int requestId)? getServerInfo,
     TResult Function(int requestId, String sinkName, double volume)?
         setSinkVolume,
     TResult Function(int requestId, String sourceName, double volume)?
         setSourceVolume,
+    TResult Function(
+            int requestId, pa_update_mode mode, String key, String value)?
+        propListUpdate,
     TResult Function(int requestId, String sinkName, bool mute)? setSinkMute,
     TResult Function(int requestId, String sourceName, bool mute)?
         setSourceMute,
@@ -2065,10 +2723,12 @@ class _$SetDefaultSourceRequestImpl implements SetDefaultSourceRequest {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(GetSinkListRequest value) getSinkList,
+    required TResult Function(GetInputSinkListRequest value) getInputSinkList,
     required TResult Function(GetSourceListRequest value) getSourceList,
     required TResult Function(GetServerInfoRequest value) getServerInfo,
     required TResult Function(SetSinkVolumeRequest value) setSinkVolume,
     required TResult Function(SetSourceVolumeRequest value) setSourceVolume,
+    required TResult Function(PropListUpdate value) propListUpdate,
     required TResult Function(SetSinkMuteRequest value) setSinkMute,
     required TResult Function(SetSourceMuteRequest value) setSourceMute,
     required TResult Function(SetDefaultSinkRequest value) setDefaultSink,
@@ -2082,10 +2742,12 @@ class _$SetDefaultSourceRequestImpl implements SetDefaultSourceRequest {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(GetSinkListRequest value)? getSinkList,
+    TResult? Function(GetInputSinkListRequest value)? getInputSinkList,
     TResult? Function(GetSourceListRequest value)? getSourceList,
     TResult? Function(GetServerInfoRequest value)? getServerInfo,
     TResult? Function(SetSinkVolumeRequest value)? setSinkVolume,
     TResult? Function(SetSourceVolumeRequest value)? setSourceVolume,
+    TResult? Function(PropListUpdate value)? propListUpdate,
     TResult? Function(SetSinkMuteRequest value)? setSinkMute,
     TResult? Function(SetSourceMuteRequest value)? setSourceMute,
     TResult? Function(SetDefaultSinkRequest value)? setDefaultSink,
@@ -2099,10 +2761,12 @@ class _$SetDefaultSourceRequestImpl implements SetDefaultSourceRequest {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(GetSinkListRequest value)? getSinkList,
+    TResult Function(GetInputSinkListRequest value)? getInputSinkList,
     TResult Function(GetSourceListRequest value)? getSourceList,
     TResult Function(GetServerInfoRequest value)? getServerInfo,
     TResult Function(SetSinkVolumeRequest value)? setSinkVolume,
     TResult Function(SetSourceVolumeRequest value)? setSourceVolume,
+    TResult Function(PropListUpdate value)? propListUpdate,
     TResult Function(SetSinkMuteRequest value)? setSinkMute,
     TResult Function(SetSourceMuteRequest value)? setSourceMute,
     TResult Function(SetDefaultSinkRequest value)? setDefaultSink,
@@ -2207,12 +2871,16 @@ class _$DisposeRequestImpl implements DisposeRequest {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(int requestId) getSinkList,
+    required TResult Function(int requestId) getInputSinkList,
     required TResult Function(int requestId) getSourceList,
     required TResult Function(int requestId) getServerInfo,
     required TResult Function(int requestId, String sinkName, double volume)
         setSinkVolume,
     required TResult Function(int requestId, String sourceName, double volume)
         setSourceVolume,
+    required TResult Function(
+            int requestId, pa_update_mode mode, String key, String value)
+        propListUpdate,
     required TResult Function(int requestId, String sinkName, bool mute)
         setSinkMute,
     required TResult Function(int requestId, String sourceName, bool mute)
@@ -2229,12 +2897,16 @@ class _$DisposeRequestImpl implements DisposeRequest {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(int requestId)? getSinkList,
+    TResult? Function(int requestId)? getInputSinkList,
     TResult? Function(int requestId)? getSourceList,
     TResult? Function(int requestId)? getServerInfo,
     TResult? Function(int requestId, String sinkName, double volume)?
         setSinkVolume,
     TResult? Function(int requestId, String sourceName, double volume)?
         setSourceVolume,
+    TResult? Function(
+            int requestId, pa_update_mode mode, String key, String value)?
+        propListUpdate,
     TResult? Function(int requestId, String sinkName, bool mute)? setSinkMute,
     TResult? Function(int requestId, String sourceName, bool mute)?
         setSourceMute,
@@ -2249,12 +2921,16 @@ class _$DisposeRequestImpl implements DisposeRequest {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(int requestId)? getSinkList,
+    TResult Function(int requestId)? getInputSinkList,
     TResult Function(int requestId)? getSourceList,
     TResult Function(int requestId)? getServerInfo,
     TResult Function(int requestId, String sinkName, double volume)?
         setSinkVolume,
     TResult Function(int requestId, String sourceName, double volume)?
         setSourceVolume,
+    TResult Function(
+            int requestId, pa_update_mode mode, String key, String value)?
+        propListUpdate,
     TResult Function(int requestId, String sinkName, bool mute)? setSinkMute,
     TResult Function(int requestId, String sourceName, bool mute)?
         setSourceMute,
@@ -2273,10 +2949,12 @@ class _$DisposeRequestImpl implements DisposeRequest {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(GetSinkListRequest value) getSinkList,
+    required TResult Function(GetInputSinkListRequest value) getInputSinkList,
     required TResult Function(GetSourceListRequest value) getSourceList,
     required TResult Function(GetServerInfoRequest value) getServerInfo,
     required TResult Function(SetSinkVolumeRequest value) setSinkVolume,
     required TResult Function(SetSourceVolumeRequest value) setSourceVolume,
+    required TResult Function(PropListUpdate value) propListUpdate,
     required TResult Function(SetSinkMuteRequest value) setSinkMute,
     required TResult Function(SetSourceMuteRequest value) setSourceMute,
     required TResult Function(SetDefaultSinkRequest value) setDefaultSink,
@@ -2290,10 +2968,12 @@ class _$DisposeRequestImpl implements DisposeRequest {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(GetSinkListRequest value)? getSinkList,
+    TResult? Function(GetInputSinkListRequest value)? getInputSinkList,
     TResult? Function(GetSourceListRequest value)? getSourceList,
     TResult? Function(GetServerInfoRequest value)? getServerInfo,
     TResult? Function(SetSinkVolumeRequest value)? setSinkVolume,
     TResult? Function(SetSourceVolumeRequest value)? setSourceVolume,
+    TResult? Function(PropListUpdate value)? propListUpdate,
     TResult? Function(SetSinkMuteRequest value)? setSinkMute,
     TResult? Function(SetSourceMuteRequest value)? setSourceMute,
     TResult? Function(SetDefaultSinkRequest value)? setDefaultSink,
@@ -2307,10 +2987,12 @@ class _$DisposeRequestImpl implements DisposeRequest {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(GetSinkListRequest value)? getSinkList,
+    TResult Function(GetInputSinkListRequest value)? getInputSinkList,
     TResult Function(GetSourceListRequest value)? getSourceList,
     TResult Function(GetServerInfoRequest value)? getServerInfo,
     TResult Function(SetSinkVolumeRequest value)? setSinkVolume,
     TResult Function(SetSourceVolumeRequest value)? setSourceVolume,
+    TResult Function(PropListUpdate value)? propListUpdate,
     TResult Function(SetSinkMuteRequest value)? setSinkMute,
     TResult Function(SetSourceMuteRequest value)? setSourceMute,
     TResult Function(SetDefaultSinkRequest value)? setDefaultSink,
