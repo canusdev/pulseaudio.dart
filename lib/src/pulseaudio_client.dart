@@ -25,6 +25,7 @@ import 'package:pulseaudio/src/model/isolate_response.dart';
 import 'package:pulseaudio/src/model/server_info.dart';
 import 'package:pulseaudio/src/model/sink.dart';
 import 'package:pulseaudio/src/model/source.dart';
+import 'package:pulseaudio/src/model/stream.dart';
 import 'package:pulseaudio/src/pulse_isolate.dart';
 
 /// A class for interacting with the PulseAudio sound server.
@@ -49,6 +50,14 @@ class PulseAudioClient {
       )
       .cast<OnServerInfoChangedResponse>()
       .map((message) => message.serverInfo);
+
+  /// Stream of [PulseAudioServerInfo]
+  Stream<PulseAudioStreamCallback> get onStreamData => _broadcastStream
+      .where(
+        (event) => event is StreamCallbackResponse,
+      )
+      .cast<StreamCallbackResponse>()
+      .map((message) => message.callback);
 
   /// Stream of [PulseAudioSink]
   Stream<PulseAudioSink> get onSinkChanged => _broadcastStream
@@ -225,7 +234,6 @@ class PulseAudioClient {
         message is SetSinkVolumeResponse && message.requestId == requestId);
   }
 
-  /// Set volume for sink by name
   Future<void> propListUpdate(
       pa_update_mode mode, String key, String value) async {
     if (!_initializedCompleter.isCompleted) {
@@ -237,6 +245,19 @@ class PulseAudioClient {
         requestId: requestId, mode: mode, key: key, value: value));
     await _broadcastStream.firstWhere((message) =>
         message is PropListUpdateResponse && message.requestId == requestId);
+  }
+
+  Future<void> createStreamCallback(
+      String sourceIndex, String streamIndex) async {
+    if (!_initializedCompleter.isCompleted) {
+      throw Exception("PulseAudio is not initialized");
+    }
+    final requestId = newRequestId;
+
+    _sendPort.send(IsolateRequest.createStreamCallback(
+        requestId: requestId,
+        sinkIndex: streamIndex,
+        sourceIndex: sourceIndex));
   }
 
   /// set mute for source by name

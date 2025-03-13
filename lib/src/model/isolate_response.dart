@@ -3,6 +3,7 @@ import 'package:pulseaudio/src/model/input_sink.dart';
 import 'package:pulseaudio/src/model/server_info.dart';
 import 'package:pulseaudio/src/model/sink.dart';
 import 'package:pulseaudio/src/model/source.dart';
+import 'package:pulseaudio/src/model/stream.dart';
 
 part 'isolate_response.freezed.dart';
 
@@ -25,6 +26,10 @@ sealed class IsolateResponse with _$IsolateResponse {
   const factory IsolateResponse.onInputSinkList(
       {required int requestId,
       required List<PulseAudioInputSink> list}) = OnInputSinkListResponse;
+
+  const factory IsolateResponse.streamCallback(
+      {required int requestId,
+      required PulseAudioStreamCallback callback}) = StreamCallbackResponse;
   const factory IsolateResponse.onSourceList(
       {required int requestId,
       required List<PulseAudioSource> list}) = OnSourceListResponse;

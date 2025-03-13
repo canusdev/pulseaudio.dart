@@ -25,6 +25,9 @@ mixin _$IsolateRequest {
     required TResult Function(int requestId) getServerInfo,
     required TResult Function(int requestId, String sinkName, double volume)
         setSinkVolume,
+    required TResult Function(
+            int requestId, String sourceIndex, String sinkIndex)
+        createStreamCallback,
     required TResult Function(int requestId, String sourceName, double volume)
         setSourceVolume,
     required TResult Function(
@@ -48,6 +51,8 @@ mixin _$IsolateRequest {
     TResult? Function(int requestId)? getServerInfo,
     TResult? Function(int requestId, String sinkName, double volume)?
         setSinkVolume,
+    TResult? Function(int requestId, String sourceIndex, String sinkIndex)?
+        createStreamCallback,
     TResult? Function(int requestId, String sourceName, double volume)?
         setSourceVolume,
     TResult? Function(
@@ -69,6 +74,8 @@ mixin _$IsolateRequest {
     TResult Function(int requestId)? getServerInfo,
     TResult Function(int requestId, String sinkName, double volume)?
         setSinkVolume,
+    TResult Function(int requestId, String sourceIndex, String sinkIndex)?
+        createStreamCallback,
     TResult Function(int requestId, String sourceName, double volume)?
         setSourceVolume,
     TResult Function(
@@ -90,6 +97,8 @@ mixin _$IsolateRequest {
     required TResult Function(GetSourceListRequest value) getSourceList,
     required TResult Function(GetServerInfoRequest value) getServerInfo,
     required TResult Function(SetSinkVolumeRequest value) setSinkVolume,
+    required TResult Function(CreateStreamCallbackRequest value)
+        createStreamCallback,
     required TResult Function(SetSourceVolumeRequest value) setSourceVolume,
     required TResult Function(PropListUpdate value) propListUpdate,
     required TResult Function(SetSinkMuteRequest value) setSinkMute,
@@ -106,6 +115,7 @@ mixin _$IsolateRequest {
     TResult? Function(GetSourceListRequest value)? getSourceList,
     TResult? Function(GetServerInfoRequest value)? getServerInfo,
     TResult? Function(SetSinkVolumeRequest value)? setSinkVolume,
+    TResult? Function(CreateStreamCallbackRequest value)? createStreamCallback,
     TResult? Function(SetSourceVolumeRequest value)? setSourceVolume,
     TResult? Function(PropListUpdate value)? propListUpdate,
     TResult? Function(SetSinkMuteRequest value)? setSinkMute,
@@ -122,6 +132,7 @@ mixin _$IsolateRequest {
     TResult Function(GetSourceListRequest value)? getSourceList,
     TResult Function(GetServerInfoRequest value)? getServerInfo,
     TResult Function(SetSinkVolumeRequest value)? setSinkVolume,
+    TResult Function(CreateStreamCallbackRequest value)? createStreamCallback,
     TResult Function(SetSourceVolumeRequest value)? setSourceVolume,
     TResult Function(PropListUpdate value)? propListUpdate,
     TResult Function(SetSinkMuteRequest value)? setSinkMute,
@@ -253,6 +264,9 @@ class _$GetSinkListRequestImpl implements GetSinkListRequest {
     required TResult Function(int requestId) getServerInfo,
     required TResult Function(int requestId, String sinkName, double volume)
         setSinkVolume,
+    required TResult Function(
+            int requestId, String sourceIndex, String sinkIndex)
+        createStreamCallback,
     required TResult Function(int requestId, String sourceName, double volume)
         setSourceVolume,
     required TResult Function(
@@ -279,6 +293,8 @@ class _$GetSinkListRequestImpl implements GetSinkListRequest {
     TResult? Function(int requestId)? getServerInfo,
     TResult? Function(int requestId, String sinkName, double volume)?
         setSinkVolume,
+    TResult? Function(int requestId, String sourceIndex, String sinkIndex)?
+        createStreamCallback,
     TResult? Function(int requestId, String sourceName, double volume)?
         setSourceVolume,
     TResult? Function(
@@ -303,6 +319,8 @@ class _$GetSinkListRequestImpl implements GetSinkListRequest {
     TResult Function(int requestId)? getServerInfo,
     TResult Function(int requestId, String sinkName, double volume)?
         setSinkVolume,
+    TResult Function(int requestId, String sourceIndex, String sinkIndex)?
+        createStreamCallback,
     TResult Function(int requestId, String sourceName, double volume)?
         setSourceVolume,
     TResult Function(
@@ -330,6 +348,8 @@ class _$GetSinkListRequestImpl implements GetSinkListRequest {
     required TResult Function(GetSourceListRequest value) getSourceList,
     required TResult Function(GetServerInfoRequest value) getServerInfo,
     required TResult Function(SetSinkVolumeRequest value) setSinkVolume,
+    required TResult Function(CreateStreamCallbackRequest value)
+        createStreamCallback,
     required TResult Function(SetSourceVolumeRequest value) setSourceVolume,
     required TResult Function(PropListUpdate value) propListUpdate,
     required TResult Function(SetSinkMuteRequest value) setSinkMute,
@@ -349,6 +369,7 @@ class _$GetSinkListRequestImpl implements GetSinkListRequest {
     TResult? Function(GetSourceListRequest value)? getSourceList,
     TResult? Function(GetServerInfoRequest value)? getServerInfo,
     TResult? Function(SetSinkVolumeRequest value)? setSinkVolume,
+    TResult? Function(CreateStreamCallbackRequest value)? createStreamCallback,
     TResult? Function(SetSourceVolumeRequest value)? setSourceVolume,
     TResult? Function(PropListUpdate value)? propListUpdate,
     TResult? Function(SetSinkMuteRequest value)? setSinkMute,
@@ -368,6 +389,7 @@ class _$GetSinkListRequestImpl implements GetSinkListRequest {
     TResult Function(GetSourceListRequest value)? getSourceList,
     TResult Function(GetServerInfoRequest value)? getServerInfo,
     TResult Function(SetSinkVolumeRequest value)? setSinkVolume,
+    TResult Function(CreateStreamCallbackRequest value)? createStreamCallback,
     TResult Function(SetSourceVolumeRequest value)? setSourceVolume,
     TResult Function(PropListUpdate value)? propListUpdate,
     TResult Function(SetSinkMuteRequest value)? setSinkMute,
@@ -479,6 +501,9 @@ class _$GetInputSinkListRequestImpl implements GetInputSinkListRequest {
     required TResult Function(int requestId) getServerInfo,
     required TResult Function(int requestId, String sinkName, double volume)
         setSinkVolume,
+    required TResult Function(
+            int requestId, String sourceIndex, String sinkIndex)
+        createStreamCallback,
     required TResult Function(int requestId, String sourceName, double volume)
         setSourceVolume,
     required TResult Function(
@@ -505,6 +530,8 @@ class _$GetInputSinkListRequestImpl implements GetInputSinkListRequest {
     TResult? Function(int requestId)? getServerInfo,
     TResult? Function(int requestId, String sinkName, double volume)?
         setSinkVolume,
+    TResult? Function(int requestId, String sourceIndex, String sinkIndex)?
+        createStreamCallback,
     TResult? Function(int requestId, String sourceName, double volume)?
         setSourceVolume,
     TResult? Function(
@@ -529,6 +556,8 @@ class _$GetInputSinkListRequestImpl implements GetInputSinkListRequest {
     TResult Function(int requestId)? getServerInfo,
     TResult Function(int requestId, String sinkName, double volume)?
         setSinkVolume,
+    TResult Function(int requestId, String sourceIndex, String sinkIndex)?
+        createStreamCallback,
     TResult Function(int requestId, String sourceName, double volume)?
         setSourceVolume,
     TResult Function(
@@ -556,6 +585,8 @@ class _$GetInputSinkListRequestImpl implements GetInputSinkListRequest {
     required TResult Function(GetSourceListRequest value) getSourceList,
     required TResult Function(GetServerInfoRequest value) getServerInfo,
     required TResult Function(SetSinkVolumeRequest value) setSinkVolume,
+    required TResult Function(CreateStreamCallbackRequest value)
+        createStreamCallback,
     required TResult Function(SetSourceVolumeRequest value) setSourceVolume,
     required TResult Function(PropListUpdate value) propListUpdate,
     required TResult Function(SetSinkMuteRequest value) setSinkMute,
@@ -575,6 +606,7 @@ class _$GetInputSinkListRequestImpl implements GetInputSinkListRequest {
     TResult? Function(GetSourceListRequest value)? getSourceList,
     TResult? Function(GetServerInfoRequest value)? getServerInfo,
     TResult? Function(SetSinkVolumeRequest value)? setSinkVolume,
+    TResult? Function(CreateStreamCallbackRequest value)? createStreamCallback,
     TResult? Function(SetSourceVolumeRequest value)? setSourceVolume,
     TResult? Function(PropListUpdate value)? propListUpdate,
     TResult? Function(SetSinkMuteRequest value)? setSinkMute,
@@ -594,6 +626,7 @@ class _$GetInputSinkListRequestImpl implements GetInputSinkListRequest {
     TResult Function(GetSourceListRequest value)? getSourceList,
     TResult Function(GetServerInfoRequest value)? getServerInfo,
     TResult Function(SetSinkVolumeRequest value)? setSinkVolume,
+    TResult Function(CreateStreamCallbackRequest value)? createStreamCallback,
     TResult Function(SetSourceVolumeRequest value)? setSourceVolume,
     TResult Function(PropListUpdate value)? propListUpdate,
     TResult Function(SetSinkMuteRequest value)? setSinkMute,
@@ -704,6 +737,9 @@ class _$GetSourceListRequestImpl implements GetSourceListRequest {
     required TResult Function(int requestId) getServerInfo,
     required TResult Function(int requestId, String sinkName, double volume)
         setSinkVolume,
+    required TResult Function(
+            int requestId, String sourceIndex, String sinkIndex)
+        createStreamCallback,
     required TResult Function(int requestId, String sourceName, double volume)
         setSourceVolume,
     required TResult Function(
@@ -730,6 +766,8 @@ class _$GetSourceListRequestImpl implements GetSourceListRequest {
     TResult? Function(int requestId)? getServerInfo,
     TResult? Function(int requestId, String sinkName, double volume)?
         setSinkVolume,
+    TResult? Function(int requestId, String sourceIndex, String sinkIndex)?
+        createStreamCallback,
     TResult? Function(int requestId, String sourceName, double volume)?
         setSourceVolume,
     TResult? Function(
@@ -754,6 +792,8 @@ class _$GetSourceListRequestImpl implements GetSourceListRequest {
     TResult Function(int requestId)? getServerInfo,
     TResult Function(int requestId, String sinkName, double volume)?
         setSinkVolume,
+    TResult Function(int requestId, String sourceIndex, String sinkIndex)?
+        createStreamCallback,
     TResult Function(int requestId, String sourceName, double volume)?
         setSourceVolume,
     TResult Function(
@@ -781,6 +821,8 @@ class _$GetSourceListRequestImpl implements GetSourceListRequest {
     required TResult Function(GetSourceListRequest value) getSourceList,
     required TResult Function(GetServerInfoRequest value) getServerInfo,
     required TResult Function(SetSinkVolumeRequest value) setSinkVolume,
+    required TResult Function(CreateStreamCallbackRequest value)
+        createStreamCallback,
     required TResult Function(SetSourceVolumeRequest value) setSourceVolume,
     required TResult Function(PropListUpdate value) propListUpdate,
     required TResult Function(SetSinkMuteRequest value) setSinkMute,
@@ -800,6 +842,7 @@ class _$GetSourceListRequestImpl implements GetSourceListRequest {
     TResult? Function(GetSourceListRequest value)? getSourceList,
     TResult? Function(GetServerInfoRequest value)? getServerInfo,
     TResult? Function(SetSinkVolumeRequest value)? setSinkVolume,
+    TResult? Function(CreateStreamCallbackRequest value)? createStreamCallback,
     TResult? Function(SetSourceVolumeRequest value)? setSourceVolume,
     TResult? Function(PropListUpdate value)? propListUpdate,
     TResult? Function(SetSinkMuteRequest value)? setSinkMute,
@@ -819,6 +862,7 @@ class _$GetSourceListRequestImpl implements GetSourceListRequest {
     TResult Function(GetSourceListRequest value)? getSourceList,
     TResult Function(GetServerInfoRequest value)? getServerInfo,
     TResult Function(SetSinkVolumeRequest value)? setSinkVolume,
+    TResult Function(CreateStreamCallbackRequest value)? createStreamCallback,
     TResult Function(SetSourceVolumeRequest value)? setSourceVolume,
     TResult Function(PropListUpdate value)? propListUpdate,
     TResult Function(SetSinkMuteRequest value)? setSinkMute,
@@ -929,6 +973,9 @@ class _$GetServerInfoRequestImpl implements GetServerInfoRequest {
     required TResult Function(int requestId) getServerInfo,
     required TResult Function(int requestId, String sinkName, double volume)
         setSinkVolume,
+    required TResult Function(
+            int requestId, String sourceIndex, String sinkIndex)
+        createStreamCallback,
     required TResult Function(int requestId, String sourceName, double volume)
         setSourceVolume,
     required TResult Function(
@@ -955,6 +1002,8 @@ class _$GetServerInfoRequestImpl implements GetServerInfoRequest {
     TResult? Function(int requestId)? getServerInfo,
     TResult? Function(int requestId, String sinkName, double volume)?
         setSinkVolume,
+    TResult? Function(int requestId, String sourceIndex, String sinkIndex)?
+        createStreamCallback,
     TResult? Function(int requestId, String sourceName, double volume)?
         setSourceVolume,
     TResult? Function(
@@ -979,6 +1028,8 @@ class _$GetServerInfoRequestImpl implements GetServerInfoRequest {
     TResult Function(int requestId)? getServerInfo,
     TResult Function(int requestId, String sinkName, double volume)?
         setSinkVolume,
+    TResult Function(int requestId, String sourceIndex, String sinkIndex)?
+        createStreamCallback,
     TResult Function(int requestId, String sourceName, double volume)?
         setSourceVolume,
     TResult Function(
@@ -1006,6 +1057,8 @@ class _$GetServerInfoRequestImpl implements GetServerInfoRequest {
     required TResult Function(GetSourceListRequest value) getSourceList,
     required TResult Function(GetServerInfoRequest value) getServerInfo,
     required TResult Function(SetSinkVolumeRequest value) setSinkVolume,
+    required TResult Function(CreateStreamCallbackRequest value)
+        createStreamCallback,
     required TResult Function(SetSourceVolumeRequest value) setSourceVolume,
     required TResult Function(PropListUpdate value) propListUpdate,
     required TResult Function(SetSinkMuteRequest value) setSinkMute,
@@ -1025,6 +1078,7 @@ class _$GetServerInfoRequestImpl implements GetServerInfoRequest {
     TResult? Function(GetSourceListRequest value)? getSourceList,
     TResult? Function(GetServerInfoRequest value)? getServerInfo,
     TResult? Function(SetSinkVolumeRequest value)? setSinkVolume,
+    TResult? Function(CreateStreamCallbackRequest value)? createStreamCallback,
     TResult? Function(SetSourceVolumeRequest value)? setSourceVolume,
     TResult? Function(PropListUpdate value)? propListUpdate,
     TResult? Function(SetSinkMuteRequest value)? setSinkMute,
@@ -1044,6 +1098,7 @@ class _$GetServerInfoRequestImpl implements GetServerInfoRequest {
     TResult Function(GetSourceListRequest value)? getSourceList,
     TResult Function(GetServerInfoRequest value)? getServerInfo,
     TResult Function(SetSinkVolumeRequest value)? setSinkVolume,
+    TResult Function(CreateStreamCallbackRequest value)? createStreamCallback,
     TResult Function(SetSourceVolumeRequest value)? setSourceVolume,
     TResult Function(PropListUpdate value)? propListUpdate,
     TResult Function(SetSinkMuteRequest value)? setSinkMute,
@@ -1172,6 +1227,9 @@ class _$SetSinkVolumeRequestImpl implements SetSinkVolumeRequest {
     required TResult Function(int requestId) getServerInfo,
     required TResult Function(int requestId, String sinkName, double volume)
         setSinkVolume,
+    required TResult Function(
+            int requestId, String sourceIndex, String sinkIndex)
+        createStreamCallback,
     required TResult Function(int requestId, String sourceName, double volume)
         setSourceVolume,
     required TResult Function(
@@ -1198,6 +1256,8 @@ class _$SetSinkVolumeRequestImpl implements SetSinkVolumeRequest {
     TResult? Function(int requestId)? getServerInfo,
     TResult? Function(int requestId, String sinkName, double volume)?
         setSinkVolume,
+    TResult? Function(int requestId, String sourceIndex, String sinkIndex)?
+        createStreamCallback,
     TResult? Function(int requestId, String sourceName, double volume)?
         setSourceVolume,
     TResult? Function(
@@ -1222,6 +1282,8 @@ class _$SetSinkVolumeRequestImpl implements SetSinkVolumeRequest {
     TResult Function(int requestId)? getServerInfo,
     TResult Function(int requestId, String sinkName, double volume)?
         setSinkVolume,
+    TResult Function(int requestId, String sourceIndex, String sinkIndex)?
+        createStreamCallback,
     TResult Function(int requestId, String sourceName, double volume)?
         setSourceVolume,
     TResult Function(
@@ -1249,6 +1311,8 @@ class _$SetSinkVolumeRequestImpl implements SetSinkVolumeRequest {
     required TResult Function(GetSourceListRequest value) getSourceList,
     required TResult Function(GetServerInfoRequest value) getServerInfo,
     required TResult Function(SetSinkVolumeRequest value) setSinkVolume,
+    required TResult Function(CreateStreamCallbackRequest value)
+        createStreamCallback,
     required TResult Function(SetSourceVolumeRequest value) setSourceVolume,
     required TResult Function(PropListUpdate value) propListUpdate,
     required TResult Function(SetSinkMuteRequest value) setSinkMute,
@@ -1268,6 +1332,7 @@ class _$SetSinkVolumeRequestImpl implements SetSinkVolumeRequest {
     TResult? Function(GetSourceListRequest value)? getSourceList,
     TResult? Function(GetServerInfoRequest value)? getServerInfo,
     TResult? Function(SetSinkVolumeRequest value)? setSinkVolume,
+    TResult? Function(CreateStreamCallbackRequest value)? createStreamCallback,
     TResult? Function(SetSourceVolumeRequest value)? setSourceVolume,
     TResult? Function(PropListUpdate value)? propListUpdate,
     TResult? Function(SetSinkMuteRequest value)? setSinkMute,
@@ -1287,6 +1352,7 @@ class _$SetSinkVolumeRequestImpl implements SetSinkVolumeRequest {
     TResult Function(GetSourceListRequest value)? getSourceList,
     TResult Function(GetServerInfoRequest value)? getServerInfo,
     TResult Function(SetSinkVolumeRequest value)? setSinkVolume,
+    TResult Function(CreateStreamCallbackRequest value)? createStreamCallback,
     TResult Function(SetSourceVolumeRequest value)? setSourceVolume,
     TResult Function(PropListUpdate value)? propListUpdate,
     TResult Function(SetSinkMuteRequest value)? setSinkMute,
@@ -1319,6 +1385,270 @@ abstract class SetSinkVolumeRequest implements IsolateRequest {
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$SetSinkVolumeRequestImplCopyWith<_$SetSinkVolumeRequestImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$CreateStreamCallbackRequestImplCopyWith<$Res>
+    implements $IsolateRequestCopyWith<$Res> {
+  factory _$$CreateStreamCallbackRequestImplCopyWith(
+          _$CreateStreamCallbackRequestImpl value,
+          $Res Function(_$CreateStreamCallbackRequestImpl) then) =
+      __$$CreateStreamCallbackRequestImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({int requestId, String sourceIndex, String sinkIndex});
+}
+
+/// @nodoc
+class __$$CreateStreamCallbackRequestImplCopyWithImpl<$Res>
+    extends _$IsolateRequestCopyWithImpl<$Res,
+        _$CreateStreamCallbackRequestImpl>
+    implements _$$CreateStreamCallbackRequestImplCopyWith<$Res> {
+  __$$CreateStreamCallbackRequestImplCopyWithImpl(
+      _$CreateStreamCallbackRequestImpl _value,
+      $Res Function(_$CreateStreamCallbackRequestImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of IsolateRequest
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? requestId = null,
+    Object? sourceIndex = null,
+    Object? sinkIndex = null,
+  }) {
+    return _then(_$CreateStreamCallbackRequestImpl(
+      requestId: null == requestId
+          ? _value.requestId
+          : requestId // ignore: cast_nullable_to_non_nullable
+              as int,
+      sourceIndex: null == sourceIndex
+          ? _value.sourceIndex
+          : sourceIndex // ignore: cast_nullable_to_non_nullable
+              as String,
+      sinkIndex: null == sinkIndex
+          ? _value.sinkIndex
+          : sinkIndex // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$CreateStreamCallbackRequestImpl implements CreateStreamCallbackRequest {
+  const _$CreateStreamCallbackRequestImpl(
+      {required this.requestId,
+      required this.sourceIndex,
+      required this.sinkIndex});
+
+  @override
+  final int requestId;
+  @override
+  final String sourceIndex;
+  @override
+  final String sinkIndex;
+
+  @override
+  String toString() {
+    return 'IsolateRequest.createStreamCallback(requestId: $requestId, sourceIndex: $sourceIndex, sinkIndex: $sinkIndex)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$CreateStreamCallbackRequestImpl &&
+            (identical(other.requestId, requestId) ||
+                other.requestId == requestId) &&
+            (identical(other.sourceIndex, sourceIndex) ||
+                other.sourceIndex == sourceIndex) &&
+            (identical(other.sinkIndex, sinkIndex) ||
+                other.sinkIndex == sinkIndex));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, requestId, sourceIndex, sinkIndex);
+
+  /// Create a copy of IsolateRequest
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$CreateStreamCallbackRequestImplCopyWith<_$CreateStreamCallbackRequestImpl>
+      get copyWith => __$$CreateStreamCallbackRequestImplCopyWithImpl<
+          _$CreateStreamCallbackRequestImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(int requestId) getSinkList,
+    required TResult Function(int requestId) getInputSinkList,
+    required TResult Function(int requestId) getSourceList,
+    required TResult Function(int requestId) getServerInfo,
+    required TResult Function(int requestId, String sinkName, double volume)
+        setSinkVolume,
+    required TResult Function(
+            int requestId, String sourceIndex, String sinkIndex)
+        createStreamCallback,
+    required TResult Function(int requestId, String sourceName, double volume)
+        setSourceVolume,
+    required TResult Function(
+            int requestId, pa_update_mode mode, String key, String value)
+        propListUpdate,
+    required TResult Function(int requestId, String sinkName, bool mute)
+        setSinkMute,
+    required TResult Function(int requestId, String sourceName, bool mute)
+        setSourceMute,
+    required TResult Function(int requestId, String sinkName) setDefaultSink,
+    required TResult Function(int requestId, String sourceName)
+        setDefaultSource,
+    required TResult Function(int requestId) dispose,
+  }) {
+    return createStreamCallback(requestId, sourceIndex, sinkIndex);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(int requestId)? getSinkList,
+    TResult? Function(int requestId)? getInputSinkList,
+    TResult? Function(int requestId)? getSourceList,
+    TResult? Function(int requestId)? getServerInfo,
+    TResult? Function(int requestId, String sinkName, double volume)?
+        setSinkVolume,
+    TResult? Function(int requestId, String sourceIndex, String sinkIndex)?
+        createStreamCallback,
+    TResult? Function(int requestId, String sourceName, double volume)?
+        setSourceVolume,
+    TResult? Function(
+            int requestId, pa_update_mode mode, String key, String value)?
+        propListUpdate,
+    TResult? Function(int requestId, String sinkName, bool mute)? setSinkMute,
+    TResult? Function(int requestId, String sourceName, bool mute)?
+        setSourceMute,
+    TResult? Function(int requestId, String sinkName)? setDefaultSink,
+    TResult? Function(int requestId, String sourceName)? setDefaultSource,
+    TResult? Function(int requestId)? dispose,
+  }) {
+    return createStreamCallback?.call(requestId, sourceIndex, sinkIndex);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(int requestId)? getSinkList,
+    TResult Function(int requestId)? getInputSinkList,
+    TResult Function(int requestId)? getSourceList,
+    TResult Function(int requestId)? getServerInfo,
+    TResult Function(int requestId, String sinkName, double volume)?
+        setSinkVolume,
+    TResult Function(int requestId, String sourceIndex, String sinkIndex)?
+        createStreamCallback,
+    TResult Function(int requestId, String sourceName, double volume)?
+        setSourceVolume,
+    TResult Function(
+            int requestId, pa_update_mode mode, String key, String value)?
+        propListUpdate,
+    TResult Function(int requestId, String sinkName, bool mute)? setSinkMute,
+    TResult Function(int requestId, String sourceName, bool mute)?
+        setSourceMute,
+    TResult Function(int requestId, String sinkName)? setDefaultSink,
+    TResult Function(int requestId, String sourceName)? setDefaultSource,
+    TResult Function(int requestId)? dispose,
+    required TResult orElse(),
+  }) {
+    if (createStreamCallback != null) {
+      return createStreamCallback(requestId, sourceIndex, sinkIndex);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(GetSinkListRequest value) getSinkList,
+    required TResult Function(GetInputSinkListRequest value) getInputSinkList,
+    required TResult Function(GetSourceListRequest value) getSourceList,
+    required TResult Function(GetServerInfoRequest value) getServerInfo,
+    required TResult Function(SetSinkVolumeRequest value) setSinkVolume,
+    required TResult Function(CreateStreamCallbackRequest value)
+        createStreamCallback,
+    required TResult Function(SetSourceVolumeRequest value) setSourceVolume,
+    required TResult Function(PropListUpdate value) propListUpdate,
+    required TResult Function(SetSinkMuteRequest value) setSinkMute,
+    required TResult Function(SetSourceMuteRequest value) setSourceMute,
+    required TResult Function(SetDefaultSinkRequest value) setDefaultSink,
+    required TResult Function(SetDefaultSourceRequest value) setDefaultSource,
+    required TResult Function(DisposeRequest value) dispose,
+  }) {
+    return createStreamCallback(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(GetSinkListRequest value)? getSinkList,
+    TResult? Function(GetInputSinkListRequest value)? getInputSinkList,
+    TResult? Function(GetSourceListRequest value)? getSourceList,
+    TResult? Function(GetServerInfoRequest value)? getServerInfo,
+    TResult? Function(SetSinkVolumeRequest value)? setSinkVolume,
+    TResult? Function(CreateStreamCallbackRequest value)? createStreamCallback,
+    TResult? Function(SetSourceVolumeRequest value)? setSourceVolume,
+    TResult? Function(PropListUpdate value)? propListUpdate,
+    TResult? Function(SetSinkMuteRequest value)? setSinkMute,
+    TResult? Function(SetSourceMuteRequest value)? setSourceMute,
+    TResult? Function(SetDefaultSinkRequest value)? setDefaultSink,
+    TResult? Function(SetDefaultSourceRequest value)? setDefaultSource,
+    TResult? Function(DisposeRequest value)? dispose,
+  }) {
+    return createStreamCallback?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(GetSinkListRequest value)? getSinkList,
+    TResult Function(GetInputSinkListRequest value)? getInputSinkList,
+    TResult Function(GetSourceListRequest value)? getSourceList,
+    TResult Function(GetServerInfoRequest value)? getServerInfo,
+    TResult Function(SetSinkVolumeRequest value)? setSinkVolume,
+    TResult Function(CreateStreamCallbackRequest value)? createStreamCallback,
+    TResult Function(SetSourceVolumeRequest value)? setSourceVolume,
+    TResult Function(PropListUpdate value)? propListUpdate,
+    TResult Function(SetSinkMuteRequest value)? setSinkMute,
+    TResult Function(SetSourceMuteRequest value)? setSourceMute,
+    TResult Function(SetDefaultSinkRequest value)? setDefaultSink,
+    TResult Function(SetDefaultSourceRequest value)? setDefaultSource,
+    TResult Function(DisposeRequest value)? dispose,
+    required TResult orElse(),
+  }) {
+    if (createStreamCallback != null) {
+      return createStreamCallback(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class CreateStreamCallbackRequest implements IsolateRequest {
+  const factory CreateStreamCallbackRequest(
+      {required final int requestId,
+      required final String sourceIndex,
+      required final String sinkIndex}) = _$CreateStreamCallbackRequestImpl;
+
+  @override
+  int get requestId;
+  String get sourceIndex;
+  String get sinkIndex;
+
+  /// Create a copy of IsolateRequest
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$CreateStreamCallbackRequestImplCopyWith<_$CreateStreamCallbackRequestImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
 
@@ -1422,6 +1752,9 @@ class _$SetSourceVolumeRequestImpl implements SetSourceVolumeRequest {
     required TResult Function(int requestId) getServerInfo,
     required TResult Function(int requestId, String sinkName, double volume)
         setSinkVolume,
+    required TResult Function(
+            int requestId, String sourceIndex, String sinkIndex)
+        createStreamCallback,
     required TResult Function(int requestId, String sourceName, double volume)
         setSourceVolume,
     required TResult Function(
@@ -1448,6 +1781,8 @@ class _$SetSourceVolumeRequestImpl implements SetSourceVolumeRequest {
     TResult? Function(int requestId)? getServerInfo,
     TResult? Function(int requestId, String sinkName, double volume)?
         setSinkVolume,
+    TResult? Function(int requestId, String sourceIndex, String sinkIndex)?
+        createStreamCallback,
     TResult? Function(int requestId, String sourceName, double volume)?
         setSourceVolume,
     TResult? Function(
@@ -1472,6 +1807,8 @@ class _$SetSourceVolumeRequestImpl implements SetSourceVolumeRequest {
     TResult Function(int requestId)? getServerInfo,
     TResult Function(int requestId, String sinkName, double volume)?
         setSinkVolume,
+    TResult Function(int requestId, String sourceIndex, String sinkIndex)?
+        createStreamCallback,
     TResult Function(int requestId, String sourceName, double volume)?
         setSourceVolume,
     TResult Function(
@@ -1499,6 +1836,8 @@ class _$SetSourceVolumeRequestImpl implements SetSourceVolumeRequest {
     required TResult Function(GetSourceListRequest value) getSourceList,
     required TResult Function(GetServerInfoRequest value) getServerInfo,
     required TResult Function(SetSinkVolumeRequest value) setSinkVolume,
+    required TResult Function(CreateStreamCallbackRequest value)
+        createStreamCallback,
     required TResult Function(SetSourceVolumeRequest value) setSourceVolume,
     required TResult Function(PropListUpdate value) propListUpdate,
     required TResult Function(SetSinkMuteRequest value) setSinkMute,
@@ -1518,6 +1857,7 @@ class _$SetSourceVolumeRequestImpl implements SetSourceVolumeRequest {
     TResult? Function(GetSourceListRequest value)? getSourceList,
     TResult? Function(GetServerInfoRequest value)? getServerInfo,
     TResult? Function(SetSinkVolumeRequest value)? setSinkVolume,
+    TResult? Function(CreateStreamCallbackRequest value)? createStreamCallback,
     TResult? Function(SetSourceVolumeRequest value)? setSourceVolume,
     TResult? Function(PropListUpdate value)? propListUpdate,
     TResult? Function(SetSinkMuteRequest value)? setSinkMute,
@@ -1537,6 +1877,7 @@ class _$SetSourceVolumeRequestImpl implements SetSourceVolumeRequest {
     TResult Function(GetSourceListRequest value)? getSourceList,
     TResult Function(GetServerInfoRequest value)? getServerInfo,
     TResult Function(SetSinkVolumeRequest value)? setSinkVolume,
+    TResult Function(CreateStreamCallbackRequest value)? createStreamCallback,
     TResult Function(SetSourceVolumeRequest value)? setSourceVolume,
     TResult Function(PropListUpdate value)? propListUpdate,
     TResult Function(SetSinkMuteRequest value)? setSinkMute,
@@ -1678,6 +2019,9 @@ class _$PropListUpdateImpl implements PropListUpdate {
     required TResult Function(int requestId) getServerInfo,
     required TResult Function(int requestId, String sinkName, double volume)
         setSinkVolume,
+    required TResult Function(
+            int requestId, String sourceIndex, String sinkIndex)
+        createStreamCallback,
     required TResult Function(int requestId, String sourceName, double volume)
         setSourceVolume,
     required TResult Function(
@@ -1704,6 +2048,8 @@ class _$PropListUpdateImpl implements PropListUpdate {
     TResult? Function(int requestId)? getServerInfo,
     TResult? Function(int requestId, String sinkName, double volume)?
         setSinkVolume,
+    TResult? Function(int requestId, String sourceIndex, String sinkIndex)?
+        createStreamCallback,
     TResult? Function(int requestId, String sourceName, double volume)?
         setSourceVolume,
     TResult? Function(
@@ -1728,6 +2074,8 @@ class _$PropListUpdateImpl implements PropListUpdate {
     TResult Function(int requestId)? getServerInfo,
     TResult Function(int requestId, String sinkName, double volume)?
         setSinkVolume,
+    TResult Function(int requestId, String sourceIndex, String sinkIndex)?
+        createStreamCallback,
     TResult Function(int requestId, String sourceName, double volume)?
         setSourceVolume,
     TResult Function(
@@ -1755,6 +2103,8 @@ class _$PropListUpdateImpl implements PropListUpdate {
     required TResult Function(GetSourceListRequest value) getSourceList,
     required TResult Function(GetServerInfoRequest value) getServerInfo,
     required TResult Function(SetSinkVolumeRequest value) setSinkVolume,
+    required TResult Function(CreateStreamCallbackRequest value)
+        createStreamCallback,
     required TResult Function(SetSourceVolumeRequest value) setSourceVolume,
     required TResult Function(PropListUpdate value) propListUpdate,
     required TResult Function(SetSinkMuteRequest value) setSinkMute,
@@ -1774,6 +2124,7 @@ class _$PropListUpdateImpl implements PropListUpdate {
     TResult? Function(GetSourceListRequest value)? getSourceList,
     TResult? Function(GetServerInfoRequest value)? getServerInfo,
     TResult? Function(SetSinkVolumeRequest value)? setSinkVolume,
+    TResult? Function(CreateStreamCallbackRequest value)? createStreamCallback,
     TResult? Function(SetSourceVolumeRequest value)? setSourceVolume,
     TResult? Function(PropListUpdate value)? propListUpdate,
     TResult? Function(SetSinkMuteRequest value)? setSinkMute,
@@ -1793,6 +2144,7 @@ class _$PropListUpdateImpl implements PropListUpdate {
     TResult Function(GetSourceListRequest value)? getSourceList,
     TResult Function(GetServerInfoRequest value)? getServerInfo,
     TResult Function(SetSinkVolumeRequest value)? setSinkVolume,
+    TResult Function(CreateStreamCallbackRequest value)? createStreamCallback,
     TResult Function(SetSourceVolumeRequest value)? setSourceVolume,
     TResult Function(PropListUpdate value)? propListUpdate,
     TResult Function(SetSinkMuteRequest value)? setSinkMute,
@@ -1926,6 +2278,9 @@ class _$SetSinkMuteRequestImpl implements SetSinkMuteRequest {
     required TResult Function(int requestId) getServerInfo,
     required TResult Function(int requestId, String sinkName, double volume)
         setSinkVolume,
+    required TResult Function(
+            int requestId, String sourceIndex, String sinkIndex)
+        createStreamCallback,
     required TResult Function(int requestId, String sourceName, double volume)
         setSourceVolume,
     required TResult Function(
@@ -1952,6 +2307,8 @@ class _$SetSinkMuteRequestImpl implements SetSinkMuteRequest {
     TResult? Function(int requestId)? getServerInfo,
     TResult? Function(int requestId, String sinkName, double volume)?
         setSinkVolume,
+    TResult? Function(int requestId, String sourceIndex, String sinkIndex)?
+        createStreamCallback,
     TResult? Function(int requestId, String sourceName, double volume)?
         setSourceVolume,
     TResult? Function(
@@ -1976,6 +2333,8 @@ class _$SetSinkMuteRequestImpl implements SetSinkMuteRequest {
     TResult Function(int requestId)? getServerInfo,
     TResult Function(int requestId, String sinkName, double volume)?
         setSinkVolume,
+    TResult Function(int requestId, String sourceIndex, String sinkIndex)?
+        createStreamCallback,
     TResult Function(int requestId, String sourceName, double volume)?
         setSourceVolume,
     TResult Function(
@@ -2003,6 +2362,8 @@ class _$SetSinkMuteRequestImpl implements SetSinkMuteRequest {
     required TResult Function(GetSourceListRequest value) getSourceList,
     required TResult Function(GetServerInfoRequest value) getServerInfo,
     required TResult Function(SetSinkVolumeRequest value) setSinkVolume,
+    required TResult Function(CreateStreamCallbackRequest value)
+        createStreamCallback,
     required TResult Function(SetSourceVolumeRequest value) setSourceVolume,
     required TResult Function(PropListUpdate value) propListUpdate,
     required TResult Function(SetSinkMuteRequest value) setSinkMute,
@@ -2022,6 +2383,7 @@ class _$SetSinkMuteRequestImpl implements SetSinkMuteRequest {
     TResult? Function(GetSourceListRequest value)? getSourceList,
     TResult? Function(GetServerInfoRequest value)? getServerInfo,
     TResult? Function(SetSinkVolumeRequest value)? setSinkVolume,
+    TResult? Function(CreateStreamCallbackRequest value)? createStreamCallback,
     TResult? Function(SetSourceVolumeRequest value)? setSourceVolume,
     TResult? Function(PropListUpdate value)? propListUpdate,
     TResult? Function(SetSinkMuteRequest value)? setSinkMute,
@@ -2041,6 +2403,7 @@ class _$SetSinkMuteRequestImpl implements SetSinkMuteRequest {
     TResult Function(GetSourceListRequest value)? getSourceList,
     TResult Function(GetServerInfoRequest value)? getServerInfo,
     TResult Function(SetSinkVolumeRequest value)? setSinkVolume,
+    TResult Function(CreateStreamCallbackRequest value)? createStreamCallback,
     TResult Function(SetSourceVolumeRequest value)? setSourceVolume,
     TResult Function(PropListUpdate value)? propListUpdate,
     TResult Function(SetSinkMuteRequest value)? setSinkMute,
@@ -2173,6 +2536,9 @@ class _$SetSourceMuteRequestImpl implements SetSourceMuteRequest {
     required TResult Function(int requestId) getServerInfo,
     required TResult Function(int requestId, String sinkName, double volume)
         setSinkVolume,
+    required TResult Function(
+            int requestId, String sourceIndex, String sinkIndex)
+        createStreamCallback,
     required TResult Function(int requestId, String sourceName, double volume)
         setSourceVolume,
     required TResult Function(
@@ -2199,6 +2565,8 @@ class _$SetSourceMuteRequestImpl implements SetSourceMuteRequest {
     TResult? Function(int requestId)? getServerInfo,
     TResult? Function(int requestId, String sinkName, double volume)?
         setSinkVolume,
+    TResult? Function(int requestId, String sourceIndex, String sinkIndex)?
+        createStreamCallback,
     TResult? Function(int requestId, String sourceName, double volume)?
         setSourceVolume,
     TResult? Function(
@@ -2223,6 +2591,8 @@ class _$SetSourceMuteRequestImpl implements SetSourceMuteRequest {
     TResult Function(int requestId)? getServerInfo,
     TResult Function(int requestId, String sinkName, double volume)?
         setSinkVolume,
+    TResult Function(int requestId, String sourceIndex, String sinkIndex)?
+        createStreamCallback,
     TResult Function(int requestId, String sourceName, double volume)?
         setSourceVolume,
     TResult Function(
@@ -2250,6 +2620,8 @@ class _$SetSourceMuteRequestImpl implements SetSourceMuteRequest {
     required TResult Function(GetSourceListRequest value) getSourceList,
     required TResult Function(GetServerInfoRequest value) getServerInfo,
     required TResult Function(SetSinkVolumeRequest value) setSinkVolume,
+    required TResult Function(CreateStreamCallbackRequest value)
+        createStreamCallback,
     required TResult Function(SetSourceVolumeRequest value) setSourceVolume,
     required TResult Function(PropListUpdate value) propListUpdate,
     required TResult Function(SetSinkMuteRequest value) setSinkMute,
@@ -2269,6 +2641,7 @@ class _$SetSourceMuteRequestImpl implements SetSourceMuteRequest {
     TResult? Function(GetSourceListRequest value)? getSourceList,
     TResult? Function(GetServerInfoRequest value)? getServerInfo,
     TResult? Function(SetSinkVolumeRequest value)? setSinkVolume,
+    TResult? Function(CreateStreamCallbackRequest value)? createStreamCallback,
     TResult? Function(SetSourceVolumeRequest value)? setSourceVolume,
     TResult? Function(PropListUpdate value)? propListUpdate,
     TResult? Function(SetSinkMuteRequest value)? setSinkMute,
@@ -2288,6 +2661,7 @@ class _$SetSourceMuteRequestImpl implements SetSourceMuteRequest {
     TResult Function(GetSourceListRequest value)? getSourceList,
     TResult Function(GetServerInfoRequest value)? getServerInfo,
     TResult Function(SetSinkVolumeRequest value)? setSinkVolume,
+    TResult Function(CreateStreamCallbackRequest value)? createStreamCallback,
     TResult Function(SetSourceVolumeRequest value)? setSourceVolume,
     TResult Function(PropListUpdate value)? propListUpdate,
     TResult Function(SetSinkMuteRequest value)? setSinkMute,
@@ -2412,6 +2786,9 @@ class _$SetDefaultSinkRequestImpl implements SetDefaultSinkRequest {
     required TResult Function(int requestId) getServerInfo,
     required TResult Function(int requestId, String sinkName, double volume)
         setSinkVolume,
+    required TResult Function(
+            int requestId, String sourceIndex, String sinkIndex)
+        createStreamCallback,
     required TResult Function(int requestId, String sourceName, double volume)
         setSourceVolume,
     required TResult Function(
@@ -2438,6 +2815,8 @@ class _$SetDefaultSinkRequestImpl implements SetDefaultSinkRequest {
     TResult? Function(int requestId)? getServerInfo,
     TResult? Function(int requestId, String sinkName, double volume)?
         setSinkVolume,
+    TResult? Function(int requestId, String sourceIndex, String sinkIndex)?
+        createStreamCallback,
     TResult? Function(int requestId, String sourceName, double volume)?
         setSourceVolume,
     TResult? Function(
@@ -2462,6 +2841,8 @@ class _$SetDefaultSinkRequestImpl implements SetDefaultSinkRequest {
     TResult Function(int requestId)? getServerInfo,
     TResult Function(int requestId, String sinkName, double volume)?
         setSinkVolume,
+    TResult Function(int requestId, String sourceIndex, String sinkIndex)?
+        createStreamCallback,
     TResult Function(int requestId, String sourceName, double volume)?
         setSourceVolume,
     TResult Function(
@@ -2489,6 +2870,8 @@ class _$SetDefaultSinkRequestImpl implements SetDefaultSinkRequest {
     required TResult Function(GetSourceListRequest value) getSourceList,
     required TResult Function(GetServerInfoRequest value) getServerInfo,
     required TResult Function(SetSinkVolumeRequest value) setSinkVolume,
+    required TResult Function(CreateStreamCallbackRequest value)
+        createStreamCallback,
     required TResult Function(SetSourceVolumeRequest value) setSourceVolume,
     required TResult Function(PropListUpdate value) propListUpdate,
     required TResult Function(SetSinkMuteRequest value) setSinkMute,
@@ -2508,6 +2891,7 @@ class _$SetDefaultSinkRequestImpl implements SetDefaultSinkRequest {
     TResult? Function(GetSourceListRequest value)? getSourceList,
     TResult? Function(GetServerInfoRequest value)? getServerInfo,
     TResult? Function(SetSinkVolumeRequest value)? setSinkVolume,
+    TResult? Function(CreateStreamCallbackRequest value)? createStreamCallback,
     TResult? Function(SetSourceVolumeRequest value)? setSourceVolume,
     TResult? Function(PropListUpdate value)? propListUpdate,
     TResult? Function(SetSinkMuteRequest value)? setSinkMute,
@@ -2527,6 +2911,7 @@ class _$SetDefaultSinkRequestImpl implements SetDefaultSinkRequest {
     TResult Function(GetSourceListRequest value)? getSourceList,
     TResult Function(GetServerInfoRequest value)? getServerInfo,
     TResult Function(SetSinkVolumeRequest value)? setSinkVolume,
+    TResult Function(CreateStreamCallbackRequest value)? createStreamCallback,
     TResult Function(SetSourceVolumeRequest value)? setSourceVolume,
     TResult Function(PropListUpdate value)? propListUpdate,
     TResult Function(SetSinkMuteRequest value)? setSinkMute,
@@ -2650,6 +3035,9 @@ class _$SetDefaultSourceRequestImpl implements SetDefaultSourceRequest {
     required TResult Function(int requestId) getServerInfo,
     required TResult Function(int requestId, String sinkName, double volume)
         setSinkVolume,
+    required TResult Function(
+            int requestId, String sourceIndex, String sinkIndex)
+        createStreamCallback,
     required TResult Function(int requestId, String sourceName, double volume)
         setSourceVolume,
     required TResult Function(
@@ -2676,6 +3064,8 @@ class _$SetDefaultSourceRequestImpl implements SetDefaultSourceRequest {
     TResult? Function(int requestId)? getServerInfo,
     TResult? Function(int requestId, String sinkName, double volume)?
         setSinkVolume,
+    TResult? Function(int requestId, String sourceIndex, String sinkIndex)?
+        createStreamCallback,
     TResult? Function(int requestId, String sourceName, double volume)?
         setSourceVolume,
     TResult? Function(
@@ -2700,6 +3090,8 @@ class _$SetDefaultSourceRequestImpl implements SetDefaultSourceRequest {
     TResult Function(int requestId)? getServerInfo,
     TResult Function(int requestId, String sinkName, double volume)?
         setSinkVolume,
+    TResult Function(int requestId, String sourceIndex, String sinkIndex)?
+        createStreamCallback,
     TResult Function(int requestId, String sourceName, double volume)?
         setSourceVolume,
     TResult Function(
@@ -2727,6 +3119,8 @@ class _$SetDefaultSourceRequestImpl implements SetDefaultSourceRequest {
     required TResult Function(GetSourceListRequest value) getSourceList,
     required TResult Function(GetServerInfoRequest value) getServerInfo,
     required TResult Function(SetSinkVolumeRequest value) setSinkVolume,
+    required TResult Function(CreateStreamCallbackRequest value)
+        createStreamCallback,
     required TResult Function(SetSourceVolumeRequest value) setSourceVolume,
     required TResult Function(PropListUpdate value) propListUpdate,
     required TResult Function(SetSinkMuteRequest value) setSinkMute,
@@ -2746,6 +3140,7 @@ class _$SetDefaultSourceRequestImpl implements SetDefaultSourceRequest {
     TResult? Function(GetSourceListRequest value)? getSourceList,
     TResult? Function(GetServerInfoRequest value)? getServerInfo,
     TResult? Function(SetSinkVolumeRequest value)? setSinkVolume,
+    TResult? Function(CreateStreamCallbackRequest value)? createStreamCallback,
     TResult? Function(SetSourceVolumeRequest value)? setSourceVolume,
     TResult? Function(PropListUpdate value)? propListUpdate,
     TResult? Function(SetSinkMuteRequest value)? setSinkMute,
@@ -2765,6 +3160,7 @@ class _$SetDefaultSourceRequestImpl implements SetDefaultSourceRequest {
     TResult Function(GetSourceListRequest value)? getSourceList,
     TResult Function(GetServerInfoRequest value)? getServerInfo,
     TResult Function(SetSinkVolumeRequest value)? setSinkVolume,
+    TResult Function(CreateStreamCallbackRequest value)? createStreamCallback,
     TResult Function(SetSourceVolumeRequest value)? setSourceVolume,
     TResult Function(PropListUpdate value)? propListUpdate,
     TResult Function(SetSinkMuteRequest value)? setSinkMute,
@@ -2876,6 +3272,9 @@ class _$DisposeRequestImpl implements DisposeRequest {
     required TResult Function(int requestId) getServerInfo,
     required TResult Function(int requestId, String sinkName, double volume)
         setSinkVolume,
+    required TResult Function(
+            int requestId, String sourceIndex, String sinkIndex)
+        createStreamCallback,
     required TResult Function(int requestId, String sourceName, double volume)
         setSourceVolume,
     required TResult Function(
@@ -2902,6 +3301,8 @@ class _$DisposeRequestImpl implements DisposeRequest {
     TResult? Function(int requestId)? getServerInfo,
     TResult? Function(int requestId, String sinkName, double volume)?
         setSinkVolume,
+    TResult? Function(int requestId, String sourceIndex, String sinkIndex)?
+        createStreamCallback,
     TResult? Function(int requestId, String sourceName, double volume)?
         setSourceVolume,
     TResult? Function(
@@ -2926,6 +3327,8 @@ class _$DisposeRequestImpl implements DisposeRequest {
     TResult Function(int requestId)? getServerInfo,
     TResult Function(int requestId, String sinkName, double volume)?
         setSinkVolume,
+    TResult Function(int requestId, String sourceIndex, String sinkIndex)?
+        createStreamCallback,
     TResult Function(int requestId, String sourceName, double volume)?
         setSourceVolume,
     TResult Function(
@@ -2953,6 +3356,8 @@ class _$DisposeRequestImpl implements DisposeRequest {
     required TResult Function(GetSourceListRequest value) getSourceList,
     required TResult Function(GetServerInfoRequest value) getServerInfo,
     required TResult Function(SetSinkVolumeRequest value) setSinkVolume,
+    required TResult Function(CreateStreamCallbackRequest value)
+        createStreamCallback,
     required TResult Function(SetSourceVolumeRequest value) setSourceVolume,
     required TResult Function(PropListUpdate value) propListUpdate,
     required TResult Function(SetSinkMuteRequest value) setSinkMute,
@@ -2972,6 +3377,7 @@ class _$DisposeRequestImpl implements DisposeRequest {
     TResult? Function(GetSourceListRequest value)? getSourceList,
     TResult? Function(GetServerInfoRequest value)? getServerInfo,
     TResult? Function(SetSinkVolumeRequest value)? setSinkVolume,
+    TResult? Function(CreateStreamCallbackRequest value)? createStreamCallback,
     TResult? Function(SetSourceVolumeRequest value)? setSourceVolume,
     TResult? Function(PropListUpdate value)? propListUpdate,
     TResult? Function(SetSinkMuteRequest value)? setSinkMute,
@@ -2991,6 +3397,7 @@ class _$DisposeRequestImpl implements DisposeRequest {
     TResult Function(GetSourceListRequest value)? getSourceList,
     TResult Function(GetServerInfoRequest value)? getServerInfo,
     TResult Function(SetSinkVolumeRequest value)? setSinkVolume,
+    TResult Function(CreateStreamCallbackRequest value)? createStreamCallback,
     TResult Function(SetSourceVolumeRequest value)? setSourceVolume,
     TResult Function(PropListUpdate value)? propListUpdate,
     TResult Function(SetSinkMuteRequest value)? setSinkMute,

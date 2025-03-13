@@ -29,6 +29,8 @@ mixin _$IsolateResponse {
         onSinkList,
     required TResult Function(int requestId, List<PulseAudioInputSink> list)
         onInputSinkList,
+    required TResult Function(int requestId, PulseAudioStreamCallback callback)
+        streamCallback,
     required TResult Function(int requestId, List<PulseAudioSource> list)
         onSourceList,
     required TResult Function(int requestId, PulseAudioServerInfo info)
@@ -53,6 +55,8 @@ mixin _$IsolateResponse {
     TResult? Function(int requestId, List<PulseAudioSink> list)? onSinkList,
     TResult? Function(int requestId, List<PulseAudioInputSink> list)?
         onInputSinkList,
+    TResult? Function(int requestId, PulseAudioStreamCallback callback)?
+        streamCallback,
     TResult? Function(int requestId, List<PulseAudioSource> list)? onSourceList,
     TResult? Function(int requestId, PulseAudioServerInfo info)? onServerInfo,
     TResult? Function(int requestId)? setSinkVolume,
@@ -75,6 +79,8 @@ mixin _$IsolateResponse {
     TResult Function(int requestId, List<PulseAudioSink> list)? onSinkList,
     TResult Function(int requestId, List<PulseAudioInputSink> list)?
         onInputSinkList,
+    TResult Function(int requestId, PulseAudioStreamCallback callback)?
+        streamCallback,
     TResult Function(int requestId, List<PulseAudioSource> list)? onSourceList,
     TResult Function(int requestId, PulseAudioServerInfo info)? onServerInfo,
     TResult Function(int requestId)? setSinkVolume,
@@ -98,6 +104,7 @@ mixin _$IsolateResponse {
     required TResult Function(OnSourceRemovedResponse value) onSourceRemoved,
     required TResult Function(OnSinkListResponse value) onSinkList,
     required TResult Function(OnInputSinkListResponse value) onInputSinkList,
+    required TResult Function(StreamCallbackResponse value) streamCallback,
     required TResult Function(OnSourceListResponse value) onSourceList,
     required TResult Function(OnServerInfoResponse value) onServerInfo,
     required TResult Function(SetSinkVolumeResponse value) setSinkVolume,
@@ -119,6 +126,7 @@ mixin _$IsolateResponse {
     TResult? Function(OnSourceRemovedResponse value)? onSourceRemoved,
     TResult? Function(OnSinkListResponse value)? onSinkList,
     TResult? Function(OnInputSinkListResponse value)? onInputSinkList,
+    TResult? Function(StreamCallbackResponse value)? streamCallback,
     TResult? Function(OnSourceListResponse value)? onSourceList,
     TResult? Function(OnServerInfoResponse value)? onServerInfo,
     TResult? Function(SetSinkVolumeResponse value)? setSinkVolume,
@@ -140,6 +148,7 @@ mixin _$IsolateResponse {
     TResult Function(OnSourceRemovedResponse value)? onSourceRemoved,
     TResult Function(OnSinkListResponse value)? onSinkList,
     TResult Function(OnInputSinkListResponse value)? onInputSinkList,
+    TResult Function(StreamCallbackResponse value)? streamCallback,
     TResult Function(OnSourceListResponse value)? onSourceList,
     TResult Function(OnServerInfoResponse value)? onServerInfo,
     TResult Function(SetSinkVolumeResponse value)? setSinkVolume,
@@ -227,6 +236,8 @@ class _$OnReadyResponseImpl implements OnReadyResponse {
         onSinkList,
     required TResult Function(int requestId, List<PulseAudioInputSink> list)
         onInputSinkList,
+    required TResult Function(int requestId, PulseAudioStreamCallback callback)
+        streamCallback,
     required TResult Function(int requestId, List<PulseAudioSource> list)
         onSourceList,
     required TResult Function(int requestId, PulseAudioServerInfo info)
@@ -254,6 +265,8 @@ class _$OnReadyResponseImpl implements OnReadyResponse {
     TResult? Function(int requestId, List<PulseAudioSink> list)? onSinkList,
     TResult? Function(int requestId, List<PulseAudioInputSink> list)?
         onInputSinkList,
+    TResult? Function(int requestId, PulseAudioStreamCallback callback)?
+        streamCallback,
     TResult? Function(int requestId, List<PulseAudioSource> list)? onSourceList,
     TResult? Function(int requestId, PulseAudioServerInfo info)? onServerInfo,
     TResult? Function(int requestId)? setSinkVolume,
@@ -279,6 +292,8 @@ class _$OnReadyResponseImpl implements OnReadyResponse {
     TResult Function(int requestId, List<PulseAudioSink> list)? onSinkList,
     TResult Function(int requestId, List<PulseAudioInputSink> list)?
         onInputSinkList,
+    TResult Function(int requestId, PulseAudioStreamCallback callback)?
+        streamCallback,
     TResult Function(int requestId, List<PulseAudioSource> list)? onSourceList,
     TResult Function(int requestId, PulseAudioServerInfo info)? onServerInfo,
     TResult Function(int requestId)? setSinkVolume,
@@ -308,6 +323,7 @@ class _$OnReadyResponseImpl implements OnReadyResponse {
     required TResult Function(OnSourceRemovedResponse value) onSourceRemoved,
     required TResult Function(OnSinkListResponse value) onSinkList,
     required TResult Function(OnInputSinkListResponse value) onInputSinkList,
+    required TResult Function(StreamCallbackResponse value) streamCallback,
     required TResult Function(OnSourceListResponse value) onSourceList,
     required TResult Function(OnServerInfoResponse value) onServerInfo,
     required TResult Function(SetSinkVolumeResponse value) setSinkVolume,
@@ -332,6 +348,7 @@ class _$OnReadyResponseImpl implements OnReadyResponse {
     TResult? Function(OnSourceRemovedResponse value)? onSourceRemoved,
     TResult? Function(OnSinkListResponse value)? onSinkList,
     TResult? Function(OnInputSinkListResponse value)? onInputSinkList,
+    TResult? Function(StreamCallbackResponse value)? streamCallback,
     TResult? Function(OnSourceListResponse value)? onSourceList,
     TResult? Function(OnServerInfoResponse value)? onServerInfo,
     TResult? Function(SetSinkVolumeResponse value)? setSinkVolume,
@@ -356,6 +373,7 @@ class _$OnReadyResponseImpl implements OnReadyResponse {
     TResult Function(OnSourceRemovedResponse value)? onSourceRemoved,
     TResult Function(OnSinkListResponse value)? onSinkList,
     TResult Function(OnInputSinkListResponse value)? onInputSinkList,
+    TResult Function(StreamCallbackResponse value)? streamCallback,
     TResult Function(OnSourceListResponse value)? onSourceList,
     TResult Function(OnServerInfoResponse value)? onServerInfo,
     TResult Function(SetSinkVolumeResponse value)? setSinkVolume,
@@ -474,6 +492,8 @@ class _$OnServerInfoChangedResponseImpl implements OnServerInfoChangedResponse {
         onSinkList,
     required TResult Function(int requestId, List<PulseAudioInputSink> list)
         onInputSinkList,
+    required TResult Function(int requestId, PulseAudioStreamCallback callback)
+        streamCallback,
     required TResult Function(int requestId, List<PulseAudioSource> list)
         onSourceList,
     required TResult Function(int requestId, PulseAudioServerInfo info)
@@ -501,6 +521,8 @@ class _$OnServerInfoChangedResponseImpl implements OnServerInfoChangedResponse {
     TResult? Function(int requestId, List<PulseAudioSink> list)? onSinkList,
     TResult? Function(int requestId, List<PulseAudioInputSink> list)?
         onInputSinkList,
+    TResult? Function(int requestId, PulseAudioStreamCallback callback)?
+        streamCallback,
     TResult? Function(int requestId, List<PulseAudioSource> list)? onSourceList,
     TResult? Function(int requestId, PulseAudioServerInfo info)? onServerInfo,
     TResult? Function(int requestId)? setSinkVolume,
@@ -526,6 +548,8 @@ class _$OnServerInfoChangedResponseImpl implements OnServerInfoChangedResponse {
     TResult Function(int requestId, List<PulseAudioSink> list)? onSinkList,
     TResult Function(int requestId, List<PulseAudioInputSink> list)?
         onInputSinkList,
+    TResult Function(int requestId, PulseAudioStreamCallback callback)?
+        streamCallback,
     TResult Function(int requestId, List<PulseAudioSource> list)? onSourceList,
     TResult Function(int requestId, PulseAudioServerInfo info)? onServerInfo,
     TResult Function(int requestId)? setSinkVolume,
@@ -555,6 +579,7 @@ class _$OnServerInfoChangedResponseImpl implements OnServerInfoChangedResponse {
     required TResult Function(OnSourceRemovedResponse value) onSourceRemoved,
     required TResult Function(OnSinkListResponse value) onSinkList,
     required TResult Function(OnInputSinkListResponse value) onInputSinkList,
+    required TResult Function(StreamCallbackResponse value) streamCallback,
     required TResult Function(OnSourceListResponse value) onSourceList,
     required TResult Function(OnServerInfoResponse value) onServerInfo,
     required TResult Function(SetSinkVolumeResponse value) setSinkVolume,
@@ -579,6 +604,7 @@ class _$OnServerInfoChangedResponseImpl implements OnServerInfoChangedResponse {
     TResult? Function(OnSourceRemovedResponse value)? onSourceRemoved,
     TResult? Function(OnSinkListResponse value)? onSinkList,
     TResult? Function(OnInputSinkListResponse value)? onInputSinkList,
+    TResult? Function(StreamCallbackResponse value)? streamCallback,
     TResult? Function(OnSourceListResponse value)? onSourceList,
     TResult? Function(OnServerInfoResponse value)? onServerInfo,
     TResult? Function(SetSinkVolumeResponse value)? setSinkVolume,
@@ -603,6 +629,7 @@ class _$OnServerInfoChangedResponseImpl implements OnServerInfoChangedResponse {
     TResult Function(OnSourceRemovedResponse value)? onSourceRemoved,
     TResult Function(OnSinkListResponse value)? onSinkList,
     TResult Function(OnInputSinkListResponse value)? onInputSinkList,
+    TResult Function(StreamCallbackResponse value)? streamCallback,
     TResult Function(OnSourceListResponse value)? onSourceList,
     TResult Function(OnServerInfoResponse value)? onServerInfo,
     TResult Function(SetSinkVolumeResponse value)? setSinkVolume,
@@ -728,6 +755,8 @@ class _$OnSinkChangedResponseImpl implements OnSinkChangedResponse {
         onSinkList,
     required TResult Function(int requestId, List<PulseAudioInputSink> list)
         onInputSinkList,
+    required TResult Function(int requestId, PulseAudioStreamCallback callback)
+        streamCallback,
     required TResult Function(int requestId, List<PulseAudioSource> list)
         onSourceList,
     required TResult Function(int requestId, PulseAudioServerInfo info)
@@ -755,6 +784,8 @@ class _$OnSinkChangedResponseImpl implements OnSinkChangedResponse {
     TResult? Function(int requestId, List<PulseAudioSink> list)? onSinkList,
     TResult? Function(int requestId, List<PulseAudioInputSink> list)?
         onInputSinkList,
+    TResult? Function(int requestId, PulseAudioStreamCallback callback)?
+        streamCallback,
     TResult? Function(int requestId, List<PulseAudioSource> list)? onSourceList,
     TResult? Function(int requestId, PulseAudioServerInfo info)? onServerInfo,
     TResult? Function(int requestId)? setSinkVolume,
@@ -780,6 +811,8 @@ class _$OnSinkChangedResponseImpl implements OnSinkChangedResponse {
     TResult Function(int requestId, List<PulseAudioSink> list)? onSinkList,
     TResult Function(int requestId, List<PulseAudioInputSink> list)?
         onInputSinkList,
+    TResult Function(int requestId, PulseAudioStreamCallback callback)?
+        streamCallback,
     TResult Function(int requestId, List<PulseAudioSource> list)? onSourceList,
     TResult Function(int requestId, PulseAudioServerInfo info)? onServerInfo,
     TResult Function(int requestId)? setSinkVolume,
@@ -809,6 +842,7 @@ class _$OnSinkChangedResponseImpl implements OnSinkChangedResponse {
     required TResult Function(OnSourceRemovedResponse value) onSourceRemoved,
     required TResult Function(OnSinkListResponse value) onSinkList,
     required TResult Function(OnInputSinkListResponse value) onInputSinkList,
+    required TResult Function(StreamCallbackResponse value) streamCallback,
     required TResult Function(OnSourceListResponse value) onSourceList,
     required TResult Function(OnServerInfoResponse value) onServerInfo,
     required TResult Function(SetSinkVolumeResponse value) setSinkVolume,
@@ -833,6 +867,7 @@ class _$OnSinkChangedResponseImpl implements OnSinkChangedResponse {
     TResult? Function(OnSourceRemovedResponse value)? onSourceRemoved,
     TResult? Function(OnSinkListResponse value)? onSinkList,
     TResult? Function(OnInputSinkListResponse value)? onInputSinkList,
+    TResult? Function(StreamCallbackResponse value)? streamCallback,
     TResult? Function(OnSourceListResponse value)? onSourceList,
     TResult? Function(OnServerInfoResponse value)? onServerInfo,
     TResult? Function(SetSinkVolumeResponse value)? setSinkVolume,
@@ -857,6 +892,7 @@ class _$OnSinkChangedResponseImpl implements OnSinkChangedResponse {
     TResult Function(OnSourceRemovedResponse value)? onSourceRemoved,
     TResult Function(OnSinkListResponse value)? onSinkList,
     TResult Function(OnInputSinkListResponse value)? onInputSinkList,
+    TResult Function(StreamCallbackResponse value)? streamCallback,
     TResult Function(OnSourceListResponse value)? onSourceList,
     TResult Function(OnServerInfoResponse value)? onServerInfo,
     TResult Function(SetSinkVolumeResponse value)? setSinkVolume,
@@ -969,6 +1005,8 @@ class _$OnSinkRemovedResponseImpl implements OnSinkRemovedResponse {
         onSinkList,
     required TResult Function(int requestId, List<PulseAudioInputSink> list)
         onInputSinkList,
+    required TResult Function(int requestId, PulseAudioStreamCallback callback)
+        streamCallback,
     required TResult Function(int requestId, List<PulseAudioSource> list)
         onSourceList,
     required TResult Function(int requestId, PulseAudioServerInfo info)
@@ -996,6 +1034,8 @@ class _$OnSinkRemovedResponseImpl implements OnSinkRemovedResponse {
     TResult? Function(int requestId, List<PulseAudioSink> list)? onSinkList,
     TResult? Function(int requestId, List<PulseAudioInputSink> list)?
         onInputSinkList,
+    TResult? Function(int requestId, PulseAudioStreamCallback callback)?
+        streamCallback,
     TResult? Function(int requestId, List<PulseAudioSource> list)? onSourceList,
     TResult? Function(int requestId, PulseAudioServerInfo info)? onServerInfo,
     TResult? Function(int requestId)? setSinkVolume,
@@ -1021,6 +1061,8 @@ class _$OnSinkRemovedResponseImpl implements OnSinkRemovedResponse {
     TResult Function(int requestId, List<PulseAudioSink> list)? onSinkList,
     TResult Function(int requestId, List<PulseAudioInputSink> list)?
         onInputSinkList,
+    TResult Function(int requestId, PulseAudioStreamCallback callback)?
+        streamCallback,
     TResult Function(int requestId, List<PulseAudioSource> list)? onSourceList,
     TResult Function(int requestId, PulseAudioServerInfo info)? onServerInfo,
     TResult Function(int requestId)? setSinkVolume,
@@ -1050,6 +1092,7 @@ class _$OnSinkRemovedResponseImpl implements OnSinkRemovedResponse {
     required TResult Function(OnSourceRemovedResponse value) onSourceRemoved,
     required TResult Function(OnSinkListResponse value) onSinkList,
     required TResult Function(OnInputSinkListResponse value) onInputSinkList,
+    required TResult Function(StreamCallbackResponse value) streamCallback,
     required TResult Function(OnSourceListResponse value) onSourceList,
     required TResult Function(OnServerInfoResponse value) onServerInfo,
     required TResult Function(SetSinkVolumeResponse value) setSinkVolume,
@@ -1074,6 +1117,7 @@ class _$OnSinkRemovedResponseImpl implements OnSinkRemovedResponse {
     TResult? Function(OnSourceRemovedResponse value)? onSourceRemoved,
     TResult? Function(OnSinkListResponse value)? onSinkList,
     TResult? Function(OnInputSinkListResponse value)? onInputSinkList,
+    TResult? Function(StreamCallbackResponse value)? streamCallback,
     TResult? Function(OnSourceListResponse value)? onSourceList,
     TResult? Function(OnServerInfoResponse value)? onServerInfo,
     TResult? Function(SetSinkVolumeResponse value)? setSinkVolume,
@@ -1098,6 +1142,7 @@ class _$OnSinkRemovedResponseImpl implements OnSinkRemovedResponse {
     TResult Function(OnSourceRemovedResponse value)? onSourceRemoved,
     TResult Function(OnSinkListResponse value)? onSinkList,
     TResult Function(OnInputSinkListResponse value)? onInputSinkList,
+    TResult Function(StreamCallbackResponse value)? streamCallback,
     TResult Function(OnSourceListResponse value)? onSourceList,
     TResult Function(OnServerInfoResponse value)? onServerInfo,
     TResult Function(SetSinkVolumeResponse value)? setSinkVolume,
@@ -1223,6 +1268,8 @@ class _$OnSourceChangedResponseImpl implements OnSourceChangedResponse {
         onSinkList,
     required TResult Function(int requestId, List<PulseAudioInputSink> list)
         onInputSinkList,
+    required TResult Function(int requestId, PulseAudioStreamCallback callback)
+        streamCallback,
     required TResult Function(int requestId, List<PulseAudioSource> list)
         onSourceList,
     required TResult Function(int requestId, PulseAudioServerInfo info)
@@ -1250,6 +1297,8 @@ class _$OnSourceChangedResponseImpl implements OnSourceChangedResponse {
     TResult? Function(int requestId, List<PulseAudioSink> list)? onSinkList,
     TResult? Function(int requestId, List<PulseAudioInputSink> list)?
         onInputSinkList,
+    TResult? Function(int requestId, PulseAudioStreamCallback callback)?
+        streamCallback,
     TResult? Function(int requestId, List<PulseAudioSource> list)? onSourceList,
     TResult? Function(int requestId, PulseAudioServerInfo info)? onServerInfo,
     TResult? Function(int requestId)? setSinkVolume,
@@ -1275,6 +1324,8 @@ class _$OnSourceChangedResponseImpl implements OnSourceChangedResponse {
     TResult Function(int requestId, List<PulseAudioSink> list)? onSinkList,
     TResult Function(int requestId, List<PulseAudioInputSink> list)?
         onInputSinkList,
+    TResult Function(int requestId, PulseAudioStreamCallback callback)?
+        streamCallback,
     TResult Function(int requestId, List<PulseAudioSource> list)? onSourceList,
     TResult Function(int requestId, PulseAudioServerInfo info)? onServerInfo,
     TResult Function(int requestId)? setSinkVolume,
@@ -1304,6 +1355,7 @@ class _$OnSourceChangedResponseImpl implements OnSourceChangedResponse {
     required TResult Function(OnSourceRemovedResponse value) onSourceRemoved,
     required TResult Function(OnSinkListResponse value) onSinkList,
     required TResult Function(OnInputSinkListResponse value) onInputSinkList,
+    required TResult Function(StreamCallbackResponse value) streamCallback,
     required TResult Function(OnSourceListResponse value) onSourceList,
     required TResult Function(OnServerInfoResponse value) onServerInfo,
     required TResult Function(SetSinkVolumeResponse value) setSinkVolume,
@@ -1328,6 +1380,7 @@ class _$OnSourceChangedResponseImpl implements OnSourceChangedResponse {
     TResult? Function(OnSourceRemovedResponse value)? onSourceRemoved,
     TResult? Function(OnSinkListResponse value)? onSinkList,
     TResult? Function(OnInputSinkListResponse value)? onInputSinkList,
+    TResult? Function(StreamCallbackResponse value)? streamCallback,
     TResult? Function(OnSourceListResponse value)? onSourceList,
     TResult? Function(OnServerInfoResponse value)? onServerInfo,
     TResult? Function(SetSinkVolumeResponse value)? setSinkVolume,
@@ -1352,6 +1405,7 @@ class _$OnSourceChangedResponseImpl implements OnSourceChangedResponse {
     TResult Function(OnSourceRemovedResponse value)? onSourceRemoved,
     TResult Function(OnSinkListResponse value)? onSinkList,
     TResult Function(OnInputSinkListResponse value)? onInputSinkList,
+    TResult Function(StreamCallbackResponse value)? streamCallback,
     TResult Function(OnSourceListResponse value)? onSourceList,
     TResult Function(OnServerInfoResponse value)? onServerInfo,
     TResult Function(SetSinkVolumeResponse value)? setSinkVolume,
@@ -1465,6 +1519,8 @@ class _$OnSourceRemovedResponseImpl implements OnSourceRemovedResponse {
         onSinkList,
     required TResult Function(int requestId, List<PulseAudioInputSink> list)
         onInputSinkList,
+    required TResult Function(int requestId, PulseAudioStreamCallback callback)
+        streamCallback,
     required TResult Function(int requestId, List<PulseAudioSource> list)
         onSourceList,
     required TResult Function(int requestId, PulseAudioServerInfo info)
@@ -1492,6 +1548,8 @@ class _$OnSourceRemovedResponseImpl implements OnSourceRemovedResponse {
     TResult? Function(int requestId, List<PulseAudioSink> list)? onSinkList,
     TResult? Function(int requestId, List<PulseAudioInputSink> list)?
         onInputSinkList,
+    TResult? Function(int requestId, PulseAudioStreamCallback callback)?
+        streamCallback,
     TResult? Function(int requestId, List<PulseAudioSource> list)? onSourceList,
     TResult? Function(int requestId, PulseAudioServerInfo info)? onServerInfo,
     TResult? Function(int requestId)? setSinkVolume,
@@ -1517,6 +1575,8 @@ class _$OnSourceRemovedResponseImpl implements OnSourceRemovedResponse {
     TResult Function(int requestId, List<PulseAudioSink> list)? onSinkList,
     TResult Function(int requestId, List<PulseAudioInputSink> list)?
         onInputSinkList,
+    TResult Function(int requestId, PulseAudioStreamCallback callback)?
+        streamCallback,
     TResult Function(int requestId, List<PulseAudioSource> list)? onSourceList,
     TResult Function(int requestId, PulseAudioServerInfo info)? onServerInfo,
     TResult Function(int requestId)? setSinkVolume,
@@ -1546,6 +1606,7 @@ class _$OnSourceRemovedResponseImpl implements OnSourceRemovedResponse {
     required TResult Function(OnSourceRemovedResponse value) onSourceRemoved,
     required TResult Function(OnSinkListResponse value) onSinkList,
     required TResult Function(OnInputSinkListResponse value) onInputSinkList,
+    required TResult Function(StreamCallbackResponse value) streamCallback,
     required TResult Function(OnSourceListResponse value) onSourceList,
     required TResult Function(OnServerInfoResponse value) onServerInfo,
     required TResult Function(SetSinkVolumeResponse value) setSinkVolume,
@@ -1570,6 +1631,7 @@ class _$OnSourceRemovedResponseImpl implements OnSourceRemovedResponse {
     TResult? Function(OnSourceRemovedResponse value)? onSourceRemoved,
     TResult? Function(OnSinkListResponse value)? onSinkList,
     TResult? Function(OnInputSinkListResponse value)? onInputSinkList,
+    TResult? Function(StreamCallbackResponse value)? streamCallback,
     TResult? Function(OnSourceListResponse value)? onSourceList,
     TResult? Function(OnServerInfoResponse value)? onServerInfo,
     TResult? Function(SetSinkVolumeResponse value)? setSinkVolume,
@@ -1594,6 +1656,7 @@ class _$OnSourceRemovedResponseImpl implements OnSourceRemovedResponse {
     TResult Function(OnSourceRemovedResponse value)? onSourceRemoved,
     TResult Function(OnSinkListResponse value)? onSinkList,
     TResult Function(OnInputSinkListResponse value)? onInputSinkList,
+    TResult Function(StreamCallbackResponse value)? streamCallback,
     TResult Function(OnSourceListResponse value)? onSourceList,
     TResult Function(OnServerInfoResponse value)? onServerInfo,
     TResult Function(SetSinkVolumeResponse value)? setSinkVolume,
@@ -1722,6 +1785,8 @@ class _$OnSinkListResponseImpl implements OnSinkListResponse {
         onSinkList,
     required TResult Function(int requestId, List<PulseAudioInputSink> list)
         onInputSinkList,
+    required TResult Function(int requestId, PulseAudioStreamCallback callback)
+        streamCallback,
     required TResult Function(int requestId, List<PulseAudioSource> list)
         onSourceList,
     required TResult Function(int requestId, PulseAudioServerInfo info)
@@ -1749,6 +1814,8 @@ class _$OnSinkListResponseImpl implements OnSinkListResponse {
     TResult? Function(int requestId, List<PulseAudioSink> list)? onSinkList,
     TResult? Function(int requestId, List<PulseAudioInputSink> list)?
         onInputSinkList,
+    TResult? Function(int requestId, PulseAudioStreamCallback callback)?
+        streamCallback,
     TResult? Function(int requestId, List<PulseAudioSource> list)? onSourceList,
     TResult? Function(int requestId, PulseAudioServerInfo info)? onServerInfo,
     TResult? Function(int requestId)? setSinkVolume,
@@ -1774,6 +1841,8 @@ class _$OnSinkListResponseImpl implements OnSinkListResponse {
     TResult Function(int requestId, List<PulseAudioSink> list)? onSinkList,
     TResult Function(int requestId, List<PulseAudioInputSink> list)?
         onInputSinkList,
+    TResult Function(int requestId, PulseAudioStreamCallback callback)?
+        streamCallback,
     TResult Function(int requestId, List<PulseAudioSource> list)? onSourceList,
     TResult Function(int requestId, PulseAudioServerInfo info)? onServerInfo,
     TResult Function(int requestId)? setSinkVolume,
@@ -1803,6 +1872,7 @@ class _$OnSinkListResponseImpl implements OnSinkListResponse {
     required TResult Function(OnSourceRemovedResponse value) onSourceRemoved,
     required TResult Function(OnSinkListResponse value) onSinkList,
     required TResult Function(OnInputSinkListResponse value) onInputSinkList,
+    required TResult Function(StreamCallbackResponse value) streamCallback,
     required TResult Function(OnSourceListResponse value) onSourceList,
     required TResult Function(OnServerInfoResponse value) onServerInfo,
     required TResult Function(SetSinkVolumeResponse value) setSinkVolume,
@@ -1827,6 +1897,7 @@ class _$OnSinkListResponseImpl implements OnSinkListResponse {
     TResult? Function(OnSourceRemovedResponse value)? onSourceRemoved,
     TResult? Function(OnSinkListResponse value)? onSinkList,
     TResult? Function(OnInputSinkListResponse value)? onInputSinkList,
+    TResult? Function(StreamCallbackResponse value)? streamCallback,
     TResult? Function(OnSourceListResponse value)? onSourceList,
     TResult? Function(OnServerInfoResponse value)? onServerInfo,
     TResult? Function(SetSinkVolumeResponse value)? setSinkVolume,
@@ -1851,6 +1922,7 @@ class _$OnSinkListResponseImpl implements OnSinkListResponse {
     TResult Function(OnSourceRemovedResponse value)? onSourceRemoved,
     TResult Function(OnSinkListResponse value)? onSinkList,
     TResult Function(OnInputSinkListResponse value)? onInputSinkList,
+    TResult Function(StreamCallbackResponse value)? streamCallback,
     TResult Function(OnSourceListResponse value)? onSourceList,
     TResult Function(OnServerInfoResponse value)? onServerInfo,
     TResult Function(SetSinkVolumeResponse value)? setSinkVolume,
@@ -1983,6 +2055,8 @@ class _$OnInputSinkListResponseImpl implements OnInputSinkListResponse {
         onSinkList,
     required TResult Function(int requestId, List<PulseAudioInputSink> list)
         onInputSinkList,
+    required TResult Function(int requestId, PulseAudioStreamCallback callback)
+        streamCallback,
     required TResult Function(int requestId, List<PulseAudioSource> list)
         onSourceList,
     required TResult Function(int requestId, PulseAudioServerInfo info)
@@ -2010,6 +2084,8 @@ class _$OnInputSinkListResponseImpl implements OnInputSinkListResponse {
     TResult? Function(int requestId, List<PulseAudioSink> list)? onSinkList,
     TResult? Function(int requestId, List<PulseAudioInputSink> list)?
         onInputSinkList,
+    TResult? Function(int requestId, PulseAudioStreamCallback callback)?
+        streamCallback,
     TResult? Function(int requestId, List<PulseAudioSource> list)? onSourceList,
     TResult? Function(int requestId, PulseAudioServerInfo info)? onServerInfo,
     TResult? Function(int requestId)? setSinkVolume,
@@ -2035,6 +2111,8 @@ class _$OnInputSinkListResponseImpl implements OnInputSinkListResponse {
     TResult Function(int requestId, List<PulseAudioSink> list)? onSinkList,
     TResult Function(int requestId, List<PulseAudioInputSink> list)?
         onInputSinkList,
+    TResult Function(int requestId, PulseAudioStreamCallback callback)?
+        streamCallback,
     TResult Function(int requestId, List<PulseAudioSource> list)? onSourceList,
     TResult Function(int requestId, PulseAudioServerInfo info)? onServerInfo,
     TResult Function(int requestId)? setSinkVolume,
@@ -2064,6 +2142,7 @@ class _$OnInputSinkListResponseImpl implements OnInputSinkListResponse {
     required TResult Function(OnSourceRemovedResponse value) onSourceRemoved,
     required TResult Function(OnSinkListResponse value) onSinkList,
     required TResult Function(OnInputSinkListResponse value) onInputSinkList,
+    required TResult Function(StreamCallbackResponse value) streamCallback,
     required TResult Function(OnSourceListResponse value) onSourceList,
     required TResult Function(OnServerInfoResponse value) onServerInfo,
     required TResult Function(SetSinkVolumeResponse value) setSinkVolume,
@@ -2088,6 +2167,7 @@ class _$OnInputSinkListResponseImpl implements OnInputSinkListResponse {
     TResult? Function(OnSourceRemovedResponse value)? onSourceRemoved,
     TResult? Function(OnSinkListResponse value)? onSinkList,
     TResult? Function(OnInputSinkListResponse value)? onInputSinkList,
+    TResult? Function(StreamCallbackResponse value)? streamCallback,
     TResult? Function(OnSourceListResponse value)? onSourceList,
     TResult? Function(OnServerInfoResponse value)? onServerInfo,
     TResult? Function(SetSinkVolumeResponse value)? setSinkVolume,
@@ -2112,6 +2192,7 @@ class _$OnInputSinkListResponseImpl implements OnInputSinkListResponse {
     TResult Function(OnSourceRemovedResponse value)? onSourceRemoved,
     TResult Function(OnSinkListResponse value)? onSinkList,
     TResult Function(OnInputSinkListResponse value)? onInputSinkList,
+    TResult Function(StreamCallbackResponse value)? streamCallback,
     TResult Function(OnSourceListResponse value)? onSourceList,
     TResult Function(OnServerInfoResponse value)? onServerInfo,
     TResult Function(SetSinkVolumeResponse value)? setSinkVolume,
@@ -2143,6 +2224,283 @@ abstract class OnInputSinkListResponse implements IsolateResponse {
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$OnInputSinkListResponseImplCopyWith<_$OnInputSinkListResponseImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$StreamCallbackResponseImplCopyWith<$Res> {
+  factory _$$StreamCallbackResponseImplCopyWith(
+          _$StreamCallbackResponseImpl value,
+          $Res Function(_$StreamCallbackResponseImpl) then) =
+      __$$StreamCallbackResponseImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({int requestId, PulseAudioStreamCallback callback});
+
+  $PulseAudioStreamCallbackCopyWith<$Res> get callback;
+}
+
+/// @nodoc
+class __$$StreamCallbackResponseImplCopyWithImpl<$Res>
+    extends _$IsolateResponseCopyWithImpl<$Res, _$StreamCallbackResponseImpl>
+    implements _$$StreamCallbackResponseImplCopyWith<$Res> {
+  __$$StreamCallbackResponseImplCopyWithImpl(
+      _$StreamCallbackResponseImpl _value,
+      $Res Function(_$StreamCallbackResponseImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of IsolateResponse
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? requestId = null,
+    Object? callback = null,
+  }) {
+    return _then(_$StreamCallbackResponseImpl(
+      requestId: null == requestId
+          ? _value.requestId
+          : requestId // ignore: cast_nullable_to_non_nullable
+              as int,
+      callback: null == callback
+          ? _value.callback
+          : callback // ignore: cast_nullable_to_non_nullable
+              as PulseAudioStreamCallback,
+    ));
+  }
+
+  /// Create a copy of IsolateResponse
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $PulseAudioStreamCallbackCopyWith<$Res> get callback {
+    return $PulseAudioStreamCallbackCopyWith<$Res>(_value.callback, (value) {
+      return _then(_value.copyWith(callback: value));
+    });
+  }
+}
+
+/// @nodoc
+
+class _$StreamCallbackResponseImpl implements StreamCallbackResponse {
+  const _$StreamCallbackResponseImpl(
+      {required this.requestId, required this.callback});
+
+  @override
+  final int requestId;
+  @override
+  final PulseAudioStreamCallback callback;
+
+  @override
+  String toString() {
+    return 'IsolateResponse.streamCallback(requestId: $requestId, callback: $callback)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$StreamCallbackResponseImpl &&
+            (identical(other.requestId, requestId) ||
+                other.requestId == requestId) &&
+            (identical(other.callback, callback) ||
+                other.callback == callback));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, requestId, callback);
+
+  /// Create a copy of IsolateResponse
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$StreamCallbackResponseImplCopyWith<_$StreamCallbackResponseImpl>
+      get copyWith => __$$StreamCallbackResponseImplCopyWithImpl<
+          _$StreamCallbackResponseImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() ready,
+    required TResult Function(PulseAudioServerInfo serverInfo)
+        onServerInfoChanged,
+    required TResult Function(PulseAudioSink sink) onSinkChanged,
+    required TResult Function(int index) onSinkRemoved,
+    required TResult Function(PulseAudioSource source) onSourceChanged,
+    required TResult Function(int index) onSourceRemoved,
+    required TResult Function(int requestId, List<PulseAudioSink> list)
+        onSinkList,
+    required TResult Function(int requestId, List<PulseAudioInputSink> list)
+        onInputSinkList,
+    required TResult Function(int requestId, PulseAudioStreamCallback callback)
+        streamCallback,
+    required TResult Function(int requestId, List<PulseAudioSource> list)
+        onSourceList,
+    required TResult Function(int requestId, PulseAudioServerInfo info)
+        onServerInfo,
+    required TResult Function(int requestId) setSinkVolume,
+    required TResult Function(int requestId) setSourceVolume,
+    required TResult Function(int requestId) setSinkMute,
+    required TResult Function(int requestId) setSourceMute,
+    required TResult Function(int requestId) setDefaultSink,
+    required TResult Function(int requestId) setDefaultSource,
+    required TResult Function(int requestId) propListUpdate,
+  }) {
+    return streamCallback(requestId, callback);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? ready,
+    TResult? Function(PulseAudioServerInfo serverInfo)? onServerInfoChanged,
+    TResult? Function(PulseAudioSink sink)? onSinkChanged,
+    TResult? Function(int index)? onSinkRemoved,
+    TResult? Function(PulseAudioSource source)? onSourceChanged,
+    TResult? Function(int index)? onSourceRemoved,
+    TResult? Function(int requestId, List<PulseAudioSink> list)? onSinkList,
+    TResult? Function(int requestId, List<PulseAudioInputSink> list)?
+        onInputSinkList,
+    TResult? Function(int requestId, PulseAudioStreamCallback callback)?
+        streamCallback,
+    TResult? Function(int requestId, List<PulseAudioSource> list)? onSourceList,
+    TResult? Function(int requestId, PulseAudioServerInfo info)? onServerInfo,
+    TResult? Function(int requestId)? setSinkVolume,
+    TResult? Function(int requestId)? setSourceVolume,
+    TResult? Function(int requestId)? setSinkMute,
+    TResult? Function(int requestId)? setSourceMute,
+    TResult? Function(int requestId)? setDefaultSink,
+    TResult? Function(int requestId)? setDefaultSource,
+    TResult? Function(int requestId)? propListUpdate,
+  }) {
+    return streamCallback?.call(requestId, callback);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? ready,
+    TResult Function(PulseAudioServerInfo serverInfo)? onServerInfoChanged,
+    TResult Function(PulseAudioSink sink)? onSinkChanged,
+    TResult Function(int index)? onSinkRemoved,
+    TResult Function(PulseAudioSource source)? onSourceChanged,
+    TResult Function(int index)? onSourceRemoved,
+    TResult Function(int requestId, List<PulseAudioSink> list)? onSinkList,
+    TResult Function(int requestId, List<PulseAudioInputSink> list)?
+        onInputSinkList,
+    TResult Function(int requestId, PulseAudioStreamCallback callback)?
+        streamCallback,
+    TResult Function(int requestId, List<PulseAudioSource> list)? onSourceList,
+    TResult Function(int requestId, PulseAudioServerInfo info)? onServerInfo,
+    TResult Function(int requestId)? setSinkVolume,
+    TResult Function(int requestId)? setSourceVolume,
+    TResult Function(int requestId)? setSinkMute,
+    TResult Function(int requestId)? setSourceMute,
+    TResult Function(int requestId)? setDefaultSink,
+    TResult Function(int requestId)? setDefaultSource,
+    TResult Function(int requestId)? propListUpdate,
+    required TResult orElse(),
+  }) {
+    if (streamCallback != null) {
+      return streamCallback(requestId, callback);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(OnReadyResponse value) ready,
+    required TResult Function(OnServerInfoChangedResponse value)
+        onServerInfoChanged,
+    required TResult Function(OnSinkChangedResponse value) onSinkChanged,
+    required TResult Function(OnSinkRemovedResponse value) onSinkRemoved,
+    required TResult Function(OnSourceChangedResponse value) onSourceChanged,
+    required TResult Function(OnSourceRemovedResponse value) onSourceRemoved,
+    required TResult Function(OnSinkListResponse value) onSinkList,
+    required TResult Function(OnInputSinkListResponse value) onInputSinkList,
+    required TResult Function(StreamCallbackResponse value) streamCallback,
+    required TResult Function(OnSourceListResponse value) onSourceList,
+    required TResult Function(OnServerInfoResponse value) onServerInfo,
+    required TResult Function(SetSinkVolumeResponse value) setSinkVolume,
+    required TResult Function(SetSourceVolumeResponse value) setSourceVolume,
+    required TResult Function(SetSinkMuteResponse value) setSinkMute,
+    required TResult Function(SetSourceMuteResponse value) setSourceMute,
+    required TResult Function(SetDefaultSinkResponse value) setDefaultSink,
+    required TResult Function(SetDefaultSourceResponse value) setDefaultSource,
+    required TResult Function(PropListUpdateResponse value) propListUpdate,
+  }) {
+    return streamCallback(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(OnReadyResponse value)? ready,
+    TResult? Function(OnServerInfoChangedResponse value)? onServerInfoChanged,
+    TResult? Function(OnSinkChangedResponse value)? onSinkChanged,
+    TResult? Function(OnSinkRemovedResponse value)? onSinkRemoved,
+    TResult? Function(OnSourceChangedResponse value)? onSourceChanged,
+    TResult? Function(OnSourceRemovedResponse value)? onSourceRemoved,
+    TResult? Function(OnSinkListResponse value)? onSinkList,
+    TResult? Function(OnInputSinkListResponse value)? onInputSinkList,
+    TResult? Function(StreamCallbackResponse value)? streamCallback,
+    TResult? Function(OnSourceListResponse value)? onSourceList,
+    TResult? Function(OnServerInfoResponse value)? onServerInfo,
+    TResult? Function(SetSinkVolumeResponse value)? setSinkVolume,
+    TResult? Function(SetSourceVolumeResponse value)? setSourceVolume,
+    TResult? Function(SetSinkMuteResponse value)? setSinkMute,
+    TResult? Function(SetSourceMuteResponse value)? setSourceMute,
+    TResult? Function(SetDefaultSinkResponse value)? setDefaultSink,
+    TResult? Function(SetDefaultSourceResponse value)? setDefaultSource,
+    TResult? Function(PropListUpdateResponse value)? propListUpdate,
+  }) {
+    return streamCallback?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(OnReadyResponse value)? ready,
+    TResult Function(OnServerInfoChangedResponse value)? onServerInfoChanged,
+    TResult Function(OnSinkChangedResponse value)? onSinkChanged,
+    TResult Function(OnSinkRemovedResponse value)? onSinkRemoved,
+    TResult Function(OnSourceChangedResponse value)? onSourceChanged,
+    TResult Function(OnSourceRemovedResponse value)? onSourceRemoved,
+    TResult Function(OnSinkListResponse value)? onSinkList,
+    TResult Function(OnInputSinkListResponse value)? onInputSinkList,
+    TResult Function(StreamCallbackResponse value)? streamCallback,
+    TResult Function(OnSourceListResponse value)? onSourceList,
+    TResult Function(OnServerInfoResponse value)? onServerInfo,
+    TResult Function(SetSinkVolumeResponse value)? setSinkVolume,
+    TResult Function(SetSourceVolumeResponse value)? setSourceVolume,
+    TResult Function(SetSinkMuteResponse value)? setSinkMute,
+    TResult Function(SetSourceMuteResponse value)? setSourceMute,
+    TResult Function(SetDefaultSinkResponse value)? setDefaultSink,
+    TResult Function(SetDefaultSourceResponse value)? setDefaultSource,
+    TResult Function(PropListUpdateResponse value)? propListUpdate,
+    required TResult orElse(),
+  }) {
+    if (streamCallback != null) {
+      return streamCallback(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class StreamCallbackResponse implements IsolateResponse {
+  const factory StreamCallbackResponse(
+          {required final int requestId,
+          required final PulseAudioStreamCallback callback}) =
+      _$StreamCallbackResponseImpl;
+
+  int get requestId;
+  PulseAudioStreamCallback get callback;
+
+  /// Create a copy of IsolateResponse
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$StreamCallbackResponseImplCopyWith<_$StreamCallbackResponseImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
 
@@ -2244,6 +2602,8 @@ class _$OnSourceListResponseImpl implements OnSourceListResponse {
         onSinkList,
     required TResult Function(int requestId, List<PulseAudioInputSink> list)
         onInputSinkList,
+    required TResult Function(int requestId, PulseAudioStreamCallback callback)
+        streamCallback,
     required TResult Function(int requestId, List<PulseAudioSource> list)
         onSourceList,
     required TResult Function(int requestId, PulseAudioServerInfo info)
@@ -2271,6 +2631,8 @@ class _$OnSourceListResponseImpl implements OnSourceListResponse {
     TResult? Function(int requestId, List<PulseAudioSink> list)? onSinkList,
     TResult? Function(int requestId, List<PulseAudioInputSink> list)?
         onInputSinkList,
+    TResult? Function(int requestId, PulseAudioStreamCallback callback)?
+        streamCallback,
     TResult? Function(int requestId, List<PulseAudioSource> list)? onSourceList,
     TResult? Function(int requestId, PulseAudioServerInfo info)? onServerInfo,
     TResult? Function(int requestId)? setSinkVolume,
@@ -2296,6 +2658,8 @@ class _$OnSourceListResponseImpl implements OnSourceListResponse {
     TResult Function(int requestId, List<PulseAudioSink> list)? onSinkList,
     TResult Function(int requestId, List<PulseAudioInputSink> list)?
         onInputSinkList,
+    TResult Function(int requestId, PulseAudioStreamCallback callback)?
+        streamCallback,
     TResult Function(int requestId, List<PulseAudioSource> list)? onSourceList,
     TResult Function(int requestId, PulseAudioServerInfo info)? onServerInfo,
     TResult Function(int requestId)? setSinkVolume,
@@ -2325,6 +2689,7 @@ class _$OnSourceListResponseImpl implements OnSourceListResponse {
     required TResult Function(OnSourceRemovedResponse value) onSourceRemoved,
     required TResult Function(OnSinkListResponse value) onSinkList,
     required TResult Function(OnInputSinkListResponse value) onInputSinkList,
+    required TResult Function(StreamCallbackResponse value) streamCallback,
     required TResult Function(OnSourceListResponse value) onSourceList,
     required TResult Function(OnServerInfoResponse value) onServerInfo,
     required TResult Function(SetSinkVolumeResponse value) setSinkVolume,
@@ -2349,6 +2714,7 @@ class _$OnSourceListResponseImpl implements OnSourceListResponse {
     TResult? Function(OnSourceRemovedResponse value)? onSourceRemoved,
     TResult? Function(OnSinkListResponse value)? onSinkList,
     TResult? Function(OnInputSinkListResponse value)? onInputSinkList,
+    TResult? Function(StreamCallbackResponse value)? streamCallback,
     TResult? Function(OnSourceListResponse value)? onSourceList,
     TResult? Function(OnServerInfoResponse value)? onServerInfo,
     TResult? Function(SetSinkVolumeResponse value)? setSinkVolume,
@@ -2373,6 +2739,7 @@ class _$OnSourceListResponseImpl implements OnSourceListResponse {
     TResult Function(OnSourceRemovedResponse value)? onSourceRemoved,
     TResult Function(OnSinkListResponse value)? onSinkList,
     TResult Function(OnInputSinkListResponse value)? onInputSinkList,
+    TResult Function(StreamCallbackResponse value)? streamCallback,
     TResult Function(OnSourceListResponse value)? onSourceList,
     TResult Function(OnServerInfoResponse value)? onServerInfo,
     TResult Function(SetSinkVolumeResponse value)? setSinkVolume,
@@ -2509,6 +2876,8 @@ class _$OnServerInfoResponseImpl implements OnServerInfoResponse {
         onSinkList,
     required TResult Function(int requestId, List<PulseAudioInputSink> list)
         onInputSinkList,
+    required TResult Function(int requestId, PulseAudioStreamCallback callback)
+        streamCallback,
     required TResult Function(int requestId, List<PulseAudioSource> list)
         onSourceList,
     required TResult Function(int requestId, PulseAudioServerInfo info)
@@ -2536,6 +2905,8 @@ class _$OnServerInfoResponseImpl implements OnServerInfoResponse {
     TResult? Function(int requestId, List<PulseAudioSink> list)? onSinkList,
     TResult? Function(int requestId, List<PulseAudioInputSink> list)?
         onInputSinkList,
+    TResult? Function(int requestId, PulseAudioStreamCallback callback)?
+        streamCallback,
     TResult? Function(int requestId, List<PulseAudioSource> list)? onSourceList,
     TResult? Function(int requestId, PulseAudioServerInfo info)? onServerInfo,
     TResult? Function(int requestId)? setSinkVolume,
@@ -2561,6 +2932,8 @@ class _$OnServerInfoResponseImpl implements OnServerInfoResponse {
     TResult Function(int requestId, List<PulseAudioSink> list)? onSinkList,
     TResult Function(int requestId, List<PulseAudioInputSink> list)?
         onInputSinkList,
+    TResult Function(int requestId, PulseAudioStreamCallback callback)?
+        streamCallback,
     TResult Function(int requestId, List<PulseAudioSource> list)? onSourceList,
     TResult Function(int requestId, PulseAudioServerInfo info)? onServerInfo,
     TResult Function(int requestId)? setSinkVolume,
@@ -2590,6 +2963,7 @@ class _$OnServerInfoResponseImpl implements OnServerInfoResponse {
     required TResult Function(OnSourceRemovedResponse value) onSourceRemoved,
     required TResult Function(OnSinkListResponse value) onSinkList,
     required TResult Function(OnInputSinkListResponse value) onInputSinkList,
+    required TResult Function(StreamCallbackResponse value) streamCallback,
     required TResult Function(OnSourceListResponse value) onSourceList,
     required TResult Function(OnServerInfoResponse value) onServerInfo,
     required TResult Function(SetSinkVolumeResponse value) setSinkVolume,
@@ -2614,6 +2988,7 @@ class _$OnServerInfoResponseImpl implements OnServerInfoResponse {
     TResult? Function(OnSourceRemovedResponse value)? onSourceRemoved,
     TResult? Function(OnSinkListResponse value)? onSinkList,
     TResult? Function(OnInputSinkListResponse value)? onInputSinkList,
+    TResult? Function(StreamCallbackResponse value)? streamCallback,
     TResult? Function(OnSourceListResponse value)? onSourceList,
     TResult? Function(OnServerInfoResponse value)? onServerInfo,
     TResult? Function(SetSinkVolumeResponse value)? setSinkVolume,
@@ -2638,6 +3013,7 @@ class _$OnServerInfoResponseImpl implements OnServerInfoResponse {
     TResult Function(OnSourceRemovedResponse value)? onSourceRemoved,
     TResult Function(OnSinkListResponse value)? onSinkList,
     TResult Function(OnInputSinkListResponse value)? onInputSinkList,
+    TResult Function(StreamCallbackResponse value)? streamCallback,
     TResult Function(OnSourceListResponse value)? onSourceList,
     TResult Function(OnServerInfoResponse value)? onServerInfo,
     TResult Function(SetSinkVolumeResponse value)? setSinkVolume,
@@ -2753,6 +3129,8 @@ class _$SetSinkVolumeResponseImpl implements SetSinkVolumeResponse {
         onSinkList,
     required TResult Function(int requestId, List<PulseAudioInputSink> list)
         onInputSinkList,
+    required TResult Function(int requestId, PulseAudioStreamCallback callback)
+        streamCallback,
     required TResult Function(int requestId, List<PulseAudioSource> list)
         onSourceList,
     required TResult Function(int requestId, PulseAudioServerInfo info)
@@ -2780,6 +3158,8 @@ class _$SetSinkVolumeResponseImpl implements SetSinkVolumeResponse {
     TResult? Function(int requestId, List<PulseAudioSink> list)? onSinkList,
     TResult? Function(int requestId, List<PulseAudioInputSink> list)?
         onInputSinkList,
+    TResult? Function(int requestId, PulseAudioStreamCallback callback)?
+        streamCallback,
     TResult? Function(int requestId, List<PulseAudioSource> list)? onSourceList,
     TResult? Function(int requestId, PulseAudioServerInfo info)? onServerInfo,
     TResult? Function(int requestId)? setSinkVolume,
@@ -2805,6 +3185,8 @@ class _$SetSinkVolumeResponseImpl implements SetSinkVolumeResponse {
     TResult Function(int requestId, List<PulseAudioSink> list)? onSinkList,
     TResult Function(int requestId, List<PulseAudioInputSink> list)?
         onInputSinkList,
+    TResult Function(int requestId, PulseAudioStreamCallback callback)?
+        streamCallback,
     TResult Function(int requestId, List<PulseAudioSource> list)? onSourceList,
     TResult Function(int requestId, PulseAudioServerInfo info)? onServerInfo,
     TResult Function(int requestId)? setSinkVolume,
@@ -2834,6 +3216,7 @@ class _$SetSinkVolumeResponseImpl implements SetSinkVolumeResponse {
     required TResult Function(OnSourceRemovedResponse value) onSourceRemoved,
     required TResult Function(OnSinkListResponse value) onSinkList,
     required TResult Function(OnInputSinkListResponse value) onInputSinkList,
+    required TResult Function(StreamCallbackResponse value) streamCallback,
     required TResult Function(OnSourceListResponse value) onSourceList,
     required TResult Function(OnServerInfoResponse value) onServerInfo,
     required TResult Function(SetSinkVolumeResponse value) setSinkVolume,
@@ -2858,6 +3241,7 @@ class _$SetSinkVolumeResponseImpl implements SetSinkVolumeResponse {
     TResult? Function(OnSourceRemovedResponse value)? onSourceRemoved,
     TResult? Function(OnSinkListResponse value)? onSinkList,
     TResult? Function(OnInputSinkListResponse value)? onInputSinkList,
+    TResult? Function(StreamCallbackResponse value)? streamCallback,
     TResult? Function(OnSourceListResponse value)? onSourceList,
     TResult? Function(OnServerInfoResponse value)? onServerInfo,
     TResult? Function(SetSinkVolumeResponse value)? setSinkVolume,
@@ -2882,6 +3266,7 @@ class _$SetSinkVolumeResponseImpl implements SetSinkVolumeResponse {
     TResult Function(OnSourceRemovedResponse value)? onSourceRemoved,
     TResult Function(OnSinkListResponse value)? onSinkList,
     TResult Function(OnInputSinkListResponse value)? onInputSinkList,
+    TResult Function(StreamCallbackResponse value)? streamCallback,
     TResult Function(OnSourceListResponse value)? onSourceList,
     TResult Function(OnServerInfoResponse value)? onServerInfo,
     TResult Function(SetSinkVolumeResponse value)? setSinkVolume,
@@ -2996,6 +3381,8 @@ class _$SetSourceVolumeResponseImpl implements SetSourceVolumeResponse {
         onSinkList,
     required TResult Function(int requestId, List<PulseAudioInputSink> list)
         onInputSinkList,
+    required TResult Function(int requestId, PulseAudioStreamCallback callback)
+        streamCallback,
     required TResult Function(int requestId, List<PulseAudioSource> list)
         onSourceList,
     required TResult Function(int requestId, PulseAudioServerInfo info)
@@ -3023,6 +3410,8 @@ class _$SetSourceVolumeResponseImpl implements SetSourceVolumeResponse {
     TResult? Function(int requestId, List<PulseAudioSink> list)? onSinkList,
     TResult? Function(int requestId, List<PulseAudioInputSink> list)?
         onInputSinkList,
+    TResult? Function(int requestId, PulseAudioStreamCallback callback)?
+        streamCallback,
     TResult? Function(int requestId, List<PulseAudioSource> list)? onSourceList,
     TResult? Function(int requestId, PulseAudioServerInfo info)? onServerInfo,
     TResult? Function(int requestId)? setSinkVolume,
@@ -3048,6 +3437,8 @@ class _$SetSourceVolumeResponseImpl implements SetSourceVolumeResponse {
     TResult Function(int requestId, List<PulseAudioSink> list)? onSinkList,
     TResult Function(int requestId, List<PulseAudioInputSink> list)?
         onInputSinkList,
+    TResult Function(int requestId, PulseAudioStreamCallback callback)?
+        streamCallback,
     TResult Function(int requestId, List<PulseAudioSource> list)? onSourceList,
     TResult Function(int requestId, PulseAudioServerInfo info)? onServerInfo,
     TResult Function(int requestId)? setSinkVolume,
@@ -3077,6 +3468,7 @@ class _$SetSourceVolumeResponseImpl implements SetSourceVolumeResponse {
     required TResult Function(OnSourceRemovedResponse value) onSourceRemoved,
     required TResult Function(OnSinkListResponse value) onSinkList,
     required TResult Function(OnInputSinkListResponse value) onInputSinkList,
+    required TResult Function(StreamCallbackResponse value) streamCallback,
     required TResult Function(OnSourceListResponse value) onSourceList,
     required TResult Function(OnServerInfoResponse value) onServerInfo,
     required TResult Function(SetSinkVolumeResponse value) setSinkVolume,
@@ -3101,6 +3493,7 @@ class _$SetSourceVolumeResponseImpl implements SetSourceVolumeResponse {
     TResult? Function(OnSourceRemovedResponse value)? onSourceRemoved,
     TResult? Function(OnSinkListResponse value)? onSinkList,
     TResult? Function(OnInputSinkListResponse value)? onInputSinkList,
+    TResult? Function(StreamCallbackResponse value)? streamCallback,
     TResult? Function(OnSourceListResponse value)? onSourceList,
     TResult? Function(OnServerInfoResponse value)? onServerInfo,
     TResult? Function(SetSinkVolumeResponse value)? setSinkVolume,
@@ -3125,6 +3518,7 @@ class _$SetSourceVolumeResponseImpl implements SetSourceVolumeResponse {
     TResult Function(OnSourceRemovedResponse value)? onSourceRemoved,
     TResult Function(OnSinkListResponse value)? onSinkList,
     TResult Function(OnInputSinkListResponse value)? onInputSinkList,
+    TResult Function(StreamCallbackResponse value)? streamCallback,
     TResult Function(OnSourceListResponse value)? onSourceList,
     TResult Function(OnServerInfoResponse value)? onServerInfo,
     TResult Function(SetSinkVolumeResponse value)? setSinkVolume,
@@ -3237,6 +3631,8 @@ class _$SetSinkMuteResponseImpl implements SetSinkMuteResponse {
         onSinkList,
     required TResult Function(int requestId, List<PulseAudioInputSink> list)
         onInputSinkList,
+    required TResult Function(int requestId, PulseAudioStreamCallback callback)
+        streamCallback,
     required TResult Function(int requestId, List<PulseAudioSource> list)
         onSourceList,
     required TResult Function(int requestId, PulseAudioServerInfo info)
@@ -3264,6 +3660,8 @@ class _$SetSinkMuteResponseImpl implements SetSinkMuteResponse {
     TResult? Function(int requestId, List<PulseAudioSink> list)? onSinkList,
     TResult? Function(int requestId, List<PulseAudioInputSink> list)?
         onInputSinkList,
+    TResult? Function(int requestId, PulseAudioStreamCallback callback)?
+        streamCallback,
     TResult? Function(int requestId, List<PulseAudioSource> list)? onSourceList,
     TResult? Function(int requestId, PulseAudioServerInfo info)? onServerInfo,
     TResult? Function(int requestId)? setSinkVolume,
@@ -3289,6 +3687,8 @@ class _$SetSinkMuteResponseImpl implements SetSinkMuteResponse {
     TResult Function(int requestId, List<PulseAudioSink> list)? onSinkList,
     TResult Function(int requestId, List<PulseAudioInputSink> list)?
         onInputSinkList,
+    TResult Function(int requestId, PulseAudioStreamCallback callback)?
+        streamCallback,
     TResult Function(int requestId, List<PulseAudioSource> list)? onSourceList,
     TResult Function(int requestId, PulseAudioServerInfo info)? onServerInfo,
     TResult Function(int requestId)? setSinkVolume,
@@ -3318,6 +3718,7 @@ class _$SetSinkMuteResponseImpl implements SetSinkMuteResponse {
     required TResult Function(OnSourceRemovedResponse value) onSourceRemoved,
     required TResult Function(OnSinkListResponse value) onSinkList,
     required TResult Function(OnInputSinkListResponse value) onInputSinkList,
+    required TResult Function(StreamCallbackResponse value) streamCallback,
     required TResult Function(OnSourceListResponse value) onSourceList,
     required TResult Function(OnServerInfoResponse value) onServerInfo,
     required TResult Function(SetSinkVolumeResponse value) setSinkVolume,
@@ -3342,6 +3743,7 @@ class _$SetSinkMuteResponseImpl implements SetSinkMuteResponse {
     TResult? Function(OnSourceRemovedResponse value)? onSourceRemoved,
     TResult? Function(OnSinkListResponse value)? onSinkList,
     TResult? Function(OnInputSinkListResponse value)? onInputSinkList,
+    TResult? Function(StreamCallbackResponse value)? streamCallback,
     TResult? Function(OnSourceListResponse value)? onSourceList,
     TResult? Function(OnServerInfoResponse value)? onServerInfo,
     TResult? Function(SetSinkVolumeResponse value)? setSinkVolume,
@@ -3366,6 +3768,7 @@ class _$SetSinkMuteResponseImpl implements SetSinkMuteResponse {
     TResult Function(OnSourceRemovedResponse value)? onSourceRemoved,
     TResult Function(OnSinkListResponse value)? onSinkList,
     TResult Function(OnInputSinkListResponse value)? onInputSinkList,
+    TResult Function(StreamCallbackResponse value)? streamCallback,
     TResult Function(OnSourceListResponse value)? onSourceList,
     TResult Function(OnServerInfoResponse value)? onServerInfo,
     TResult Function(SetSinkVolumeResponse value)? setSinkVolume,
@@ -3479,6 +3882,8 @@ class _$SetSourceMuteResponseImpl implements SetSourceMuteResponse {
         onSinkList,
     required TResult Function(int requestId, List<PulseAudioInputSink> list)
         onInputSinkList,
+    required TResult Function(int requestId, PulseAudioStreamCallback callback)
+        streamCallback,
     required TResult Function(int requestId, List<PulseAudioSource> list)
         onSourceList,
     required TResult Function(int requestId, PulseAudioServerInfo info)
@@ -3506,6 +3911,8 @@ class _$SetSourceMuteResponseImpl implements SetSourceMuteResponse {
     TResult? Function(int requestId, List<PulseAudioSink> list)? onSinkList,
     TResult? Function(int requestId, List<PulseAudioInputSink> list)?
         onInputSinkList,
+    TResult? Function(int requestId, PulseAudioStreamCallback callback)?
+        streamCallback,
     TResult? Function(int requestId, List<PulseAudioSource> list)? onSourceList,
     TResult? Function(int requestId, PulseAudioServerInfo info)? onServerInfo,
     TResult? Function(int requestId)? setSinkVolume,
@@ -3531,6 +3938,8 @@ class _$SetSourceMuteResponseImpl implements SetSourceMuteResponse {
     TResult Function(int requestId, List<PulseAudioSink> list)? onSinkList,
     TResult Function(int requestId, List<PulseAudioInputSink> list)?
         onInputSinkList,
+    TResult Function(int requestId, PulseAudioStreamCallback callback)?
+        streamCallback,
     TResult Function(int requestId, List<PulseAudioSource> list)? onSourceList,
     TResult Function(int requestId, PulseAudioServerInfo info)? onServerInfo,
     TResult Function(int requestId)? setSinkVolume,
@@ -3560,6 +3969,7 @@ class _$SetSourceMuteResponseImpl implements SetSourceMuteResponse {
     required TResult Function(OnSourceRemovedResponse value) onSourceRemoved,
     required TResult Function(OnSinkListResponse value) onSinkList,
     required TResult Function(OnInputSinkListResponse value) onInputSinkList,
+    required TResult Function(StreamCallbackResponse value) streamCallback,
     required TResult Function(OnSourceListResponse value) onSourceList,
     required TResult Function(OnServerInfoResponse value) onServerInfo,
     required TResult Function(SetSinkVolumeResponse value) setSinkVolume,
@@ -3584,6 +3994,7 @@ class _$SetSourceMuteResponseImpl implements SetSourceMuteResponse {
     TResult? Function(OnSourceRemovedResponse value)? onSourceRemoved,
     TResult? Function(OnSinkListResponse value)? onSinkList,
     TResult? Function(OnInputSinkListResponse value)? onInputSinkList,
+    TResult? Function(StreamCallbackResponse value)? streamCallback,
     TResult? Function(OnSourceListResponse value)? onSourceList,
     TResult? Function(OnServerInfoResponse value)? onServerInfo,
     TResult? Function(SetSinkVolumeResponse value)? setSinkVolume,
@@ -3608,6 +4019,7 @@ class _$SetSourceMuteResponseImpl implements SetSourceMuteResponse {
     TResult Function(OnSourceRemovedResponse value)? onSourceRemoved,
     TResult Function(OnSinkListResponse value)? onSinkList,
     TResult Function(OnInputSinkListResponse value)? onInputSinkList,
+    TResult Function(StreamCallbackResponse value)? streamCallback,
     TResult Function(OnSourceListResponse value)? onSourceList,
     TResult Function(OnServerInfoResponse value)? onServerInfo,
     TResult Function(SetSinkVolumeResponse value)? setSinkVolume,
@@ -3722,6 +4134,8 @@ class _$SetDefaultSinkResponseImpl implements SetDefaultSinkResponse {
         onSinkList,
     required TResult Function(int requestId, List<PulseAudioInputSink> list)
         onInputSinkList,
+    required TResult Function(int requestId, PulseAudioStreamCallback callback)
+        streamCallback,
     required TResult Function(int requestId, List<PulseAudioSource> list)
         onSourceList,
     required TResult Function(int requestId, PulseAudioServerInfo info)
@@ -3749,6 +4163,8 @@ class _$SetDefaultSinkResponseImpl implements SetDefaultSinkResponse {
     TResult? Function(int requestId, List<PulseAudioSink> list)? onSinkList,
     TResult? Function(int requestId, List<PulseAudioInputSink> list)?
         onInputSinkList,
+    TResult? Function(int requestId, PulseAudioStreamCallback callback)?
+        streamCallback,
     TResult? Function(int requestId, List<PulseAudioSource> list)? onSourceList,
     TResult? Function(int requestId, PulseAudioServerInfo info)? onServerInfo,
     TResult? Function(int requestId)? setSinkVolume,
@@ -3774,6 +4190,8 @@ class _$SetDefaultSinkResponseImpl implements SetDefaultSinkResponse {
     TResult Function(int requestId, List<PulseAudioSink> list)? onSinkList,
     TResult Function(int requestId, List<PulseAudioInputSink> list)?
         onInputSinkList,
+    TResult Function(int requestId, PulseAudioStreamCallback callback)?
+        streamCallback,
     TResult Function(int requestId, List<PulseAudioSource> list)? onSourceList,
     TResult Function(int requestId, PulseAudioServerInfo info)? onServerInfo,
     TResult Function(int requestId)? setSinkVolume,
@@ -3803,6 +4221,7 @@ class _$SetDefaultSinkResponseImpl implements SetDefaultSinkResponse {
     required TResult Function(OnSourceRemovedResponse value) onSourceRemoved,
     required TResult Function(OnSinkListResponse value) onSinkList,
     required TResult Function(OnInputSinkListResponse value) onInputSinkList,
+    required TResult Function(StreamCallbackResponse value) streamCallback,
     required TResult Function(OnSourceListResponse value) onSourceList,
     required TResult Function(OnServerInfoResponse value) onServerInfo,
     required TResult Function(SetSinkVolumeResponse value) setSinkVolume,
@@ -3827,6 +4246,7 @@ class _$SetDefaultSinkResponseImpl implements SetDefaultSinkResponse {
     TResult? Function(OnSourceRemovedResponse value)? onSourceRemoved,
     TResult? Function(OnSinkListResponse value)? onSinkList,
     TResult? Function(OnInputSinkListResponse value)? onInputSinkList,
+    TResult? Function(StreamCallbackResponse value)? streamCallback,
     TResult? Function(OnSourceListResponse value)? onSourceList,
     TResult? Function(OnServerInfoResponse value)? onServerInfo,
     TResult? Function(SetSinkVolumeResponse value)? setSinkVolume,
@@ -3851,6 +4271,7 @@ class _$SetDefaultSinkResponseImpl implements SetDefaultSinkResponse {
     TResult Function(OnSourceRemovedResponse value)? onSourceRemoved,
     TResult Function(OnSinkListResponse value)? onSinkList,
     TResult Function(OnInputSinkListResponse value)? onInputSinkList,
+    TResult Function(StreamCallbackResponse value)? streamCallback,
     TResult Function(OnSourceListResponse value)? onSourceList,
     TResult Function(OnServerInfoResponse value)? onServerInfo,
     TResult Function(SetSinkVolumeResponse value)? setSinkVolume,
@@ -3965,6 +4386,8 @@ class _$SetDefaultSourceResponseImpl implements SetDefaultSourceResponse {
         onSinkList,
     required TResult Function(int requestId, List<PulseAudioInputSink> list)
         onInputSinkList,
+    required TResult Function(int requestId, PulseAudioStreamCallback callback)
+        streamCallback,
     required TResult Function(int requestId, List<PulseAudioSource> list)
         onSourceList,
     required TResult Function(int requestId, PulseAudioServerInfo info)
@@ -3992,6 +4415,8 @@ class _$SetDefaultSourceResponseImpl implements SetDefaultSourceResponse {
     TResult? Function(int requestId, List<PulseAudioSink> list)? onSinkList,
     TResult? Function(int requestId, List<PulseAudioInputSink> list)?
         onInputSinkList,
+    TResult? Function(int requestId, PulseAudioStreamCallback callback)?
+        streamCallback,
     TResult? Function(int requestId, List<PulseAudioSource> list)? onSourceList,
     TResult? Function(int requestId, PulseAudioServerInfo info)? onServerInfo,
     TResult? Function(int requestId)? setSinkVolume,
@@ -4017,6 +4442,8 @@ class _$SetDefaultSourceResponseImpl implements SetDefaultSourceResponse {
     TResult Function(int requestId, List<PulseAudioSink> list)? onSinkList,
     TResult Function(int requestId, List<PulseAudioInputSink> list)?
         onInputSinkList,
+    TResult Function(int requestId, PulseAudioStreamCallback callback)?
+        streamCallback,
     TResult Function(int requestId, List<PulseAudioSource> list)? onSourceList,
     TResult Function(int requestId, PulseAudioServerInfo info)? onServerInfo,
     TResult Function(int requestId)? setSinkVolume,
@@ -4046,6 +4473,7 @@ class _$SetDefaultSourceResponseImpl implements SetDefaultSourceResponse {
     required TResult Function(OnSourceRemovedResponse value) onSourceRemoved,
     required TResult Function(OnSinkListResponse value) onSinkList,
     required TResult Function(OnInputSinkListResponse value) onInputSinkList,
+    required TResult Function(StreamCallbackResponse value) streamCallback,
     required TResult Function(OnSourceListResponse value) onSourceList,
     required TResult Function(OnServerInfoResponse value) onServerInfo,
     required TResult Function(SetSinkVolumeResponse value) setSinkVolume,
@@ -4070,6 +4498,7 @@ class _$SetDefaultSourceResponseImpl implements SetDefaultSourceResponse {
     TResult? Function(OnSourceRemovedResponse value)? onSourceRemoved,
     TResult? Function(OnSinkListResponse value)? onSinkList,
     TResult? Function(OnInputSinkListResponse value)? onInputSinkList,
+    TResult? Function(StreamCallbackResponse value)? streamCallback,
     TResult? Function(OnSourceListResponse value)? onSourceList,
     TResult? Function(OnServerInfoResponse value)? onServerInfo,
     TResult? Function(SetSinkVolumeResponse value)? setSinkVolume,
@@ -4094,6 +4523,7 @@ class _$SetDefaultSourceResponseImpl implements SetDefaultSourceResponse {
     TResult Function(OnSourceRemovedResponse value)? onSourceRemoved,
     TResult Function(OnSinkListResponse value)? onSinkList,
     TResult Function(OnInputSinkListResponse value)? onInputSinkList,
+    TResult Function(StreamCallbackResponse value)? streamCallback,
     TResult Function(OnSourceListResponse value)? onSourceList,
     TResult Function(OnServerInfoResponse value)? onServerInfo,
     TResult Function(SetSinkVolumeResponse value)? setSinkVolume,
@@ -4208,6 +4638,8 @@ class _$PropListUpdateResponseImpl implements PropListUpdateResponse {
         onSinkList,
     required TResult Function(int requestId, List<PulseAudioInputSink> list)
         onInputSinkList,
+    required TResult Function(int requestId, PulseAudioStreamCallback callback)
+        streamCallback,
     required TResult Function(int requestId, List<PulseAudioSource> list)
         onSourceList,
     required TResult Function(int requestId, PulseAudioServerInfo info)
@@ -4235,6 +4667,8 @@ class _$PropListUpdateResponseImpl implements PropListUpdateResponse {
     TResult? Function(int requestId, List<PulseAudioSink> list)? onSinkList,
     TResult? Function(int requestId, List<PulseAudioInputSink> list)?
         onInputSinkList,
+    TResult? Function(int requestId, PulseAudioStreamCallback callback)?
+        streamCallback,
     TResult? Function(int requestId, List<PulseAudioSource> list)? onSourceList,
     TResult? Function(int requestId, PulseAudioServerInfo info)? onServerInfo,
     TResult? Function(int requestId)? setSinkVolume,
@@ -4260,6 +4694,8 @@ class _$PropListUpdateResponseImpl implements PropListUpdateResponse {
     TResult Function(int requestId, List<PulseAudioSink> list)? onSinkList,
     TResult Function(int requestId, List<PulseAudioInputSink> list)?
         onInputSinkList,
+    TResult Function(int requestId, PulseAudioStreamCallback callback)?
+        streamCallback,
     TResult Function(int requestId, List<PulseAudioSource> list)? onSourceList,
     TResult Function(int requestId, PulseAudioServerInfo info)? onServerInfo,
     TResult Function(int requestId)? setSinkVolume,
@@ -4289,6 +4725,7 @@ class _$PropListUpdateResponseImpl implements PropListUpdateResponse {
     required TResult Function(OnSourceRemovedResponse value) onSourceRemoved,
     required TResult Function(OnSinkListResponse value) onSinkList,
     required TResult Function(OnInputSinkListResponse value) onInputSinkList,
+    required TResult Function(StreamCallbackResponse value) streamCallback,
     required TResult Function(OnSourceListResponse value) onSourceList,
     required TResult Function(OnServerInfoResponse value) onServerInfo,
     required TResult Function(SetSinkVolumeResponse value) setSinkVolume,
@@ -4313,6 +4750,7 @@ class _$PropListUpdateResponseImpl implements PropListUpdateResponse {
     TResult? Function(OnSourceRemovedResponse value)? onSourceRemoved,
     TResult? Function(OnSinkListResponse value)? onSinkList,
     TResult? Function(OnInputSinkListResponse value)? onInputSinkList,
+    TResult? Function(StreamCallbackResponse value)? streamCallback,
     TResult? Function(OnSourceListResponse value)? onSourceList,
     TResult? Function(OnServerInfoResponse value)? onServerInfo,
     TResult? Function(SetSinkVolumeResponse value)? setSinkVolume,
@@ -4337,6 +4775,7 @@ class _$PropListUpdateResponseImpl implements PropListUpdateResponse {
     TResult Function(OnSourceRemovedResponse value)? onSourceRemoved,
     TResult Function(OnSinkListResponse value)? onSinkList,
     TResult Function(OnInputSinkListResponse value)? onInputSinkList,
+    TResult Function(StreamCallbackResponse value)? streamCallback,
     TResult Function(OnSourceListResponse value)? onSourceList,
     TResult Function(OnServerInfoResponse value)? onServerInfo,
     TResult Function(SetSinkVolumeResponse value)? setSinkVolume,

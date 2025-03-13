@@ -13,10 +13,16 @@ sealed class IsolateRequest with _$IsolateRequest {
       GetSourceListRequest;
   const factory IsolateRequest.getServerInfo({required int requestId}) =
       GetServerInfoRequest;
+
   const factory IsolateRequest.setSinkVolume(
       {required int requestId,
       required String sinkName,
       required double volume}) = SetSinkVolumeRequest;
+
+  const factory IsolateRequest.createStreamCallback(
+      {required int requestId,
+      required String sourceIndex,
+      required String sinkIndex}) = CreateStreamCallbackRequest;
   const factory IsolateRequest.setSourceVolume(
       {required int requestId,
       required String sourceName,

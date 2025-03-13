@@ -1,10 +1,21 @@
+import 'dart:io';
+
 import 'package:pulseaudio/pulseaudio.dart';
-import 'package:pulseaudio/src/generated_bindings.dart';
+
+Future<void> waiter() async {
+  while (true) {
+    print("get");
+    stdin.readLineSync();
+  }
+}
 
 void main() async {
   final client = PulseAudioClient();
   client.onServerInfoChanged.listen((event) {
     print(event);
+  });
+  client.onStreamData.listen((onData) {
+    print("ondata $onData");
   });
   client.onSinkChanged.listen((event) {
     print(event);
@@ -23,15 +34,15 @@ void main() async {
   final inpuSinks = await client.getInputSinkList();
   print('\nAvailable Sinks:');
   for (var source in inpuSinks) {
-    print('Sink Name: ${source.name} ${source.proplist["application.name"]}');
+    print(
+        'Sink Name: ${source.name} ${source.proplist["application.name"]} ${source.index}');
   }
   final sourceList = await client.getSourceList();
   print('\nAvailable Sources:');
   for (var source in sourceList) {
     print('Source Name: ${source.name}, Description: ${source.description}');
   }
-  await client.propListUpdate(
-      pa_update_mode.PA_UPDATE_SET, "application.name", "tester");
+
   final sinkList = await client.getSinkList();
   print('\nAvailable Sinks:');
   for (var sink in sinkList) {
@@ -40,5 +51,7 @@ void main() async {
 
   await client.setSinkVolume(serverInfo.defaultSinkName, 0.5);
 
+  await client.createStreamCallback("357", "357");
+  await waiter();
   client.dispose();
 }

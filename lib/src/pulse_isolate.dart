@@ -10,6 +10,7 @@ import 'package:pulseaudio/src/model/isolate_response.dart';
 import 'package:pulseaudio/src/model/server_info.dart';
 import 'package:pulseaudio/src/model/sink.dart';
 import 'package:pulseaudio/src/model/source.dart';
+import 'package:pulseaudio/src/model/stream.dart';
 
 final PulseAudioBindings pa =
     PulseAudioBindings(DynamicLibrary.open('libpulse.so.0'));
@@ -33,8 +34,8 @@ class PulseIsolate {
     if (_instance != null) return _instance!;
     final mainloop = pa.pa_mainloop_new();
     final mainloopApi = pa.pa_mainloop_get_api(mainloop);
-    final context =
-        pa.pa_context_new(mainloopApi, 'PulseClientDart'.toNativeUtf8().cast());
+    final context = pa.pa_context_new(
+        mainloopApi, 'Antandros Virtual Device Client'.toNativeUtf8().cast());
     pa.pa_context_connect(
         context, nullptr, pa_context_flags.PA_CONTEXT_NOAUTOSPAWN, nullptr);
 
@@ -88,6 +89,9 @@ class PulseIsolate {
         case PropListUpdate():
           _propListSets(
               message.requestId, message.mode, message.key, message.value);
+        case CreateStreamCallbackRequest():
+          _streamCallback(
+              message.requestId, message.sinkIndex, message.sourceIndex);
       }
     });
 
@@ -221,6 +225,34 @@ class PulseIsolate {
     };
   }
 
+  static void _streamCallback(
+      int requestId, String streamIndex, String sourceIndex) {
+    final requestIdNative = calloc<Int>()
+      ..value = requestId; // Allocate memory explicitly
+
+    final Pointer<pa_sample_spec> spec = calloc<pa_sample_spec>();
+
+    spec.ref.channels = 2;
+    spec.ref.rate = 25;
+    spec.ref.formatAsInt = 5;
+
+    final Pointer<pa_buffer_attr> buffer = calloc<pa_buffer_attr>();
+    buffer.ref.fragsize = sizeOf<Float>();
+    buffer.ref.maxlength = sizeOf<Uint32>() - 1;
+
+    var stream = pa.pa_stream_new(
+        _instance!.context, "Peak Detect".toNativeUtf8().cast(), spec, nullptr);
+    if (streamIndex == "") {
+      pa.pa_stream_set_monitor_stream(stream, int.parse(streamIndex));
+    }
+
+    pa.pa_stream_set_read_callback(stream,
+        Pointer.fromFunction(_onStreamCallback), requestIdNative.cast());
+
+    pa.pa_stream_connect_record(stream, sourceIndex.toNativeUtf8().cast(),
+        buffer, pa_stream_flags.fromValue(PA_STREAM_PEAK_DETECT));
+  }
+
   static void _getInputSinkList(int requestId) {
     final requestIdNative = calloc<Int>()
       ..value = requestId; // Allocate memory explicitly
@@ -273,6 +305,18 @@ class PulseIsolate {
 
     _instance!.responsePerIdMap[requestId] = response.copyWith(
         list: [...response.list, PulseAudioSink.fromNative(sink.ref)]);
+  }
+
+  static void _onStreamCallback(
+    Pointer<pa_stream> source,
+    int length,
+    Pointer<Void> userdata,
+  ) {
+    final requestId = userdata.cast<Int>().value;
+
+    _instance!._sendPort.send(IsolateResponse.streamCallback(
+        requestId: requestId,
+        callback: PulseAudioStreamCallback.fromNative(source, length)));
   }
 
   static void _onSourceListInfo(
