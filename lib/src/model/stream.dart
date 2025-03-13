@@ -38,7 +38,7 @@ class PulseAudioStreamCallback with _$PulseAudioStreamCallback {
 
     pa.pa_stream_drop(stream);
 
-    //print("Res: $resutl, Val:$v, SI:$paIndex S: ${sizeOf<Float>()}");
+    print("Val:$v,  S: ${sizeOf<Float>()}");
     return PulseAudioStreamCallback(
         peak: v,
         sourceId: sourceId,

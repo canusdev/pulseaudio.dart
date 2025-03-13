@@ -258,6 +258,8 @@ class PulseAudioClient {
         requestId: requestId,
         sinkIndex: streamIndex,
         sourceIndex: sourceIndex));
+    await _broadcastStream.firstWhere((message) =>
+        message is StreamCallbackResponse && message.requestId == requestId);
   }
 
   /// set mute for source by name
