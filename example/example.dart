@@ -1,12 +1,7 @@
-import 'dart:io';
-
 import 'package:pulseaudio/pulseaudio.dart';
 
 Future<void> waiter() async {
-  while (true) {
-    print("get");
-    stdin.readLineSync();
-  }
+  while (true) {}
 }
 
 void main() async {
@@ -52,6 +47,5 @@ void main() async {
   await client.setSinkVolume(serverInfo.defaultSinkName, 0.5);
 
   await client.createStreamCallback("357", "357");
-  await waiter();
   client.dispose();
 }

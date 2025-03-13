@@ -227,9 +227,6 @@ class PulseIsolate {
 
   static void _streamCallback(
       int requestId, String streamIndex, String sourceIndex) {
-    final requestIdNative = calloc<Int>()
-      ..value = requestId; // Allocate memory explicitly
-
     final Pointer<pa_sample_spec> spec = calloc<pa_sample_spec>();
 
     spec.ref.channels = 2;
@@ -245,9 +242,11 @@ class PulseIsolate {
     if (streamIndex == "") {
       pa.pa_stream_set_monitor_stream(stream, int.parse(streamIndex));
     }
-
-    pa.pa_stream_set_read_callback(stream,
-        Pointer.fromFunction(_onStreamCallback), requestIdNative.cast());
+    var requestIdNative = "$requestId|$sourceIndex|$streamIndex";
+    pa.pa_stream_set_read_callback(
+        stream,
+        Pointer.fromFunction(_onStreamCallback),
+        requestIdNative.toNativeUtf8().cast());
 
     pa.pa_stream_connect_record(stream, sourceIndex.toNativeUtf8().cast(),
         buffer, pa_stream_flags.fromValue(PA_STREAM_PEAK_DETECT));
@@ -312,11 +311,12 @@ class PulseIsolate {
     int length,
     Pointer<Void> userdata,
   ) {
-    final requestId = userdata.cast<Int>().value;
+    final requestId = userdata.cast<Char>().toString().split("|");
 
     _instance!._sendPort.send(IsolateResponse.streamCallback(
-        requestId: requestId,
-        callback: PulseAudioStreamCallback.fromNative(source, length)));
+        requestId: int.parse(requestId[0]),
+        callback: PulseAudioStreamCallback.fromNative(
+            source, length, int.parse(requestId[1]), int.parse(requestId[2]))));
   }
 
   static void _onSourceListInfo(

@@ -18,6 +18,9 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$PulseAudioStreamCallback {
   double get peak => throw _privateConstructorUsedError;
   double get volume => throw _privateConstructorUsedError;
+  int get index => throw _privateConstructorUsedError;
+  int get sourceId => throw _privateConstructorUsedError;
+  int get streamId => throw _privateConstructorUsedError;
   int get deviceIndex => throw _privateConstructorUsedError;
 
   /// Create a copy of PulseAudioStreamCallback
@@ -33,7 +36,13 @@ abstract class $PulseAudioStreamCallbackCopyWith<$Res> {
           $Res Function(PulseAudioStreamCallback) then) =
       _$PulseAudioStreamCallbackCopyWithImpl<$Res, PulseAudioStreamCallback>;
   @useResult
-  $Res call({double peak, double volume, int deviceIndex});
+  $Res call(
+      {double peak,
+      double volume,
+      int index,
+      int sourceId,
+      int streamId,
+      int deviceIndex});
 }
 
 /// @nodoc
@@ -54,6 +63,9 @@ class _$PulseAudioStreamCallbackCopyWithImpl<$Res,
   $Res call({
     Object? peak = null,
     Object? volume = null,
+    Object? index = null,
+    Object? sourceId = null,
+    Object? streamId = null,
     Object? deviceIndex = null,
   }) {
     return _then(_value.copyWith(
@@ -65,6 +77,18 @@ class _$PulseAudioStreamCallbackCopyWithImpl<$Res,
           ? _value.volume
           : volume // ignore: cast_nullable_to_non_nullable
               as double,
+      index: null == index
+          ? _value.index
+          : index // ignore: cast_nullable_to_non_nullable
+              as int,
+      sourceId: null == sourceId
+          ? _value.sourceId
+          : sourceId // ignore: cast_nullable_to_non_nullable
+              as int,
+      streamId: null == streamId
+          ? _value.streamId
+          : streamId // ignore: cast_nullable_to_non_nullable
+              as int,
       deviceIndex: null == deviceIndex
           ? _value.deviceIndex
           : deviceIndex // ignore: cast_nullable_to_non_nullable
@@ -82,7 +106,13 @@ abstract class _$$PulseAudioStreamCallbackImplCopyWith<$Res>
       __$$PulseAudioStreamCallbackImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({double peak, double volume, int deviceIndex});
+  $Res call(
+      {double peak,
+      double volume,
+      int index,
+      int sourceId,
+      int streamId,
+      int deviceIndex});
 }
 
 /// @nodoc
@@ -102,6 +132,9 @@ class __$$PulseAudioStreamCallbackImplCopyWithImpl<$Res>
   $Res call({
     Object? peak = null,
     Object? volume = null,
+    Object? index = null,
+    Object? sourceId = null,
+    Object? streamId = null,
     Object? deviceIndex = null,
   }) {
     return _then(_$PulseAudioStreamCallbackImpl(
@@ -113,6 +146,18 @@ class __$$PulseAudioStreamCallbackImplCopyWithImpl<$Res>
           ? _value.volume
           : volume // ignore: cast_nullable_to_non_nullable
               as double,
+      index: null == index
+          ? _value.index
+          : index // ignore: cast_nullable_to_non_nullable
+              as int,
+      sourceId: null == sourceId
+          ? _value.sourceId
+          : sourceId // ignore: cast_nullable_to_non_nullable
+              as int,
+      streamId: null == streamId
+          ? _value.streamId
+          : streamId // ignore: cast_nullable_to_non_nullable
+              as int,
       deviceIndex: null == deviceIndex
           ? _value.deviceIndex
           : deviceIndex // ignore: cast_nullable_to_non_nullable
@@ -125,18 +170,29 @@ class __$$PulseAudioStreamCallbackImplCopyWithImpl<$Res>
 
 class _$PulseAudioStreamCallbackImpl implements _PulseAudioStreamCallback {
   const _$PulseAudioStreamCallbackImpl(
-      {required this.peak, required this.volume, required this.deviceIndex});
+      {required this.peak,
+      required this.volume,
+      required this.index,
+      required this.sourceId,
+      required this.streamId,
+      required this.deviceIndex});
 
   @override
   final double peak;
   @override
   final double volume;
   @override
+  final int index;
+  @override
+  final int sourceId;
+  @override
+  final int streamId;
+  @override
   final int deviceIndex;
 
   @override
   String toString() {
-    return 'PulseAudioStreamCallback(peak: $peak, volume: $volume, deviceIndex: $deviceIndex)';
+    return 'PulseAudioStreamCallback(peak: $peak, volume: $volume, index: $index, sourceId: $sourceId, streamId: $streamId, deviceIndex: $deviceIndex)';
   }
 
   @override
@@ -146,12 +202,18 @@ class _$PulseAudioStreamCallbackImpl implements _PulseAudioStreamCallback {
             other is _$PulseAudioStreamCallbackImpl &&
             (identical(other.peak, peak) || other.peak == peak) &&
             (identical(other.volume, volume) || other.volume == volume) &&
+            (identical(other.index, index) || other.index == index) &&
+            (identical(other.sourceId, sourceId) ||
+                other.sourceId == sourceId) &&
+            (identical(other.streamId, streamId) ||
+                other.streamId == streamId) &&
             (identical(other.deviceIndex, deviceIndex) ||
                 other.deviceIndex == deviceIndex));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, peak, volume, deviceIndex);
+  int get hashCode => Object.hash(
+      runtimeType, peak, volume, index, sourceId, streamId, deviceIndex);
 
   /// Create a copy of PulseAudioStreamCallback
   /// with the given fields replaced by the non-null parameter values.
@@ -167,12 +229,21 @@ abstract class _PulseAudioStreamCallback implements PulseAudioStreamCallback {
   const factory _PulseAudioStreamCallback(
       {required final double peak,
       required final double volume,
+      required final int index,
+      required final int sourceId,
+      required final int streamId,
       required final int deviceIndex}) = _$PulseAudioStreamCallbackImpl;
 
   @override
   double get peak;
   @override
   double get volume;
+  @override
+  int get index;
+  @override
+  int get sourceId;
+  @override
+  int get streamId;
   @override
   int get deviceIndex;
 

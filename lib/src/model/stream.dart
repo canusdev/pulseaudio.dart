@@ -12,11 +12,14 @@ class PulseAudioStreamCallback with _$PulseAudioStreamCallback {
   const factory PulseAudioStreamCallback({
     required double peak,
     required double volume,
+    required int index,
+    required int sourceId,
+    required int streamId,
     required int deviceIndex,
   }) = _PulseAudioStreamCallback;
 
   factory PulseAudioStreamCallback.fromNative(
-      Pointer<pa_stream> stream, int length) {
+      Pointer<pa_stream> stream, int length, int sourceId, int streamId) {
     final Pointer<Pointer<Void>> ret = calloc<Pointer<Void>>();
     final blength = calloc<Size>()
       ..value = length; // Allocate memory explicitly
@@ -27,7 +30,8 @@ class PulseAudioStreamCallback with _$PulseAudioStreamCallback {
         pa.pa_stream_drop(stream);
       }
     }
-    final deviceIndex = pa.pa_stream_get_index(stream);
+    final deviceIndex = pa.pa_stream_get_device_index(stream);
+    final index = pa.pa_stream_get_index(stream);
 
     final Pointer<Float> floatPtr = ret.value.cast<Float>();
     double v = floatPtr[length ~/ sizeOf<Float>() - 1];
@@ -36,6 +40,11 @@ class PulseAudioStreamCallback with _$PulseAudioStreamCallback {
 
     //print("Res: $resutl, Val:$v, SI:$paIndex S: ${sizeOf<Float>()}");
     return PulseAudioStreamCallback(
-        peak: v, deviceIndex: deviceIndex, volume: 0);
+        peak: v,
+        sourceId: sourceId,
+        streamId: streamId,
+        index: index,
+        deviceIndex: deviceIndex,
+        volume: 0);
   }
 }
