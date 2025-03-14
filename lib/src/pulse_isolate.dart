@@ -313,8 +313,6 @@ class PulseIsolate {
   ) {
     final requestId = userdata.cast<Utf8>().toDartString().split("|");
 
-    print("scallbakc $requestId");
-
     _instance!._sendPort.send(IsolateResponse.streamCallback(
         requestId: int.parse(requestId[0]),
         callback: PulseAudioStreamCallback.fromNative(
