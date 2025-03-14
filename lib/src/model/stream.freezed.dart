@@ -18,6 +18,8 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$PulseAudioStreamCallback {
   double get peak => throw _privateConstructorUsedError;
   double get volume => throw _privateConstructorUsedError;
+  double get leftDb => throw _privateConstructorUsedError;
+  double get rightDb => throw _privateConstructorUsedError;
   int get index => throw _privateConstructorUsedError;
   int get sourceId => throw _privateConstructorUsedError;
   int get streamId => throw _privateConstructorUsedError;
@@ -39,6 +41,8 @@ abstract class $PulseAudioStreamCallbackCopyWith<$Res> {
   $Res call(
       {double peak,
       double volume,
+      double leftDb,
+      double rightDb,
       int index,
       int sourceId,
       int streamId,
@@ -63,6 +67,8 @@ class _$PulseAudioStreamCallbackCopyWithImpl<$Res,
   $Res call({
     Object? peak = null,
     Object? volume = null,
+    Object? leftDb = null,
+    Object? rightDb = null,
     Object? index = null,
     Object? sourceId = null,
     Object? streamId = null,
@@ -76,6 +82,14 @@ class _$PulseAudioStreamCallbackCopyWithImpl<$Res,
       volume: null == volume
           ? _value.volume
           : volume // ignore: cast_nullable_to_non_nullable
+              as double,
+      leftDb: null == leftDb
+          ? _value.leftDb
+          : leftDb // ignore: cast_nullable_to_non_nullable
+              as double,
+      rightDb: null == rightDb
+          ? _value.rightDb
+          : rightDb // ignore: cast_nullable_to_non_nullable
               as double,
       index: null == index
           ? _value.index
@@ -109,6 +123,8 @@ abstract class _$$PulseAudioStreamCallbackImplCopyWith<$Res>
   $Res call(
       {double peak,
       double volume,
+      double leftDb,
+      double rightDb,
       int index,
       int sourceId,
       int streamId,
@@ -132,6 +148,8 @@ class __$$PulseAudioStreamCallbackImplCopyWithImpl<$Res>
   $Res call({
     Object? peak = null,
     Object? volume = null,
+    Object? leftDb = null,
+    Object? rightDb = null,
     Object? index = null,
     Object? sourceId = null,
     Object? streamId = null,
@@ -145,6 +163,14 @@ class __$$PulseAudioStreamCallbackImplCopyWithImpl<$Res>
       volume: null == volume
           ? _value.volume
           : volume // ignore: cast_nullable_to_non_nullable
+              as double,
+      leftDb: null == leftDb
+          ? _value.leftDb
+          : leftDb // ignore: cast_nullable_to_non_nullable
+              as double,
+      rightDb: null == rightDb
+          ? _value.rightDb
+          : rightDb // ignore: cast_nullable_to_non_nullable
               as double,
       index: null == index
           ? _value.index
@@ -172,6 +198,8 @@ class _$PulseAudioStreamCallbackImpl implements _PulseAudioStreamCallback {
   const _$PulseAudioStreamCallbackImpl(
       {required this.peak,
       required this.volume,
+      required this.leftDb,
+      required this.rightDb,
       required this.index,
       required this.sourceId,
       required this.streamId,
@@ -181,6 +209,10 @@ class _$PulseAudioStreamCallbackImpl implements _PulseAudioStreamCallback {
   final double peak;
   @override
   final double volume;
+  @override
+  final double leftDb;
+  @override
+  final double rightDb;
   @override
   final int index;
   @override
@@ -192,7 +224,7 @@ class _$PulseAudioStreamCallbackImpl implements _PulseAudioStreamCallback {
 
   @override
   String toString() {
-    return 'PulseAudioStreamCallback(peak: $peak, volume: $volume, index: $index, sourceId: $sourceId, streamId: $streamId, deviceIndex: $deviceIndex)';
+    return 'PulseAudioStreamCallback(peak: $peak, volume: $volume, leftDb: $leftDb, rightDb: $rightDb, index: $index, sourceId: $sourceId, streamId: $streamId, deviceIndex: $deviceIndex)';
   }
 
   @override
@@ -202,6 +234,8 @@ class _$PulseAudioStreamCallbackImpl implements _PulseAudioStreamCallback {
             other is _$PulseAudioStreamCallbackImpl &&
             (identical(other.peak, peak) || other.peak == peak) &&
             (identical(other.volume, volume) || other.volume == volume) &&
+            (identical(other.leftDb, leftDb) || other.leftDb == leftDb) &&
+            (identical(other.rightDb, rightDb) || other.rightDb == rightDb) &&
             (identical(other.index, index) || other.index == index) &&
             (identical(other.sourceId, sourceId) ||
                 other.sourceId == sourceId) &&
@@ -212,8 +246,8 @@ class _$PulseAudioStreamCallbackImpl implements _PulseAudioStreamCallback {
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, peak, volume, index, sourceId, streamId, deviceIndex);
+  int get hashCode => Object.hash(runtimeType, peak, volume, leftDb, rightDb,
+      index, sourceId, streamId, deviceIndex);
 
   /// Create a copy of PulseAudioStreamCallback
   /// with the given fields replaced by the non-null parameter values.
@@ -229,6 +263,8 @@ abstract class _PulseAudioStreamCallback implements PulseAudioStreamCallback {
   const factory _PulseAudioStreamCallback(
       {required final double peak,
       required final double volume,
+      required final double leftDb,
+      required final double rightDb,
       required final int index,
       required final int sourceId,
       required final int streamId,
@@ -238,6 +274,10 @@ abstract class _PulseAudioStreamCallback implements PulseAudioStreamCallback {
   double get peak;
   @override
   double get volume;
+  @override
+  double get leftDb;
+  @override
+  double get rightDb;
   @override
   int get index;
   @override

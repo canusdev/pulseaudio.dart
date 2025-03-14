@@ -230,8 +230,8 @@ class PulseIsolate {
     final Pointer<pa_sample_spec> spec = calloc<pa_sample_spec>();
 
     spec.ref.channels = 2;
-    spec.ref.rate = 25;
-    spec.ref.formatAsInt = 5;
+    spec.ref.rate = 44100;
+    spec.ref.formatAsInt = 8;
 
     final Pointer<pa_buffer_attr> buffer = calloc<pa_buffer_attr>();
     buffer.ref.fragsize = sizeOf<Float>();
