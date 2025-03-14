@@ -231,11 +231,11 @@ class PulseIsolate {
 
     spec.ref.channels = 2;
     spec.ref.rate = 44100;
-    spec.ref.formatAsInt = 8;
+    spec.ref.formatAsInt = PA_SAMPLE_FLOAT32LE;
 
     final Pointer<pa_buffer_attr> buffer = calloc<pa_buffer_attr>();
     buffer.ref.fragsize = sizeOf<Float>();
-    buffer.ref.maxlength = sizeOf<Uint32>() - 1;
+    buffer.ref.maxlength = (sizeOf<Uint32>() - 1) * 8;
 
     var stream = pa.pa_stream_new(
         _instance!.context, "Peak Detect".toNativeUtf8().cast(), spec, nullptr);

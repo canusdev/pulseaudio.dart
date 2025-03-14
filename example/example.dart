@@ -44,6 +44,7 @@ void main() async {
     print('Sink Name: ${sink.name}, Description: ${sink.description}');
   }
 
-  await client.createStreamCallback("357", "357");
+  await client.createStreamCallback("2595", "2595");
+  await Future.delayed(const Duration(minutes: 5));
   client.dispose();
 }

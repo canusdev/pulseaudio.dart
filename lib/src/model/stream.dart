@@ -9,6 +9,16 @@ import 'package:pulseaudio/src/pulse_isolate.dart';
 part 'stream.freezed.dart';
 
 double log10(num x) => log(x) / ln10;
+int _convert24BitToSigned(Pointer<Uint8> data) {
+  int value = (data.elementAt(0).value |
+      (data.elementAt(1).value << 8) |
+      (data.elementAt(2).value << 16));
+
+  if (value & 0x800000 != 0) {
+    value |= 0xFF000000; // 24-bit işaret uzatma
+  }
+  return value;
+}
 
 List<double> _calculateVU(List<double> samples) {
   double leftRMS = _calculateRMS(samples, 0, 2);
