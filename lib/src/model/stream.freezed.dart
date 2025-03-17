@@ -16,7 +16,7 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$PulseAudioStreamCallback {
-  double get peak => throw _privateConstructorUsedError;
+  int get peak => throw _privateConstructorUsedError;
   double get volume => throw _privateConstructorUsedError;
   double get leftDb => throw _privateConstructorUsedError;
   double get rightDb => throw _privateConstructorUsedError;
@@ -41,7 +41,7 @@ abstract class $PulseAudioStreamCallbackCopyWith<$Res> {
       _$PulseAudioStreamCallbackCopyWithImpl<$Res, PulseAudioStreamCallback>;
   @useResult
   $Res call(
-      {double peak,
+      {int peak,
       double volume,
       double leftDb,
       double rightDb,
@@ -84,7 +84,7 @@ class _$PulseAudioStreamCallbackCopyWithImpl<$Res,
       peak: null == peak
           ? _value.peak
           : peak // ignore: cast_nullable_to_non_nullable
-              as double,
+              as int,
       volume: null == volume
           ? _value.volume
           : volume // ignore: cast_nullable_to_non_nullable
@@ -135,7 +135,7 @@ abstract class _$$PulseAudioStreamCallbackImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {double peak,
+      {int peak,
       double volume,
       double leftDb,
       double rightDb,
@@ -177,7 +177,7 @@ class __$$PulseAudioStreamCallbackImplCopyWithImpl<$Res>
       peak: null == peak
           ? _value.peak
           : peak // ignore: cast_nullable_to_non_nullable
-              as double,
+              as int,
       volume: null == volume
           ? _value.volume
           : volume // ignore: cast_nullable_to_non_nullable
@@ -235,7 +235,7 @@ class _$PulseAudioStreamCallbackImpl implements _PulseAudioStreamCallback {
       : _samples = samples;
 
   @override
-  final double peak;
+  final int peak;
   @override
   final double volume;
   @override
@@ -312,7 +312,7 @@ class _$PulseAudioStreamCallbackImpl implements _PulseAudioStreamCallback {
 
 abstract class _PulseAudioStreamCallback implements PulseAudioStreamCallback {
   const factory _PulseAudioStreamCallback(
-      {required final double peak,
+      {required final int peak,
       required final double volume,
       required final double leftDb,
       required final double rightDb,
@@ -324,7 +324,7 @@ abstract class _PulseAudioStreamCallback implements PulseAudioStreamCallback {
       required final int deviceIndex}) = _$PulseAudioStreamCallbackImpl;
 
   @override
-  double get peak;
+  int get peak;
   @override
   double get volume;
   @override
