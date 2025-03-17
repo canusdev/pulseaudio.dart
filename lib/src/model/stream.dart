@@ -32,7 +32,7 @@ double _calculateRMS(List<double> samples, int channel, int totalChannels) {
 }
 
 double _toDB(double value) {
-  return value > 0 ? 20 * log10(value) : -80.0;
+  return value > 0 ? 20 * log10(value) : -100.0;
 }
 
 @freezed
@@ -44,7 +44,6 @@ class PulseAudioStreamCallback with _$PulseAudioStreamCallback {
     required double rightDb,
     required int index,
     required int length,
-    required List<double> samples,
     required int sourceId,
     required int streamId,
     required int deviceIndex,
@@ -84,7 +83,6 @@ class PulseAudioStreamCallback with _$PulseAudioStreamCallback {
         rightDb: res[1],
         sourceId: sourceId,
         length: length,
-        samples: samples,
         streamId: streamId,
         index: index,
         deviceIndex: deviceIndex,
