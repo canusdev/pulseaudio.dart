@@ -22,7 +22,7 @@ mixin _$PulseAudioStreamCallback {
   double get rightDb => throw _privateConstructorUsedError;
   int get index => throw _privateConstructorUsedError;
   int get length => throw _privateConstructorUsedError;
-  List<double> get samples => throw _privateConstructorUsedError;
+  Pointer<Float> get samples => throw _privateConstructorUsedError;
   int get sourceId => throw _privateConstructorUsedError;
   int get streamId => throw _privateConstructorUsedError;
   int get deviceIndex => throw _privateConstructorUsedError;
@@ -47,7 +47,7 @@ abstract class $PulseAudioStreamCallbackCopyWith<$Res> {
       double rightDb,
       int index,
       int length,
-      List<double> samples,
+      Pointer<Float> samples,
       int sourceId,
       int streamId,
       int deviceIndex});
@@ -108,7 +108,7 @@ class _$PulseAudioStreamCallbackCopyWithImpl<$Res,
       samples: null == samples
           ? _value.samples
           : samples // ignore: cast_nullable_to_non_nullable
-              as List<double>,
+              as Pointer<Float>,
       sourceId: null == sourceId
           ? _value.sourceId
           : sourceId // ignore: cast_nullable_to_non_nullable
@@ -141,7 +141,7 @@ abstract class _$$PulseAudioStreamCallbackImplCopyWith<$Res>
       double rightDb,
       int index,
       int length,
-      List<double> samples,
+      Pointer<Float> samples,
       int sourceId,
       int streamId,
       int deviceIndex});
@@ -199,9 +199,9 @@ class __$$PulseAudioStreamCallbackImplCopyWithImpl<$Res>
           : length // ignore: cast_nullable_to_non_nullable
               as int,
       samples: null == samples
-          ? _value._samples
+          ? _value.samples
           : samples // ignore: cast_nullable_to_non_nullable
-              as List<double>,
+              as Pointer<Float>,
       sourceId: null == sourceId
           ? _value.sourceId
           : sourceId // ignore: cast_nullable_to_non_nullable
@@ -228,11 +228,10 @@ class _$PulseAudioStreamCallbackImpl implements _PulseAudioStreamCallback {
       required this.rightDb,
       required this.index,
       required this.length,
-      required final List<double> samples,
+      required this.samples,
       required this.sourceId,
       required this.streamId,
-      required this.deviceIndex})
-      : _samples = samples;
+      required this.deviceIndex});
 
   @override
   final int peak;
@@ -246,14 +245,8 @@ class _$PulseAudioStreamCallbackImpl implements _PulseAudioStreamCallback {
   final int index;
   @override
   final int length;
-  final List<double> _samples;
   @override
-  List<double> get samples {
-    if (_samples is EqualUnmodifiableListView) return _samples;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_samples);
-  }
-
+  final Pointer<Float> samples;
   @override
   final int sourceId;
   @override
@@ -277,7 +270,7 @@ class _$PulseAudioStreamCallbackImpl implements _PulseAudioStreamCallback {
             (identical(other.rightDb, rightDb) || other.rightDb == rightDb) &&
             (identical(other.index, index) || other.index == index) &&
             (identical(other.length, length) || other.length == length) &&
-            const DeepCollectionEquality().equals(other._samples, _samples) &&
+            (identical(other.samples, samples) || other.samples == samples) &&
             (identical(other.sourceId, sourceId) ||
                 other.sourceId == sourceId) &&
             (identical(other.streamId, streamId) ||
@@ -287,18 +280,8 @@ class _$PulseAudioStreamCallbackImpl implements _PulseAudioStreamCallback {
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      peak,
-      volume,
-      leftDb,
-      rightDb,
-      index,
-      length,
-      const DeepCollectionEquality().hash(_samples),
-      sourceId,
-      streamId,
-      deviceIndex);
+  int get hashCode => Object.hash(runtimeType, peak, volume, leftDb, rightDb,
+      index, length, samples, sourceId, streamId, deviceIndex);
 
   /// Create a copy of PulseAudioStreamCallback
   /// with the given fields replaced by the non-null parameter values.
@@ -318,7 +301,7 @@ abstract class _PulseAudioStreamCallback implements PulseAudioStreamCallback {
       required final double rightDb,
       required final int index,
       required final int length,
-      required final List<double> samples,
+      required final Pointer<Float> samples,
       required final int sourceId,
       required final int streamId,
       required final int deviceIndex}) = _$PulseAudioStreamCallbackImpl;
@@ -336,7 +319,7 @@ abstract class _PulseAudioStreamCallback implements PulseAudioStreamCallback {
   @override
   int get length;
   @override
-  List<double> get samples;
+  Pointer<Float> get samples;
   @override
   int get sourceId;
   @override
