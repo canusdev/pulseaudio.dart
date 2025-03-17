@@ -51,7 +51,7 @@ class PulseAudioStreamCallback with _$PulseAudioStreamCallback {
 
   factory PulseAudioStreamCallback.fromNative(
       Pointer<pa_stream> stream, int length, int sourceId, int streamId) {
-    Pointer<Float> ret = malloc<Float>(length ~/ 4);
+    final Pointer<Pointer<Void>> ret = calloc<Pointer<Void>>();
     final blength = calloc<Size>()
       ..value = length; // Allocate memory explicitly
 
@@ -65,11 +65,12 @@ class PulseAudioStreamCallback with _$PulseAudioStreamCallback {
     if (length % 8 != 0) {
       pa.pa_stream_drop(stream);
     }
+    Pointer<Float> buffer = ret.value.cast<Float>();
 
     List<double> samples = [];
 
     for (int i = 0; i < length; i += 2) {
-      samples.add(ret[i]);
+      samples.add(buffer[i]);
     }
 
     final deviceIndex = pa.pa_stream_get_device_index(stream);
