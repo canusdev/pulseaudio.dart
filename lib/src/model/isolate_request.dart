@@ -18,6 +18,10 @@ sealed class IsolateRequest with _$IsolateRequest {
       {required int requestId,
       required String sinkName,
       required double volume}) = SetSinkVolumeRequest;
+  const factory IsolateRequest.setInputSinkVolume(
+      {required int requestId,
+      required int sinkId,
+      required double volume}) = SetInputSinkVolumeRequest;
 
   const factory IsolateRequest.createStreamCallback(
       {required int requestId,
@@ -36,6 +40,10 @@ sealed class IsolateRequest with _$IsolateRequest {
       {required int requestId,
       required String sinkName,
       required bool mute}) = SetSinkMuteRequest;
+  const factory IsolateRequest.setInputSinkMute(
+      {required int requestId,
+      required int sinkId,
+      required bool mute}) = SetInputSinkMuteRequest;
   const factory IsolateRequest.setSourceMute(
       {required int requestId,
       required String sourceName,

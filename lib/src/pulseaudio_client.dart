@@ -234,6 +234,30 @@ class PulseAudioClient {
         message is SetSinkVolumeResponse && message.requestId == requestId);
   }
 
+  Future<void> setInputSinkMute(int sinkId, bool mute) async {
+    if (!_initializedCompleter.isCompleted) {
+      throw Exception("PulseAudio is not initialized");
+    }
+    final requestId = newRequestId;
+    _sendPort.send(IsolateRequest.setInputSinkMute(
+        requestId: requestId, sinkId: sinkId, mute: mute));
+    await _broadcastStream.firstWhere((message) =>
+        message is SetSinkMuteResponse && message.requestId == requestId);
+  }
+
+  /// Set volume for sink by name
+  Future<void> setInputSinkVolume(int sinkId, double volume) async {
+    if (!_initializedCompleter.isCompleted) {
+      throw Exception("PulseAudio is not initialized");
+    }
+    final requestId = newRequestId;
+
+    _sendPort.send(IsolateRequest.setInputSinkVolume(
+        requestId: requestId, sinkId: sinkId, volume: volume));
+    await _broadcastStream.firstWhere((message) =>
+        message is SetSinkVolumeResponse && message.requestId == requestId);
+  }
+
   Future<void> propListUpdate(
       pa_update_mode mode, String key, String value) async {
     if (!_initializedCompleter.isCompleted) {

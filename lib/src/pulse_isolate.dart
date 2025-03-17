@@ -92,6 +92,13 @@ class PulseIsolate {
         case CreateStreamCallbackRequest():
           _streamCallback(
               message.requestId, message.sinkIndex, message.sourceIndex);
+
+        case SetInputSinkVolumeRequest():
+          _setInputSinkVolume(
+              message.requestId, message.sinkId, message.volume);
+        case SetInputSinkMuteRequest():
+          _setInputSinkMute(message.requestId, message.sinkId, message.mute);
+          throw UnimplementedError();
       }
     });
 
@@ -469,6 +476,26 @@ class PulseIsolate {
     });
   }
 
+  static _setInputSinkVolume(int requestId, int id, double volume) {
+    using((Arena arena) {
+      final pVolume = arena<pa_cvolume>();
+      pa.pa_cvolume_init(pVolume);
+      pa.pa_cvolume_set(pVolume, 2, (volume * PA_VOLUME_NORM).ceil());
+
+      final operation = pa.pa_context_set_sink_input_volume(
+        _instance!.context,
+        id,
+        pVolume,
+        nullptr,
+        nullptr,
+      );
+
+      _instance!.operationCallbackMap[operation] = () {
+        _instance!._sendPort.send(SetSinkVolumeResponse(requestId: requestId));
+      };
+    });
+  }
+
   static _setSourceVolume(int requestId, String name, double volume) {
     using((Arena arena) {
       final pVolume = arena<pa_cvolume>();
@@ -487,6 +514,19 @@ class PulseIsolate {
             .send(SetSourceVolumeResponse(requestId: requestId));
       };
     });
+  }
+
+  static _setInputSinkMute(int requestId, int id, bool mute) {
+    final operation = pa.pa_context_set_sink_input_mute(
+      _instance!.context,
+      id,
+      mute ? 1 : 0,
+      nullptr,
+      nullptr,
+    );
+    _instance!.operationCallbackMap[operation] = () {
+      _instance!._sendPort.send(SetSinkMuteResponse(requestId: requestId));
+    };
   }
 
   static _setSinkMute(int requestId, String name, bool mute) {
