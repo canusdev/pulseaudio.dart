@@ -84,7 +84,7 @@ class PulseAudioStreamCallback with _$PulseAudioStreamCallback {
         rightDb: res[1],
         sourceId: sourceId,
         length: length,
-        samples: ret.asTypedList(length),
+        samples: samples,
         streamId: streamId,
         index: index,
         deviceIndex: deviceIndex,
