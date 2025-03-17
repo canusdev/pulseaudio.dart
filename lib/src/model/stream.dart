@@ -27,8 +27,6 @@ List<double> _calculateVU(List<double> samples) {
   double leftDB = _toDB(leftRMS);
   double rightDB = _toDB(rightRMS);
   return [leftDB, rightDB];
-  print(
-      "L: ${leftDB.toStringAsFixed(2)} dB | R: ${rightDB.toStringAsFixed(2)} dB");
 }
 
 double _calculateRMS(List<double> samples, int channel, int totalChannels) {
@@ -55,6 +53,8 @@ class PulseAudioStreamCallback with _$PulseAudioStreamCallback {
     required double leftDb,
     required double rightDb,
     required int index,
+    required int length,
+    required List<double> samples,
     required int sourceId,
     required int streamId,
     required int deviceIndex,
@@ -79,6 +79,10 @@ class PulseAudioStreamCallback with _$PulseAudioStreamCallback {
     }
 
     List<double> samples = [];
+    List<double> bsamples = [];
+    for (int i = 0; i < length; i++) {
+      bsamples.add(buffer[i]);
+    }
     for (int i = 0; i < length; i += 2) {
       samples.add(buffer[i]);
     }
@@ -96,6 +100,8 @@ class PulseAudioStreamCallback with _$PulseAudioStreamCallback {
         leftDb: res[0],
         rightDb: res[1],
         sourceId: sourceId,
+        length: length,
+        samples: bsamples,
         streamId: streamId,
         index: index,
         deviceIndex: deviceIndex,
