@@ -9,16 +9,6 @@ import 'package:pulseaudio/src/pulse_isolate.dart';
 part 'stream.freezed.dart';
 
 double log10(num x) => log(x) / ln10;
-int _convert24BitToSigned(Pointer<Uint8> data) {
-  int value = (data.elementAt(0).value |
-      (data.elementAt(1).value << 8) |
-      (data.elementAt(2).value << 16));
-
-  if (value & 0x800000 != 0) {
-    value |= 0xFF000000; // 24-bit işaret uzatma
-  }
-  return value;
-}
 
 List<double> _calculateVU(List<double> samples) {
   double leftRMS = _calculateRMS(samples, 0, 2);
@@ -48,7 +38,7 @@ double _toDB(double value) {
 @freezed
 class PulseAudioStreamCallback with _$PulseAudioStreamCallback {
   const factory PulseAudioStreamCallback({
-    required double peak,
+    required int peak,
     required double volume,
     required double leftDb,
     required double rightDb,
@@ -66,7 +56,7 @@ class PulseAudioStreamCallback with _$PulseAudioStreamCallback {
     final blength = calloc<Size>()
       ..value = length; // Allocate memory explicitly
 
-    pa.pa_stream_peek(stream, ret, blength);
+    var peakVal = pa.pa_stream_peek(stream, ret, blength);
     if (ret == nullptr) {
       if (length > 0) {
         pa.pa_stream_drop(stream);
@@ -90,13 +80,10 @@ class PulseAudioStreamCallback with _$PulseAudioStreamCallback {
     final deviceIndex = pa.pa_stream_get_device_index(stream);
     final index = pa.pa_stream_get_index(stream);
 
-    final Pointer<Float> floatPtr = ret.value.cast<Float>();
-    double v = floatPtr[length ~/ sizeOf<Float>() - 1];
-
     pa.pa_stream_drop(stream);
     var res = _calculateVU(samples);
     return PulseAudioStreamCallback(
-        peak: v,
+        peak: peakVal,
         leftDb: res[0],
         rightDb: res[1],
         sourceId: sourceId,
