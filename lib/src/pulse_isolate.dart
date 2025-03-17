@@ -98,7 +98,6 @@ class PulseIsolate {
               message.requestId, message.sinkId, message.volume);
         case SetInputSinkMuteRequest():
           _setInputSinkMute(message.requestId, message.sinkId, message.mute);
-          throw UnimplementedError();
       }
     });
 
